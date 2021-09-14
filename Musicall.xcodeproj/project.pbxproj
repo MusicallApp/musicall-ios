@@ -20,8 +20,8 @@
 		69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13126EA4BC100A25A69 /* SignInViewController.swift */; };
 		69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13326EA4BD500A25A69 /* LoginViewController.swift */; };
 		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
-		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
 		FFC6E65C26F0DF49001D780A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC6E65B26F0DF49001D780A /* UIColor.swift */; };
+		FFD709C926F0F1870010EBDD /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD709C826F0F1870010EBDD /* UIFont.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,12 +61,12 @@
 		69A7F13126EA4BC100A25A69 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		69A7F13326EA4BD500A25A69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69A7F13526EA4BFE00A25A69 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		69A7F13726EA4C0E00A25A69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		FFC6E65B26F0DF49001D780A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		FFC6E65D26F0E20A001D780A /* Overlock-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overlock-Bold.ttf"; sourceTree = "<group>"; };
 		FFC6E65E26F0E24B001D780A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		FFC6E65F26F0E288001D780A /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		FFC6E66026F0E28F001D780A /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		FFD709C826F0F1870010EBDD /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +153,6 @@
 			children = (
 				FFC6E66126F0E2FE001D780A /* Assets */,
 				FFC6E65926F0DF34001D780A /* Extensions */,
-				69A7F13726EA4C0E00A25A69 /* Extensions.swift */,
 			);
 			path = MusicUI;
 			sourceTree = "<group>";
@@ -233,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				FFC6E65B26F0DF49001D780A /* UIColor.swift */,
+				FFD709C826F0F1870010EBDD /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,9 +379,9 @@
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
-				69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				FFC6E65C26F0DF49001D780A /* UIColor.swift in Sources */,
+				FFD709C926F0F1870010EBDD /* UIFont.swift in Sources */,
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
