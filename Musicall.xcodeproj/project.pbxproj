@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0346E45E26F0D20E00F43504 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0346E45F26F0D21600F43504 /* Cards */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0346E45F26F0D21600F43504 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				0346E46026F0DCCC00F43504 /* Card.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		69A7F0E226EA49C500A25A69 = {
 			isa = PBXGroup;
 			children = (
@@ -146,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				69A7F13726EA4C0E00A25A69 /* Extensions.swift */,
+				0346E45E26F0D20E00F43504 /* Components */,
 			);
 			path = MusicUI;
 			sourceTree = "<group>";
@@ -349,6 +368,7 @@
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
+				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
