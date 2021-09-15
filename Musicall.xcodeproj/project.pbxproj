@@ -25,6 +25,8 @@
 		69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13326EA4BD500A25A69 /* LoginViewController.swift */; };
 		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
 		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
+		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
+		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,9 @@
 		69A7F13326EA4BD500A25A69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69A7F13526EA4BFE00A25A69 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		69A7F13726EA4C0E00A25A69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
+		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */,
 				0346E46726F0E97E00F43504 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -136,6 +142,7 @@
 				69A7F10426EA49C800A25A69 /* MusicallTests */,
 				69A7F10F26EA49C800A25A69 /* MusicallUITests */,
 				69A7F0EC26EA49C500A25A69 /* Products */,
+				69A7F18826F0E4B500A25A69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -152,6 +159,8 @@
 		69A7F0ED26EA49C500A25A69 /* Musicall */ = {
 			isa = PBXGroup;
 			children = (
+				69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */,
+				69A7F18326F0DFDB00A25A69 /* MusicCloudKit */,
 				69A7F12026EA4A8F00A25A69 /* MusicApp */,
 				69A7F11F26EA4A7900A25A69 /* MusicService */,
 				69A7F11E26EA4A4700A25A69 /* MusicUI */,
@@ -161,6 +170,7 @@
 				69A7F0F726EA49C800A25A69 /* Assets.xcassets */,
 				69A7F0F926EA49C800A25A69 /* LaunchScreen.storyboard */,
 				69A7F0FC26EA49C800A25A69 /* Info.plist */,
+				69A7F18526F0E0F700A25A69 /* .swiftlint.yml */,
 			);
 			path = Musicall;
 			sourceTree = "<group>";
@@ -253,6 +263,21 @@
 			path = Mural;
 			sourceTree = "<group>";
 		};
+		69A7F18326F0DFDB00A25A69 /* MusicCloudKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MusicCloudKit;
+			sourceTree = "<group>";
+		};
+		69A7F18826F0E4B500A25A69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69A7F18926F0E4B500A25A69 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -263,6 +288,7 @@
 				69A7F0E726EA49C500A25A69 /* Sources */,
 				69A7F0E826EA49C500A25A69 /* Frameworks */,
 				69A7F0E926EA49C500A25A69 /* Resources */,
+				69A7F18426F0E02900A25A69 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -362,6 +388,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */,
 				69A7F0FB26EA49C800A25A69 /* LaunchScreen.storyboard in Resources */,
 				69A7F0F826EA49C800A25A69 /* Assets.xcassets in Resources */,
 			);
@@ -382,6 +409,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69A7F18426F0E02900A25A69 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69A7F0E726EA49C500A25A69 /* Sources */ = {
@@ -568,6 +615,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GHRBLV3RV2;
 				INFOPLIST_FILE = Musicall/Info.plist;
@@ -587,6 +635,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GHRBLV3RV2;
 				INFOPLIST_FILE = Musicall/Info.plist;
