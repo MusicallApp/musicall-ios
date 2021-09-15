@@ -91,8 +91,47 @@ class Card: UIView {
 
     // MARK: UI Elements
 
-    let stack
+    let photoImageView: UIImageView = {
+        let image = UIImageView()
 
+        return image
+    }()
+
+    lazy var nameLabel: UILabel = {
+        let label = UILabel()
+        label.text = headerInfos.username
+
+        return label
+    }()
+
+    lazy var dateLabel: UILabel = {
+        let label = UILabel()
+        label.text = headerInfos.date
+
+        return label
+    }()
+
+    let stackVertical: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.axis = .vertical
+        stackView.spacing = 0
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+
+    let stackHorizontal: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.axis = .horizontal
+        stackView.spacing = 0
+
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
 
     // MARK: LIFE CYCLE
     init(headerInfos: HeaderInfos, style: CardStyle) {
@@ -101,6 +140,7 @@ class Card: UIView {
         self.contentView = style.configureStyleView()
         super.init(frame: .zero)
 
+        configureUI()
     }
 
     required init?(coder: NSCoder) {
@@ -109,7 +149,25 @@ class Card: UIView {
 
     // MARK: PRIVATE FUNCS
     private func configureUI() {
+        addSubview(stackHorizontal)
 
+        stackHorizontal.addArrangedSubview(photoImageView)
+        stackHorizontal.addArrangedSubview(stackVertical)
+
+        stackVertical.addArrangedSubview(nameLabel)
+        stackVertical.addArrangedSubview(dateLabel)
+
+        addSubview(contentView)
+
+        stackHorizontal.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(16)
+            make.top.equalToSuperview().inset(14)
+        }
+
+        contentView.snp.makeConstraints { make in
+            make.top.equalTo(stackHorizontal.snp.bottom).inset(12)
+            make.left.right.bottom.equalToSuperview().inset(16)
+        }
     }
 
     // MARK: PUBLIC FUNCS
