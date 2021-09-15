@@ -10,6 +10,7 @@
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
 		0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46326F0E42400F43504 /* StackView Extension.swift */; };
 		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
+		0346E46D26F0ED9100F43504 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46C26F0ED9100F43504 /* ProfileView.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0346E46326F0E42400F43504 /* StackView Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView Extension.swift"; sourceTree = "<group>"; };
+		0346E46C26F0ED9100F43504 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0346E46B26F0ED8200F43504 /* ProfileView */,
 				0346E45F26F0D21600F43504 /* Cards */,
 			);
 			path = Components;
@@ -116,6 +119,14 @@
 				0346E46326F0E42400F43504 /* StackView Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0346E46B26F0ED8200F43504 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				0346E46C26F0ED9100F43504 /* ProfileView.swift */,
+			);
+			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		69A7F0E226EA49C500A25A69 = {
@@ -378,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
+				0346E46D26F0ED9100F43504 /* ProfileView.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
 				0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,

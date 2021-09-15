@@ -6,20 +6,22 @@
 //
 
 import UIKit
+import SnapKit
+
 enum CardStyle {
     case complete(content: String, likes: Int, interactions: Int)
     case simple(content: String)
     case contact(number: String)
     case editable
 
-    fileprivate func configureStyle(style: CardStyle) -> UIView {
+    fileprivate func configureStyleView() -> UIView {
         let stackVertical = UIStackView()
         stackVertical.axis = .vertical
         stackVertical.alignment = .fill
         stackVertical.distribution = .fill
         stackVertical.spacing = 16
 
-        switch style {
+        switch self {
         case .complete(content: let content, likes: let likes, interactions: let interactions):
             let contentLabel = UILabel()
             contentLabel.text = content
@@ -52,9 +54,21 @@ enum CardStyle {
             stackVertical.addArrangedSubview(contentLabel)
 
         case .contact(number: let number): break
+//            let contentView = UIView()
+//            contentView.backgroundColor = .gray
+//            contentView.translatesAutoresizingMaskIntoConstraints = false
+//
+//            contentView.snp.makeConstraints { make in
+//                make.height.equalTo(38)
+//            }
+//
+//
+        case .editable:
+            let contentLabel = UILabel()
+            contentLabel.text = "Escreva seu comentário"
+            contentLabel.numberOfLines = 0
 
-        case .editable: break
-            
+            stackVertical.addArrangedSubview(contentLabel)
         }
         return stackVertical
     }
@@ -73,15 +87,20 @@ class Card: UIView {
     // MARK: PRIVATE PROPERTIES
     private var style: CardStyle
     private var headerInfos: HeaderInfos
+    private var contentView: UIView
 
     // MARK: UI Elements
+
+    let stack
 
 
     // MARK: LIFE CYCLE
     init(headerInfos: HeaderInfos, style: CardStyle) {
         self.style = style
         self.headerInfos = headerInfos
+        self.contentView = style.configureStyleView()
         super.init(frame: .zero)
+
     }
 
     required init?(coder: NSCoder) {
@@ -89,6 +108,9 @@ class Card: UIView {
     }
 
     // MARK: PRIVATE FUNCS
+    private func configureUI() {
+
+    }
 
     // MARK: PUBLIC FUNCS
 
