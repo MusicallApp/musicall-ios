@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -22,6 +23,9 @@
 		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
 		FFC6E65C26F0DF49001D780A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC6E65B26F0DF49001D780A /* UIColor.swift */; };
 		FFD709C926F0F1870010EBDD /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD709C826F0F1870010EBDD /* UIFont.swift */; };
+		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
+		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
+		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +71,11 @@
 		FFC6E65F26F0E288001D780A /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		FFC6E66026F0E28F001D780A /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		FFD709C826F0F1870010EBDD /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		69A7F13726EA4C0E00A25A69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
+		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */,
+				0346E46726F0E97E00F43504 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +112,7 @@
 				69A7F10426EA49C800A25A69 /* MusicallTests */,
 				69A7F10F26EA49C800A25A69 /* MusicallUITests */,
 				69A7F0EC26EA49C500A25A69 /* Products */,
+				69A7F18826F0E4B500A25A69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,6 +129,8 @@
 		69A7F0ED26EA49C500A25A69 /* Musicall */ = {
 			isa = PBXGroup;
 			children = (
+				69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */,
+				69A7F18326F0DFDB00A25A69 /* MusicCloudKit */,
 				69A7F12026EA4A8F00A25A69 /* MusicApp */,
 				69A7F11F26EA4A7900A25A69 /* MusicService */,
 				69A7F11E26EA4A4700A25A69 /* MusicUI */,
@@ -126,6 +140,7 @@
 				69A7F0F726EA49C800A25A69 /* Assets.xcassets */,
 				69A7F0F926EA49C800A25A69 /* LaunchScreen.storyboard */,
 				69A7F0FC26EA49C800A25A69 /* Info.plist */,
+				69A7F18526F0E0F700A25A69 /* .swiftlint.yml */,
 			);
 			path = Musicall;
 			sourceTree = "<group>";
@@ -243,6 +258,20 @@
 				FFC6E65826F0DF2F001D780A /* Fonts */,
 			);
 			path = Assets;
+
+		69A7F18326F0DFDB00A25A69 /* MusicCloudKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MusicCloudKit;
+			sourceTree = "<group>";
+		};
+		69A7F18826F0E4B500A25A69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				69A7F18926F0E4B500A25A69 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,12 +284,16 @@
 				69A7F0E726EA49C500A25A69 /* Sources */,
 				69A7F0E826EA49C500A25A69 /* Frameworks */,
 				69A7F0E926EA49C500A25A69 /* Resources */,
+				69A7F18426F0E02900A25A69 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Musicall;
+			packageProductDependencies = (
+				0346E46626F0E97E00F43504 /* SnapKit */,
+			);
 			productName = Musicall;
 			productReference = 69A7F0EB26EA49C500A25A69 /* Musicall.app */;
 			productType = "com.apple.product-type.application";
@@ -332,6 +365,9 @@
 				Base,
 			);
 			mainGroup = 69A7F0E226EA49C500A25A69;
+			packageReferences = (
+				0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 69A7F0EC26EA49C500A25A69 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,6 +384,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */,
 				69A7F0FB26EA49C800A25A69 /* LaunchScreen.storyboard in Resources */,
 				69A7F0F826EA49C800A25A69 /* Assets.xcassets in Resources */,
 			);
@@ -368,6 +405,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		69A7F18426F0E02900A25A69 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69A7F0E726EA49C500A25A69 /* Sources */ = {
@@ -552,6 +609,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GHRBLV3RV2;
 				INFOPLIST_FILE = Musicall/Info.plist;
@@ -571,6 +629,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GHRBLV3RV2;
 				INFOPLIST_FILE = Musicall/Info.plist;
@@ -709,6 +768,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0346E46626F0E97E00F43504 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 69A7F0E326EA49C500A25A69 /* Project object */;
 }
