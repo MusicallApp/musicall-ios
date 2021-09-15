@@ -20,14 +20,9 @@
 		69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13126EA4BC100A25A69 /* SignInViewController.swift */; };
 		69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13326EA4BD500A25A69 /* LoginViewController.swift */; };
 		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
-<<<<<<< HEAD
 		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
 		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
 		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
-=======
-		FFC6E65C26F0DF49001D780A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC6E65B26F0DF49001D780A /* UIColor.swift */; };
-		FFD709C926F0F1870010EBDD /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD709C826F0F1870010EBDD /* UIFont.swift */; };
->>>>>>> parent of a04f6d5 (Merge branch 'dev' into PI-001)
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,19 +62,11 @@
 		69A7F13126EA4BC100A25A69 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		69A7F13326EA4BD500A25A69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69A7F13526EA4BFE00A25A69 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-<<<<<<< HEAD
 		69A7F13726EA4C0E00A25A69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
 		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
-=======
-		FFC6E65B26F0DF49001D780A /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		FFC6E65D26F0E20A001D780A /* Overlock-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overlock-Bold.ttf"; sourceTree = "<group>"; };
-		FFC6E65E26F0E24B001D780A /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
-		FFC6E65F26F0E288001D780A /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
-		FFC6E66026F0E28F001D780A /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
-		FFD709C826F0F1870010EBDD /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
->>>>>>> parent of a04f6d5 (Merge branch 'dev' into PI-001)
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +216,6 @@
 			path = Mural;
 			sourceTree = "<group>";
 		};
-<<<<<<< HEAD
 		69A7F18326F0DFDB00A25A69 /* MusicCloudKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,7 +229,6 @@
 				69A7F18926F0E4B500A25A69 /* CloudKit.framework */,
 			);
 			name = Frameworks;
-=======
 		FFC6E65826F0DF2F001D780A /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,7 +255,6 @@
 				FFC6E65826F0DF2F001D780A /* Fonts */,
 			);
 			path = Assets;
->>>>>>> parent of a04f6d5 (Merge branch 'dev' into PI-001)
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
