@@ -8,72 +8,6 @@
 import UIKit
 import SnapKit
 
-enum CardStyle {
-    case complete(content: String, likes: Int, interactions: Int)
-    case simple(content: String)
-    case contact(number: String)
-    case editable
-
-    fileprivate func configureStyleView() -> UIView {
-        let stackVertical = UIStackView()
-        stackVertical.axis = .vertical
-        stackVertical.alignment = .fill
-        stackVertical.distribution = .fill
-        stackVertical.spacing = 16
-
-        switch self {
-        case .complete(content: let content, likes: let likes, interactions: let interactions):
-            let contentLabel = UILabel()
-            contentLabel.text = content
-            contentLabel.numberOfLines = 0
-
-            let stackHorizontal = UIStackView()
-            stackHorizontal.axis = .horizontal
-            stackHorizontal.alignment = .fill
-            stackHorizontal.distribution = .fill
-            stackHorizontal.spacing = 0
-
-            let likeLabel = UILabel()
-            likeLabel.text = likes.description
-
-            let interactionsLabel = UILabel()
-            interactionsLabel.text = interactions.description
-
-            stackHorizontal.addArrangedSubview(likeLabel)
-            stackHorizontal.addArrangedSubview(UIView())
-            stackHorizontal.addArrangedSubview(interactionsLabel)
-
-            stackVertical.addArrangedSubview(contentLabel)
-            stackVertical.addArrangedSubview(stackHorizontal)
-
-        case .simple(content: let content):
-            let contentLabel = UILabel()
-            contentLabel.text = content
-            contentLabel.numberOfLines = 0
-
-            stackVertical.addArrangedSubview(contentLabel)
-
-        case .contact(number: let number): break
-//            let contentView = UIView()
-//            contentView.backgroundColor = .gray
-//            contentView.translatesAutoresizingMaskIntoConstraints = false
-//
-//            contentView.snp.makeConstraints { make in
-//                make.height.equalTo(38)
-//            }
-//
-//
-        case .editable:
-            let contentLabel = UILabel()
-            contentLabel.text = "Escreva seu comentário"
-            contentLabel.numberOfLines = 0
-
-            stackVertical.addArrangedSubview(contentLabel)
-        }
-        return stackVertical
-    }
-}
-
 struct HeaderInfos {
     let username: String
     let date: String
@@ -93,13 +27,16 @@ class Card: UIView {
 
     let photoImageView: UIImageView = {
         let image = UIImageView()
-
+        image.backgroundColor = .red
+        image.layer.cornerRadius = 10
         return image
     }()
 
     lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = headerInfos.username
+        label.font = .MCDesignSystem(font: .subtitle1)
+        label.textColor = .white
 
         return label
     }()
@@ -107,7 +44,18 @@ class Card: UIView {
     lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.text = headerInfos.date
+        label.font = .MCDesignSystem(font: .body)
+        label.textColor = .gray
 
+        return label
+    }()
+
+    lazy var editableLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Escreva seu comentário..."
+        label.font = .MCDesignSystem(font: .body)
+        label.textColor = .lightGray
+        label.numberOfLines = 0
         return label
     }()
 
@@ -127,7 +75,7 @@ class Card: UIView {
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.axis = .horizontal
-        stackView.spacing = 0
+        stackView.spacing = 12
 
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -139,6 +87,9 @@ class Card: UIView {
         self.headerInfos = headerInfos
         self.contentView = style.configureStyleView()
         super.init(frame: .zero)
+        editableConfiguration()
+        backgroundColor = .darkestGray
+        layer.cornerRadius = 10
 
         configureUI()
     }
@@ -148,6 +99,15 @@ class Card: UIView {
     }
 
     // MARK: PRIVATE FUNCS
+
+    private func editableConfiguration() {
+        guard let stack = contentView as? UIStackView,
+              style == .editable else {
+            return
+        }
+        stack.addArrangedSubview(editableLabel)
+    }
+
     private func configureUI() {
         addSubview(stackHorizontal)
 
@@ -158,6 +118,9 @@ class Card: UIView {
         stackVertical.addArrangedSubview(dateLabel)
 
         addSubview(contentView)
+        photoImageView.snp.makeConstraints { make in
+            make.width.height.equalTo(37)
+        }
 
         stackHorizontal.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(16)
@@ -165,11 +128,20 @@ class Card: UIView {
         }
 
         contentView.snp.makeConstraints { make in
-            make.top.equalTo(stackHorizontal.snp.bottom).inset(12)
+            make.top.equalTo(stackHorizontal.snp.bottom).inset(-12)
             make.left.right.bottom.equalToSuperview().inset(16)
         }
     }
 
     // MARK: PUBLIC FUNCS
 
+    /*!
+     * @brief Just works when this class have "editable" as style
+     */
+    public func setText(text: String) {
+        guard style == .editable else {
+            return
+        }
+        editableLabel.text = text
+    }
 }
