@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
-		0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46326F0E42400F43504 /* StackView Extension.swift */; };
 		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
@@ -54,7 +53,6 @@
 
 /* Begin PBXFileReference section */
 		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		0346E46326F0E42400F43504 /* StackView Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView Extension.swift"; sourceTree = "<group>"; };
 		0346E46F26F2219C00F43504 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0346E47026F2219C00F43504 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 		0346E46226F0E3FA00F43504 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0346E46326F0E42400F43504 /* StackView Extension.swift */,
 				0346E46F26F2219C00F43504 /* UIColor.swift */,
 				0346E47026F2219C00F43504 /* UIFont.swift */,
 			);
@@ -467,7 +464,6 @@
 			files = (
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
-				0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
 				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
