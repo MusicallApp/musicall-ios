@@ -23,6 +23,26 @@ enum CardStyle: Equatable {
         return contentLabel
     }
 
+    private func buildIconStack(icon: UIImage?) -> UIStackView {
+        let stackHorizontal = UIStackView()
+        stackHorizontal.axis = .horizontal
+        stackHorizontal.alignment = .fill
+        stackHorizontal.distribution = .fill
+        stackHorizontal.spacing = 8
+
+        let iconView = UIImageView(image: icon)
+        iconView.translatesAutoresizingMaskIntoConstraints = false
+        iconView.contentMode = .scaleAspectFit
+
+        iconView.snp.makeConstraints { make in
+            make.height.equalTo(16)
+        }
+
+        stackHorizontal.addArrangedSubview(iconView)
+
+        return stackHorizontal
+    }
+
     private func buildCompleteStyle(in mainStack: UIStackView, content: String, likes: Int, interactions: Int) {
         let contentLabel = buildContentLabel(text: content)
 
@@ -32,10 +52,15 @@ enum CardStyle: Equatable {
         stackHorizontal.distribution = .fill
         stackHorizontal.spacing = 0
 
+        let likeStack = buildIconStack(icon: .icHeartFill)
         let likeLabel = UILabel()
         likeLabel.font = .MCDesignSystem(font: .caption1)
         likeLabel.textColor = .white
         likeLabel.text = likes.description
+
+        likeStack.addArrangedSubview(likeLabel)
+
+        let interactionsStack = buildIconStack(icon: .icComment)
 
         let interactionsLabel = UILabel()
         interactionsLabel.font = .MCDesignSystem(font: .caption1)
@@ -48,9 +73,11 @@ enum CardStyle: Equatable {
                                      attributes: [.font: UIFont.MCDesignSystem(font: .caption2)]))
         interactionsLabel.attributedText = myMutableString
 
-        stackHorizontal.addArrangedSubview(likeLabel)
+        interactionsStack.addArrangedSubview(interactionsLabel)
+
+        stackHorizontal.addArrangedSubview(likeStack)
         stackHorizontal.addArrangedSubview(UIView())
-        stackHorizontal.addArrangedSubview(interactionsLabel)
+        stackHorizontal.addArrangedSubview(interactionsStack)
 
         mainStack.addArrangedSubview(contentLabel)
         mainStack.addArrangedSubview(stackHorizontal)
@@ -72,8 +99,7 @@ enum CardStyle: Equatable {
             make.height.equalTo(38)
         }
 
-        let iconView = UIImageView()
-        iconView.backgroundColor = .blue
+        let iconView = UIImageView(image: .icContact)
         iconView.snp.makeConstraints { make in
             make.height.width.equalTo(18)
         }
