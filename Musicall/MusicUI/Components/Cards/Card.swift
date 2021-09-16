@@ -135,9 +135,6 @@ class Card: UIView {
 
     // MARK: PUBLIC FUNCS
 
-    /*!
-     * @brief Just works when this class have "editable" as style
-     */
     public func setText(text: String) {
         guard style == .editable else {
             return
