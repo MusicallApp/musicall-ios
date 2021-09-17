@@ -33,6 +33,7 @@
 		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
 		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
 		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
+		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
 		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DEF95EFE26F2D4EA008ED808 /* Elements */,
 				0346E46B26F0ED8200F43504 /* ProfileView */,
 				0346E45F26F0D21600F43504 /* Cards */,
 			);
@@ -233,7 +236,6 @@
 				0346E46226F0E3FA00F43504 /* Extensions */,
 				0346E45E26F0D20E00F43504 /* Components */,
 				0346E47126F2219C00F43504 /* Assets */,
-				FFC6E65926F0DF34001D780A /* Extensions */,
 			);
 			path = MusicUI;
 			sourceTree = "<group>";
@@ -311,6 +313,14 @@
 				69A7F18926F0E4B500A25A69 /* CloudKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DEF95EFE26F2D4EA008ED808 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
+			);
+			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -488,6 +498,7 @@
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
+				DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */,
 				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -586,7 +597,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -641,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
