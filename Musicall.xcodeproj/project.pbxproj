@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
 		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
@@ -14,6 +15,7 @@
 		0346E47A26F2219C00F43504 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47426F2219C00F43504 /* OpenSans-Bold.ttf */; };
 		0346E47B26F2219C00F43504 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47526F2219C00F43504 /* OpenSans-Regular.ttf */; };
 		0346E47C26F2219C00F43504 /* Overlock-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47626F2219C00F43504 /* Overlock-Bold.ttf */; };
+		0346E48026F3768400F43504 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47F26F3768400F43504 /* CardStyle.swift */; };
 		0346E48226F3791500F43504 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48126F3791500F43504 /* UIImage.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
@@ -51,12 +53,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0346E46F26F2219C00F43504 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0346E47026F2219C00F43504 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		0346E47426F2219C00F43504 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		0346E47526F2219C00F43504 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		0346E47626F2219C00F43504 /* Overlock-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overlock-Bold.ttf"; sourceTree = "<group>"; };
+		0346E47F26F3768400F43504 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		0346E48126F3791500F43504 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +114,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0346E46E26F2219C00F43504 /* Extensions */ = {
+		0346E45E26F0D20E00F43504 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0346E45F26F0D21600F43504 /* Cards */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		0346E45F26F0D21600F43504 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				0346E46026F0DCCC00F43504 /* Card.swift */,
+				0346E47F26F3768400F43504 /* CardStyle.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		0346E46226F0E3FA00F43504 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				0346E46F26F2219C00F43504 /* UIColor.swift */,
@@ -200,9 +221,10 @@
 		69A7F11E26EA4A4700A25A69 /* MusicUI */ = {
 			isa = PBXGroup;
 			children = (
-				0346E47126F2219C00F43504 /* Assets */,
-				0346E46E26F2219C00F43504 /* Extensions */,
 				69A7F13726EA4C0E00A25A69 /* Extensions.swift */,
+				0346E46226F0E3FA00F43504 /* Extensions */,
+				0346E45E26F0D20E00F43504 /* Components */,
+				0346E47126F2219C00F43504 /* Assets */,
 			);
 			path = MusicUI;
 			sourceTree = "<group>";
@@ -446,6 +468,7 @@
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
+				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
 				69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */,
@@ -456,6 +479,7 @@
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				0346E48226F3791500F43504 /* UIImage.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
+				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
