@@ -17,6 +17,7 @@
 		0346E47C26F2219C00F43504 /* Overlock-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47626F2219C00F43504 /* Overlock-Bold.ttf */; };
 		0346E48026F3768400F43504 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47F26F3768400F43504 /* CardStyle.swift */; };
 		0346E48226F3791500F43504 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48126F3791500F43504 /* UIImage.swift */; };
+		0346E48526F3903300F43504 /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48426F3903300F43504 /* SelectableCard.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -30,7 +31,6 @@
 		69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13126EA4BC100A25A69 /* SignInViewController.swift */; };
 		69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13326EA4BD500A25A69 /* LoginViewController.swift */; };
 		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
-		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
 		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
 		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
 		69A7F18C26F2227A00A25A69 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18B26F2227A00A25A69 /* Post.swift */; };
@@ -66,6 +66,7 @@
 		0346E47626F2219C00F43504 /* Overlock-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overlock-Bold.ttf"; sourceTree = "<group>"; };
 		0346E47F26F3768400F43504 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		0346E48126F3791500F43504 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0346E48426F3903300F43504 /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +86,6 @@
 		69A7F13126EA4BC100A25A69 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		69A7F13326EA4BD500A25A69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69A7F13526EA4BFE00A25A69 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		69A7F13726EA4C0E00A25A69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
 		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -125,6 +125,7 @@
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				0346E48326F3901D00F43504 /* SelectableCard */,
 				0346E45F26F0D21600F43504 /* Cards */,
 			);
 			path = Components;
@@ -166,6 +167,14 @@
 				0346E47626F2219C00F43504 /* Overlock-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0346E48326F3901D00F43504 /* SelectableCard */ = {
+			isa = PBXGroup;
+			children = (
+				0346E48426F3903300F43504 /* SelectableCard.swift */,
+			);
+			path = SelectableCard;
 			sourceTree = "<group>";
 		};
 		69A7F0E226EA49C500A25A69 = {
@@ -229,7 +238,6 @@
 		69A7F11E26EA4A4700A25A69 /* MusicUI */ = {
 			isa = PBXGroup;
 			children = (
-				69A7F13726EA4C0E00A25A69 /* Extensions.swift */,
 				0346E46226F0E3FA00F43504 /* Extensions */,
 				0346E45E26F0D20E00F43504 /* Components */,
 				0346E47126F2219C00F43504 /* Assets */,
@@ -493,7 +501,6 @@
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
 				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
-				69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
@@ -502,6 +509,7 @@
 				69A7F18C26F2227A00A25A69 /* Post.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				0346E48226F3791500F43504 /* UIImage.swift in Sources */,
+				0346E48526F3903300F43504 /* SelectableCard.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
 				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
