@@ -52,8 +52,8 @@ class FloatActionSheet: UIView {
         addSubview(icon)
         addSubview(titleLabel)
 
-        /// Main view default size.
-        /// Can be changed on superview.
+        // Main view default size.
+        // Can be changed on superview.
         snp.makeConstraints { make in
             make.height.greaterThanOrEqualTo(50)
             make.width.greaterThanOrEqualTo(200)

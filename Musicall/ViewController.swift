@@ -10,24 +10,20 @@ import SnapKit
 
 class ViewController: UIViewController {
 
-    let floatActionSheet = FloatActionSheet(imageIcon: UIImage(systemName: "person.crop.circle"),
-                                            title: "Compartilhar meu perfil")
+    let button = MCButton(style: .ghost, size: .large)
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         view.backgroundColor = .white
-        view.addSubview(floatActionSheet)
 
-        floatActionSheet.addTarget(target: self, action: #selector(test))
+        button.setImage(UIImage(named: "Paperclip"), for: .normal)
+        view.addSubview(button)
 
-        floatActionSheet.snp.makeConstraints { make in
+        button.snp.makeConstraints { make in
             make.center.equalToSuperview()
         }
-    }
 
-    @objc
-    func test() {
-        print("Testando...")
     }
 
 }
