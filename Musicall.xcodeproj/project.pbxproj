@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
-		0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46326F0E42400F43504 /* StackView Extension.swift */; };
 		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
-		0346E46D26F0ED9100F43504 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46C26F0ED9100F43504 /* ProfileView.swift */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
 		0346E47926F2219C00F43504 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */; };
 		0346E47A26F2219C00F43504 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47426F2219C00F43504 /* OpenSans-Bold.ttf */; };
 		0346E47B26F2219C00F43504 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47526F2219C00F43504 /* OpenSans-Regular.ttf */; };
 		0346E47C26F2219C00F43504 /* Overlock-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47626F2219C00F43504 /* Overlock-Bold.ttf */; };
+		0346E48026F3768400F43504 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47F26F3768400F43504 /* CardStyle.swift */; };
 		0346E48226F3791500F43504 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48126F3791500F43504 /* UIImage.swift */; };
+		0346E48526F3903300F43504 /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48426F3903300F43504 /* SelectableCard.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -31,7 +31,6 @@
 		69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13126EA4BC100A25A69 /* SignInViewController.swift */; };
 		69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13326EA4BD500A25A69 /* LoginViewController.swift */; };
 		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
-		69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13726EA4C0E00A25A69 /* Extensions.swift */; };
 		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
 		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
@@ -39,6 +38,10 @@
 		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
 		DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2726F7C5C40002C064 /* MCTextField.swift */; };
 		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
+		69A7F18C26F2227A00A25A69 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18B26F2227A00A25A69 /* Post.swift */; };
+		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
+		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
+		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,15 +63,15 @@
 
 /* Begin PBXFileReference section */
 		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		0346E46326F0E42400F43504 /* StackView Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StackView Extension.swift"; sourceTree = "<group>"; };
-		0346E46C26F0ED9100F43504 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		0346E46F26F2219C00F43504 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0346E47026F2219C00F43504 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		0346E47426F2219C00F43504 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		0346E47526F2219C00F43504 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		0346E47626F2219C00F43504 /* Overlock-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Overlock-Bold.ttf"; sourceTree = "<group>"; };
+		0346E47F26F3768400F43504 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		0346E48126F3791500F43504 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		0346E48426F3903300F43504 /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -88,7 +91,6 @@
 		69A7F13126EA4BC100A25A69 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		69A7F13326EA4BD500A25A69 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		69A7F13526EA4BFE00A25A69 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		69A7F13726EA4C0E00A25A69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
 		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,10 @@
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
+		69A7F18B26F2227A00A25A69 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
+		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +137,7 @@
 			children = (
 				DEF95EFE26F2D4EA008ED808 /* Elements */,
 				0346E46B26F0ED8200F43504 /* ProfileView */,
+				0346E48326F3901D00F43504 /* SelectableCard */,
 				0346E45F26F0D21600F43504 /* Cards */,
 			);
 			path = Components;
@@ -140,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0346E46026F0DCCC00F43504 /* Card.swift */,
+				0346E47F26F3768400F43504 /* CardStyle.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -147,21 +155,12 @@
 		0346E46226F0E3FA00F43504 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				0346E46326F0E42400F43504 /* StackView Extension.swift */,
 				0346E46F26F2219C00F43504 /* UIColor.swift */,
 				0346E47026F2219C00F43504 /* UIFont.swift */,
 				0346E48126F3791500F43504 /* UIImage.swift */,
 				DE97BA2526F7C0CC0002C064 /* UITextField.swift */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		0346E46B26F0ED8200F43504 /* ProfileView */ = {
-			isa = PBXGroup;
-			children = (
-				0346E46C26F0ED9100F43504 /* ProfileView.swift */,
-			);
-			path = ProfileView;
 			sourceTree = "<group>";
 		};
 		0346E47126F2219C00F43504 /* Assets */ = {
@@ -181,6 +180,14 @@
 				0346E47626F2219C00F43504 /* Overlock-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0346E48326F3901D00F43504 /* SelectableCard */ = {
+			isa = PBXGroup;
+			children = (
+				0346E48426F3903300F43504 /* SelectableCard.swift */,
+			);
+			path = SelectableCard;
 			sourceTree = "<group>";
 		};
 		69A7F0E226EA49C500A25A69 = {
@@ -244,7 +251,6 @@
 		69A7F11E26EA4A4700A25A69 /* MusicUI */ = {
 			isa = PBXGroup;
 			children = (
-				69A7F13726EA4C0E00A25A69 /* Extensions.swift */,
 				0346E46226F0E3FA00F43504 /* Extensions */,
 				0346E45E26F0D20E00F43504 /* Components */,
 				0346E47126F2219C00F43504 /* Assets */,
@@ -256,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				69A7F13526EA4BFE00A25A69 /* Service.swift */,
+				69A7F18D26F36CB100A25A69 /* Model */,
 			);
 			path = MusicService;
 			sourceTree = "<group>";
@@ -315,6 +322,7 @@
 		69A7F18326F0DFDB00A25A69 /* MusicCloudKit */ = {
 			isa = PBXGroup;
 			children = (
+				69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */,
 			);
 			path = MusicCloudKit;
 			sourceTree = "<group>";
@@ -336,6 +344,16 @@
 				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
 			);
 			path = Elements;
+				sourceTree = "<group>";
+		};
+		69A7F18D26F36CB100A25A69 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				69A7F18B26F2227A00A25A69 /* Post.swift */,
+				69A7F18E26F36CD800A25A69 /* Author.swift */,
+				69A7F19026F36FDC00A25A69 /* Comment.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,23 +518,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */,
+				69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */,
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
-				0346E46D26F0ED9100F43504 /* ProfileView.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
-				0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
+				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
 				DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */,
+				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
-				69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
 				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
+				69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */,
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
+				69A7F18C26F2227A00A25A69 /* Post.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */,
 				0346E48226F3791500F43504 /* UIImage.swift in Sources */,
+				0346E48526F3903300F43504 /* SelectableCard.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
 				DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */,
 				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
