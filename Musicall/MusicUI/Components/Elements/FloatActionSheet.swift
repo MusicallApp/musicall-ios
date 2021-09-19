@@ -14,7 +14,6 @@ class FloatActionSheet: UIView {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.tintColor = .blue
-        
         return imageView
     }()
 
@@ -22,7 +21,6 @@ class FloatActionSheet: UIView {
         let label = UILabel()
         label.font = UIFont.MCDesignSystem(font: .body)
         label.textColor = .white
-
         return label
     }()
 

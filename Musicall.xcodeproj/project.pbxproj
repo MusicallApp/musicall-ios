@@ -35,6 +35,9 @@
 		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
 		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
+		DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */; };
+		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
+		DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2726F7C5C40002C064 /* MCTextField.swift */; };
 		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +93,9 @@
 		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
 		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
+		DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTexField.swift; sourceTree = "<group>"; };
+		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +151,7 @@
 				0346E46F26F2219C00F43504 /* UIColor.swift */,
 				0346E47026F2219C00F43504 /* UIFont.swift */,
 				0346E48126F3791500F43504 /* UIImage.swift */,
+				DE97BA2526F7C0CC0002C064 /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -325,6 +332,8 @@
 			children = (
 				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
 				DE2FB04426F4D8710006E8B6 /* MCButton.swift */,
+				DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */,
+				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
 			);
 			path = Elements;
 			sourceTree = "<group>";
@@ -490,16 +499,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */,
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
 				0346E46D26F0ED9100F43504 /* ProfileView.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
 				0346E46426F0E42400F43504 /* StackView Extension.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
+				DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
 				69A7F13826EA4C0E00A25A69 /* Extensions.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
+				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
