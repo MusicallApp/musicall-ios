@@ -21,6 +21,7 @@
 		039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */; };
 		039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */; };
 		039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */; };
+		039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDDA26F8CEE200B46BC0 /* CardCell.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -78,6 +79,7 @@
 		039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
 		039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsView.swift; sourceTree = "<group>"; };
 		039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewModel.swift; sourceTree = "<group>"; };
+		039DCDDA26F8CEE200B46BC0 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 			children = (
 				0346E46026F0DCCC00F43504 /* Card.swift */,
 				0346E47F26F3768400F43504 /* CardStyle.swift */,
+				039DCDDA26F8CEE200B46BC0 /* CardCell.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */,
 				DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */,
 				69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */,
 				039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */,
