@@ -14,9 +14,10 @@ class CardCell: UITableViewCell {
 
     private(set) var card: Card?
 
-    public override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+    public override init(style: UITableViewCell.CellStyle = .default, reuseIdentifier: String? = reuseId) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
+        backgroundColor = .clear
     }
 
     required init?(coder: NSCoder) {

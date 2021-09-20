@@ -15,4 +15,10 @@ class InteractionsViewController: UIViewController {
         self.view = interactionsView
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = "interações"
+    }
+
 }

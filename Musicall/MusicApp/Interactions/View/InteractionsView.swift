@@ -11,9 +11,13 @@ import SnapKit
 class InteractionsView: UIView {
 
     // MARK: UI ELEMENTS
-    let tableView: UITableView = {
+    lazy var tableView: UITableView = {
         let tableView = UITableView()
-
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = .clear
         return tableView
     }()
 
@@ -49,7 +53,9 @@ class InteractionsView: UIView {
             make.bottom.left.right.equalToSuperview()
         }
         tableView.snp.makeConstraints { make in
-            make.topMargin.left.right.equalToSuperview()
+            make.topMargin.equalToSuperview()
+            make.left.right.equalToSuperview().inset(16)
+            make.bottom.equalTo(keyboardTextField.snp.top)
         }
 
         floatActionSheet.snp.makeConstraints { make in
@@ -63,4 +69,20 @@ class InteractionsView: UIView {
     func switchHiddenStateFloatActionSheet() {
         floatActionSheet.isHidden.toggle()
     }
+}
+
+extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let card = CardCell()
+        card.configureView(card: .init(headerInfos: .init(username: "Lucas Oliveira", date: "3 de Janeiro"),
+                                       style: .complete(content: "Gostaria de contratar dois musicos, um baterista e um guitarrista, ambos tem que ser sem braço",
+                                                        likes: 3,
+                                                        interactions: 1)))
+        return card
+    }
+
 }
