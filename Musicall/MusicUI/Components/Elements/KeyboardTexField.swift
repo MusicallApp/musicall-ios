@@ -17,7 +17,7 @@ class KeyboardTexField: UIView {
 
     private let attachmentButton: MCButton = {
         let button = MCButton(style: .ghost, size: .medium)
-        button.setImage(UIImage(named: "Paperclip"), for: .normal)
+        button.setImage(.icPaperclip, for: .normal)
         return button
     }()
 
