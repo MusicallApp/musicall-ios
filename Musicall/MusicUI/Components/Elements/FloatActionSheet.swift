@@ -37,7 +37,7 @@ class FloatActionSheet: UIView {
     }
 
     override func layoutSubviews() {
-        superview?.layoutSubviews()
+        super.layoutSubviews()
         layer.cornerRadius = 6
     }
 
