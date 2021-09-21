@@ -21,10 +21,31 @@ class PreSettingsViewController: UIViewController, Coordinating {
         return label
     }()
 
-    private let stackView: UIStackView = {
+    private let mainStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
-        stackView.spacing = 32
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+
+    private let interactableStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.distribution = .equalSpacing
+        stackView.spacing = 30
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+
+    private let buttonsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.distribution = .equalSpacing
+        stackView.alignment = .trailing
+        stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
 
@@ -33,6 +54,7 @@ class PreSettingsViewController: UIViewController, Coordinating {
     private let selectableCardCompany = SelectableCard(style: .company)
     private let selectableCardMusician = SelectableCard(style: .musician)
     private let nextButton = MCButton(style: .primary, size: .larger)
+    private let spaceView = UIView()
 
     // MARK: Control Variables.
 
@@ -50,16 +72,28 @@ class PreSettingsViewController: UIViewController, Coordinating {
     }
 
     // MARK: Actions.
+
     @objc
     private func nextButtonTapped() {
         if let nickname = nicknameTextField.getText(),
-           let phoneNumber = phoneTextField.getText() {
+           let phoneNumber = phoneTextField.getText(),
+           validadeField(nickname),
+           validadeField(phoneNumber) {
+
+            // TODO: Salvar dados no userDefault.
+            
             user = User(nickName: nickname, phoneNumber: phoneNumber)
             animatoToSelectType()
         }
     }
 
     // MARK: Functions.
+
+    private func validadeField(_ field: String) -> Bool {
+        return
+            !field.isEmpty &&
+            !field.trimmingCharacters(in: .whitespaces).isEmpty
+    }
 
     private func setupNavBar() {
         title = "Quem é você?"
@@ -71,10 +105,12 @@ class PreSettingsViewController: UIViewController, Coordinating {
     }
 
     private func animatoToSelectType() {
-        UIView.transition(with: stackView, duration: 0.5, options: .transitionCrossDissolve, animations: {
-            self.stackView.removeAllArrangedSubviews()
-            self.stackView.addArrangedSubview(self.selectableCardMusician)
-            self.stackView.addArrangedSubview(self.selectableCardCompany)
+        UIView.transition(with: interactableStackView, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            self.interactableStackView.removeAllArrangedSubviews()
+            self.interactableStackView.addArrangedSubview(self.selectableCardMusician)
+            self.interactableStackView.addArrangedSubview(self.selectableCardCompany)
+            self.mainStackView.insertArrangedSubview(UIView(), at: 1)
+            self.spaceView.isHidden = true
             self.nextButton.isHidden = true
         }, completion: nil)
     }
@@ -87,39 +123,38 @@ class PreSettingsViewController: UIViewController, Coordinating {
     private func setupCards() {
         selectableCardCompany.titleText = UserType.company.description
         selectableCardCompany.descriptionText = "Procura por músicos para se apresentar em eventos."
+        selectableCardCompany.delegate = self
+        
         selectableCardMusician.titleText = UserType.musician.description
         selectableCardMusician.descriptionText = "Busca encontrar locais para tocar e quer fazer networking."
-
         selectableCardMusician.delegate = self
-        selectableCardCompany.delegate = self
     }
 
     private func setupView() {
         view.backgroundColor = .black
-        view.addSubview(subtitleLabel)
-        stackView.addArrangedSubview(nicknameTextField)
-        stackView.addArrangedSubview(phoneTextField)
-        view.addSubview(stackView)
-        view.addSubview(nextButton)
+        interactableStackView.addArrangedSubview(nicknameTextField)
+        interactableStackView.addArrangedSubview(phoneTextField)
+        buttonsStackView.addArrangedSubview(UIView())
+        buttonsStackView.addArrangedSubview(nextButton)
 
-        subtitleLabel.snp.makeConstraints { make in
+        mainStackView.addArrangedSubview(subtitleLabel)
+        mainStackView.addArrangedSubview(interactableStackView)
+        mainStackView.addArrangedSubview(spaceView)
+        mainStackView.addArrangedSubview(buttonsStackView)
+
+        view.addSubview(mainStackView)
+
+        mainStackView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin).inset(12)
-            make.leading.equalToSuperview().inset(20)
-            make.trailing.equalToSuperview().inset(20)
-        }
-
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(subtitleLabel.snp.bottom).offset(100)
+            make.bottom.equalToSuperview().inset(40)
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().inset(20)
         }
 
-        nextButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(66)
-            make.trailing.equalToSuperview().inset(20)
-        }
     }
 }
+
+// MARK: - Selectable Card Delegate Implementation.
 
 extension PreSettingsViewController: SelectableCardDelegate {
     func selectCard(of type: SelectableCardStyle) {

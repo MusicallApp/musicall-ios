@@ -26,4 +26,14 @@ class UserDefaultHelper {
             return UserDefaults.standard.value(forKey: field.rawValue) as? String
         }
     }
+
+    static func getUser() -> User? {
+        if let nickname = get(field: .userNickName) as? String,
+           let phoneNumber = get(field: .userCellphone) as? String,
+           let type = UserType.init(rawValue: get(field: .userType) as? Int ?? 1) {
+            return User(nickName: nickname, phoneNumber: phoneNumber, type: type)
+        } else {
+            return nil
+        }
+    }
 }

@@ -13,21 +13,23 @@ class MainCoordinator: Coordinator {
     func eventOcurred(with type: Event, data: Any?) {
         switch type {
         case .goToMural:
-            let viewController: UIViewController = MuralViewController()
-            // viewController.coordinator = self
-            navigationController?.setViewControllers([viewController], animated: false)
+            goToMural(with: data as? User)
         }
     }
 
     func start() {
-        if UserDefaultHelper.get(field: .userNickName) != nil {
-            let viewController: UIViewController = MuralViewController()
-            // viewController.coordinator = self
-            navigationController?.setViewControllers([viewController], animated: false)
+        if let user = UserDefaultHelper.getUser() {
+            goToMural(with: user)
         } else {
             var viewController: UIViewController & Coordinating = PreSettingsViewController()
             viewController.coordinator = self
             navigationController?.setViewControllers([viewController], animated: false)
         }
+    }
+
+    private func goToMural(with data: User?) {
+        let viewController: UIViewController = MuralViewController()
+        // viewController.coordinator = self
+        navigationController?.setViewControllers([viewController], animated: false)
     }
 }

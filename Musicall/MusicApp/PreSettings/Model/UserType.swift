@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 enum UserType: Int {
     case musician = 1
     case company = 2
