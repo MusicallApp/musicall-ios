@@ -18,6 +18,9 @@
 		0346E48026F3768400F43504 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47F26F3768400F43504 /* CardStyle.swift */; };
 		0346E48226F3791500F43504 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48126F3791500F43504 /* UIImage.swift */; };
 		0346E48526F3903300F43504 /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48426F3903300F43504 /* SelectableCard.swift */; };
+		039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */; };
+		039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */; };
+		039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */; };
 		039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDDA26F8CEE200B46BC0 /* CardCell.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
@@ -73,6 +76,9 @@
 		0346E47F26F3768400F43504 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		0346E48126F3791500F43504 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0346E48426F3903300F43504 /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
+		039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
+		039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsView.swift; sourceTree = "<group>"; };
+		039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewModel.swift; sourceTree = "<group>"; };
 		039DCDDA26F8CEE200B46BC0 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -192,6 +198,40 @@
 			path = SelectableCard;
 			sourceTree = "<group>";
 		};
+		039DCDCF26F8B26000B46BC0 /* Interactions */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD226F8B27D00B46BC0 /* ViewModel */,
+				039DCDD126F8B27900B46BC0 /* View */,
+				039DCDD026F8B27200B46BC0 /* ViewController */,
+			);
+			path = Interactions;
+			sourceTree = "<group>";
+		};
+		039DCDD026F8B27200B46BC0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		039DCDD126F8B27900B46BC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		039DCDD226F8B27D00B46BC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		69A7F0E226EA49C500A25A69 = {
 			isa = PBXGroup;
 			children = (
@@ -272,6 +312,7 @@
 		69A7F12026EA4A8F00A25A69 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				039DCDCF26F8B26000B46BC0 /* Interactions */,
 				69A7F12726EA4B2700A25A69 /* Mural */,
 				69A7F12626EA4B0B00A25A69 /* Explore */,
 				69A7F12526EA4AE100A25A69 /* Profile */,
@@ -522,8 +563,10 @@
 				039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */,
 				DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */,
 				69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */,
+				039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */,
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
+				039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
 				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
@@ -531,6 +574,7 @@
 				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
+				039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
 				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,

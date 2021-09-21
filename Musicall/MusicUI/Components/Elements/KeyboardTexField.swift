@@ -75,4 +75,8 @@ class KeyboardTexField: UIView {
             make.trailing.equalToSuperview().inset(16)
         }
     }
+
+    func addTargetAttachmentButton(target: AnyObject, action: Selector) {
+        attachmentButton.addTarget(target, action: action, for: .touchDown)
+    }
 }
