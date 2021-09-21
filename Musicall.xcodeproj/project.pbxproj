@@ -18,6 +18,10 @@
 		0346E48026F3768400F43504 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47F26F3768400F43504 /* CardStyle.swift */; };
 		0346E48226F3791500F43504 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48126F3791500F43504 /* UIImage.swift */; };
 		0346E48526F3903300F43504 /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48426F3903300F43504 /* SelectableCard.swift */; };
+		039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */; };
+		039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */; };
+		039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */; };
+		039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDDA26F8CEE200B46BC0 /* CardCell.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
 		69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F226EA49C500A25A69 /* ViewController.swift */; };
@@ -48,6 +52,9 @@
 		DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3726F8B33000A4A26E /* Coordinator.swift */; };
 		DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */; };
 		DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */; };
+		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
+		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
+		DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2726F7C5C40002C064 /* MCTextField.swift */; };
 		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +86,10 @@
 		0346E47F26F3768400F43504 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		0346E48126F3791500F43504 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0346E48426F3903300F43504 /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
+		039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
+		039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsView.swift; sourceTree = "<group>"; };
+		039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewModel.swift; sourceTree = "<group>"; };
+		039DCDDA26F8CEE200B46BC0 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +127,9 @@
 		DEEF7E3726F8B33000A4A26E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewController.swift; sourceTree = "<group>"; };
+		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
+		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +175,7 @@
 			children = (
 				0346E46026F0DCCC00F43504 /* Card.swift */,
 				0346E47F26F3768400F43504 /* CardStyle.swift */,
+				039DCDDA26F8CEE200B46BC0 /* CardCell.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -202,6 +217,40 @@
 				0346E48426F3903300F43504 /* SelectableCard.swift */,
 			);
 			path = SelectableCard;
+			sourceTree = "<group>";
+		};
+		039DCDCF26F8B26000B46BC0 /* Interactions */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD226F8B27D00B46BC0 /* ViewModel */,
+				039DCDD126F8B27900B46BC0 /* View */,
+				039DCDD026F8B27200B46BC0 /* ViewController */,
+			);
+			path = Interactions;
+			sourceTree = "<group>";
+		};
+		039DCDD026F8B27200B46BC0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		039DCDD126F8B27900B46BC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		039DCDD226F8B27D00B46BC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		69A7F0E226EA49C500A25A69 = {
@@ -287,6 +336,7 @@
 				DEA931F126F8C8EE0096CB4D /* Helpers */,
 				DEEF7E3626F8B2B100A4A26E /* Coordinator */,
 				DEEF7E3B26F8B4F300A4A26E /* PreSettings */,
+				039DCDCF26F8B26000B46BC0 /* Interactions */,
 				69A7F12726EA4B2700A25A69 /* Mural */,
 				69A7F12626EA4B0B00A25A69 /* Explore */,
 				69A7F12526EA4AE100A25A69 /* Profile */,
@@ -403,6 +453,17 @@
 				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
 				DE2FB04426F4D8710006E8B6 /* MCButton.swift */,
 				DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */,
+				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		DEF95EFE26F2D4EA008ED808 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
+				DE2FB04426F4D8710006E8B6 /* MCButton.swift */,
+				DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */,
 				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
 			);
 			path = Elements;
@@ -569,12 +630,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */,
+				039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */,
+				DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */,
 				69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */,
 				DEA931F326F8C9000096CB4D /* UserDefaultHelper.swift in Sources */,
+				039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */,
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
 				DEA931FB26F8D14B0096CB4D /* User.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
+				039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
 				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
@@ -584,6 +648,7 @@
 				DEA931F726F8CDB60096CB4D /* UserType.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
+				039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
 				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
@@ -697,7 +762,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -752,7 +817,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -769,7 +834,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GHRBLV3RV2;
+				DEVELOPMENT_TEAM = 62NRBAKMQ3;
 				INFOPLIST_FILE = Musicall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -789,7 +854,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GHRBLV3RV2;
+				DEVELOPMENT_TEAM = 62NRBAKMQ3;
 				INFOPLIST_FILE = Musicall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

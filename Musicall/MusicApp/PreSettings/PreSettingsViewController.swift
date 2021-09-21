@@ -69,6 +69,7 @@ class PreSettingsViewController: UIViewController, Coordinating {
         setupCards()
         setupNavBar()
         setupView()
+        addActionDismissKeyboard()
     }
 
     // MARK: Actions.
@@ -87,7 +88,16 @@ class PreSettingsViewController: UIViewController, Coordinating {
         }
     }
 
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
     // MARK: Functions.
+
+    private func addActionDismissKeyboard() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        mainStackView.addGestureRecognizer(tapGesture)
+    }
 
     private func validadeField(_ field: String) -> Bool {
         return
