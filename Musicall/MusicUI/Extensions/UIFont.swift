@@ -26,7 +26,6 @@ extension UIFont {
         case subtitle1
         case subtitle2
         case body
-        case body2
         case caption1
         case caption2
     }
@@ -34,7 +33,7 @@ extension UIFont {
     static func MCDesignSystem(font: Style) -> UIFont {
         switch font {
         case .heading1:
-            return UIFont(name: FontName.overLockBold.rawValue, size: 32)!
+            return UIFont(name: FontName.overLockBold.rawValue, size: 36)!
         case .title1:
             return UIFont(name: FontName.overLockBold.rawValue, size: 20)!
         case .subtitle1:
@@ -43,8 +42,6 @@ extension UIFont {
             return UIFont(name: FontName.openSansSemiBold.rawValue, size: 14)!
         case .body:
             return UIFont(name: FontName.openSansRegular.rawValue, size: 14)!
-        case .body2:
-            return UIFont(name: FontName.openSansRegular.rawValue, size: 20)!
         case .caption1:
             return UIFont(name: FontName.openSansBold.rawValue, size: 12)!
         case .caption2:
