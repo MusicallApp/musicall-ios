@@ -101,5 +101,4 @@ class KeyboardTextField: UIView {
     func addTargetAttachmentButton(target: AnyObject, action: Selector) {
         attachmentButton.addTarget(target, action: action, for: .touchDown)
     }
-
 }
