@@ -25,12 +25,13 @@ class CardCell: UITableViewCell {
     }
 
     // MARK: Public APIs
-    public func configureView(card: Card) {
+    public func configureView(card: Card, bottomSpacing: Int) {
         self.card = card
-        addSubview(card)
+        contentView.addSubview(card)
 
         card.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.left.right.equalToSuperview()
+            make.bottom.equalToSuperview().inset(bottomSpacing)
         }
     }
 
