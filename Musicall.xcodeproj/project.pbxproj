@@ -37,6 +37,7 @@
 		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
 		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
+		FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
+		FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				69A7F12726EA4B2700A25A69 /* Mural */,
+				FF3BB8EA26F8ACEA009763F1 /* Create */,
 				69A7F12626EA4B0B00A25A69 /* Explore */,
 				69A7F12526EA4AE100A25A69 /* Profile */,
 				69A7F12426EA4AD800A25A69 /* SignIn */,
@@ -330,6 +333,14 @@
 				69A7F19026F36FDC00A25A69 /* Comment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		FF3BB8EA26F8ACEA009763F1 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +514,7 @@
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
+				FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
 				69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */,
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
