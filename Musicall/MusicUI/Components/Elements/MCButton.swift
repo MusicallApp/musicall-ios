@@ -25,6 +25,7 @@ extension MCButton: Styleable {
     enum Size {
         case medium
         case large
+        case larger
 
         func getSize() -> CGSize {
             switch self {
@@ -32,6 +33,8 @@ extension MCButton: Styleable {
                 return CGSize(width: 38, height: 38)
             case .large:
                 return CGSize(width: 40, height: 40)
+            case .larger:
+                return CGSize(width: 50, height: 50)
             }
         }
     }

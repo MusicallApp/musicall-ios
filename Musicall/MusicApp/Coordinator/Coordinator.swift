@@ -8,12 +8,12 @@
 import UIKit
 
 enum Event {
-    case buttonTapped
+    case goToMural
 }
 
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
-    func eventOcurred(with tyoe: Event)
+    func eventOcurred(with type: Event, data: Any?)
     func start()
 }
 

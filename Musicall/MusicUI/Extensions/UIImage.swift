@@ -16,5 +16,6 @@ extension UIImage {
     static let icPaperclip = UIImage(named: "Paperclip")
     static let icPlus = UIImage(named: "Plus")
     static let icTelegram = UIImage(named: "Telegram")
-    static let icMic = UIImage(named: "Mic")
+    static let icMic = UIImage(named: "mic")
+    static let icArrowDown = UIImage(named: "arrowdown")
 }
