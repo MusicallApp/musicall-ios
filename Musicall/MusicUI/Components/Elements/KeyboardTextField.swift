@@ -13,10 +13,19 @@ enum TextFieldSize: CGFloat {
     case reduced = 62
 }
 
+protocol KeyboardTextFieldDelegate: AnyObject {
+    func sendAction()
+}
+
 class KeyboardTextField: UIView {
 
+    // MARK: PUBLIC PROPERTIES
+    public weak var delegate: KeyboardTextFieldDelegate?
+
+    // MARK: PRIVATE PROPERTIES
     private var heightConstraint: SnapKit.ConstraintMakerEditable?
 
+    // MARK: UI ELEMENTS
     private let attachmentButton: MCButton = {
         let button = MCButton(style: .ghost, size: .medium)
         button.setImage(.icPaperclip, for: .normal)
@@ -25,16 +34,20 @@ class KeyboardTextField: UIView {
 
     private let commentTextField: UITextField = {
         let textField = UITextField()
-        let image = UIImageView(image: UIImage(named: "Telegram_spaced"))
+
+        let imageView = UIImageView(image: UIImage(named: "Telegram_spaced"))
+        imageView.addGestureRecognizer(.init(target: self, action: #selector(sendAction)))
+
         textField.backgroundColor = .black
         textField.textColor = .lightGray
-        textField.rightView = image
+        textField.rightView = imageView
         textField.setLeftPadding(10)
         textField.rightViewMode = .always
         textField.font = UIFont.MCDesignSystem(font: .body)
         return textField
     }()
 
+    // MARK: LIFE CYCLE
     init(placeholder: String, size: TextFieldSize = .normal) {
         super.init(frame: .zero)
         backgroundColor = .darkestGray
@@ -55,6 +68,7 @@ class KeyboardTextField: UIView {
         commentTextField.layer.cornerRadius = 5.5
     }
 
+    // MARK: PRIVATE FUNCS
     private func setupView() {
         addSubview(attachmentButton)
         addSubview(commentTextField)
@@ -72,6 +86,12 @@ class KeyboardTextField: UIView {
         }
     }
 
+    // MARK: Action
+    @objc func sendAction() {
+        delegate?.sendAction()
+    }
+
+    // MARK: PUBLIC FUNCS
     func setSize(with size: TextFieldSize) {
         snp.makeConstraints { make in
             make.height.equalTo(size.rawValue)
@@ -81,4 +101,5 @@ class KeyboardTextField: UIView {
     func addTargetAttachmentButton(target: AnyObject, action: Selector) {
         attachmentButton.addTarget(target, action: action, for: .touchDown)
     }
+
 }
