@@ -8,6 +8,7 @@
 import UIKit
 
 class InteractionsViewController: UIViewController {
+
     private let interactionsView = InteractionsView()
 
     override func loadView() {

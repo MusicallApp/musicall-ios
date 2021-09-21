@@ -13,7 +13,9 @@ enum TextFieldSize: CGFloat {
     case reduced = 62
 }
 
-class KeyboardTexField: UIView {
+class KeyboardTextField: UIView {
+
+    private var heightConstraint: SnapKit.ConstraintMakerEditable?
 
     private let attachmentButton: MCButton = {
         let button = MCButton(style: .ghost, size: .medium)
@@ -53,12 +55,6 @@ class KeyboardTexField: UIView {
         commentTextField.layer.cornerRadius = 5.5
     }
 
-    func setSize(with size: TextFieldSize) {
-        snp.makeConstraints { make in
-            make.height.equalTo(size.rawValue)
-        }
-    }
-
     private func setupView() {
         addSubview(attachmentButton)
         addSubview(commentTextField)
@@ -73,6 +69,12 @@ class KeyboardTexField: UIView {
             make.height.equalTo(38)
             make.leading.equalTo(attachmentButton.snp.trailing).offset(6)
             make.trailing.equalToSuperview().inset(16)
+        }
+    }
+
+    func setSize(with size: TextFieldSize) {
+        snp.makeConstraints { make in
+            make.height.equalTo(size.rawValue)
         }
     }
 
