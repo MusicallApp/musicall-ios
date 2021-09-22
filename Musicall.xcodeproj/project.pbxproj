@@ -41,6 +41,7 @@
 		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
 		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
+		FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
 		DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */; };
 		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
@@ -116,6 +117,7 @@
 		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
+		FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
 		DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTexField.swift; sourceTree = "<group>"; };
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +341,7 @@
 				DEEF7E3B26F8B4F300A4A26E /* PreSettings */,
 				039DCDCF26F8B26000B46BC0 /* Interactions */,
 				69A7F12726EA4B2700A25A69 /* Mural */,
+				FF3BB8EA26F8ACEA009763F1 /* Create */,
 				69A7F12626EA4B0B00A25A69 /* Explore */,
 				69A7F12526EA4AE100A25A69 /* Profile */,
 				69A7F12426EA4AD800A25A69 /* SignIn */,
@@ -456,6 +460,14 @@
 				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
 			);
 			path = Elements;
+			sourceTree = "<group>";
+		};
+		FF3BB8EA26F8ACEA009763F1 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 		DEF95EFE26F2D4EA008ED808 /* Elements */ = {
@@ -650,6 +662,7 @@
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
+				FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */,
 				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
 				69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */,
