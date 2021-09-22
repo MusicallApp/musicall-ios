@@ -23,6 +23,20 @@ class ModelCloudKit {
         publicDataBase = container.publicCloudDatabase
     }
     
+    // MARK: Utils
+    
+    func getDate() -> Date {
+        let formatter = DateFormatter()
+        let date = Date()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let dateString = formatter.string(from: date)
+        guard let createdAt = formatter.date(from: dateString) else {
+            return date
+        }
+        
+        return createdAt
+    }
+    
     // MARK: GET functions 
     
     func fetchPost(_ completion: @escaping (Result<[Post], Error>) -> Void) {
@@ -95,5 +109,34 @@ class ModelCloudKit {
                 completion(.success(data))
             }
         }
+    }
+    
+    // MARK: POST functions
+    
+    func createAuthor(with nickname: String, number: String, type: Int) {
+        
+        let record = CKRecord(recordType: "Author")
+        
+        let date = getDate()
+        
+        record.setValue(nickname, forKey: "nickname")
+        record.setValue(number, forKey: "number")
+        record.setValue(type, forKey: "type")
+        record.setValue(date, forKey: "createdAt")
+        
+        publicDataBase.save(record) { record, errors in
+            
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            }
+            
+            guard let _ = record else {
+                return
+            }
+            // Saved
+        }
+        
     }
 }
