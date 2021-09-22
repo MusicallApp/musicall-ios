@@ -113,7 +113,7 @@ class ModelCloudKit {
     
     // MARK: POST functions
     
-    func createAuthor(with nickname: String, number: String, type: Int) {
+    func createAuthor(withNickname nickname: String, number: String, type: Int) {
         
         let record = CKRecord(recordType: "Author")
         
@@ -132,7 +132,60 @@ class ModelCloudKit {
                 }
             }
             
-            guard let _ = record else {
+            guard record != nil else {
+                return
+            }
+            // Saved
+        }
+        
+    }
+    
+    func createPost(withAuthor authorId: CKRecord.Reference, content: String, likes: Int) {
+       
+        let record = CKRecord(recordType: "Post")
+        
+        let date = getDate()
+        
+        record.setValue(authorId, forKey: "author_id")
+        record.setValue(content, forKey: "content")
+        record.setValue(likes, forKey: "likes")
+        record.setValue(date, forKey: "createdAt")
+        
+        publicDataBase.save(record) { record, errors in
+            
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            }
+            
+            guard record != nil else {
+                return
+            }
+            // Saved
+        }
+    }
+    
+    func createComment(withPost postId: CKRecord.Reference, content: String, authorId: CKRecord.Reference) {
+        
+        let record = CKRecord(recordType: "Comment")
+        
+        let date = getDate()
+        
+        record.setValue(authorId, forKey: "author_id")
+        record.setValue(content, forKey: "content")
+        record.setValue(postId, forKey: "post_id")
+        record.setValue(date, forKey: "createdAt")
+        
+        publicDataBase.save(record) { record, errors in
+            
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            }
+            
+            guard record != nil else {
                 return
             }
             // Saved

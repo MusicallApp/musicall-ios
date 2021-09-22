@@ -21,7 +21,7 @@ class Comment {
         guard let createdAt = record["createdAt"] as? Date,
               let content = record["content"] as? String,
               let authorId = record["author_id"] as? CKRecord.Reference,
-              let postId = record["comments"] as? CKRecord.Reference else {
+              let postId = record["post_id"] as? CKRecord.Reference else {
             return nil
         }
         
