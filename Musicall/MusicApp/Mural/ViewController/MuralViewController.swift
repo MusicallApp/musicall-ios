@@ -11,7 +11,7 @@ class MuralViewController: UIViewController {
     
     // MARK: Setup
     
-//    let viewModel
+    let viewModel = MuralViewModel()
     
     // MARK: UI
     
@@ -46,6 +46,16 @@ class MuralViewController: UIViewController {
         
         setUpUI()
         setUpTableView()
+        
+        let cloudKit = ModelCloudKit()
+        cloudKit.fetchPost { result in
+            switch result {
+            case .success(let data):
+                print(data)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     // MARK: Methods

@@ -28,7 +28,8 @@ class CardTableViewCell: UITableViewCell {
     
     private func setUpConstraints() {
         cardView.snp.makeConstraints { (make) in
-            make.top.bottom.equalToSuperview().inset(8)
+            make.top.equalToSuperview().inset(16)
+            make.bottom.equalToSuperview()
             make.left.right.equalToSuperview()
         }
     }
