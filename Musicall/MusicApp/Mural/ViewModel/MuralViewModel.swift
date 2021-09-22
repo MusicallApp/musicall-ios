@@ -29,6 +29,8 @@ class MuralViewModel {
             switch result {
             case .success(let data):
                 self.posts = data
+                self.createCell(posts: self.posts)
+                self.reloadTableView?()
             case .failure(let error):
                 print(error)
             }
@@ -50,7 +52,7 @@ class MuralViewModel {
             
             let authorRecordName = data.authorId.recordID
             
-            cloudKit.publicDataBase.fetch(withRecordID: authorRecordName, completionHandler: { record, error in
+            cloudKit.publicDataBase.fetch(withRecordID: authorRecordName, completionHandler: { record, _ in
                 
                 guard let authorName = record?.object(forKey: "nickname") as? String else {
                     return
@@ -59,9 +61,9 @@ class MuralViewModel {
                                              content: data.content,
                                              likes: data.likes,
                                              date: data.createdAt))
+                self.cellViewModels = vms
             })
         }
-        cellViewModels = vms
     }
     
 }

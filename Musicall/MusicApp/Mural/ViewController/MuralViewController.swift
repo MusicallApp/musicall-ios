@@ -121,7 +121,7 @@ extension MuralViewController {
     }
     
     public func setUpTableView() {
-        tableView.register(CardTableViewCell.self, forCellReuseIdentifier: CardTableViewCell.identifier)
+        tableView.register(CardCell.self, forCellReuseIdentifier: CardCell.reuseId)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -134,11 +134,16 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier, for: indexPath) as? CardTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardCell.reuseId, for: indexPath) as? CardCell else {
             fatalError("Cell not exists")
         }
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        cell.
+        cell.configureView(card: .init(headerInfos: HeaderInfos(username: cellViewModel.authorName,
+                                                                date: cellViewModel.date.description),
+                                       style: .complete(content: cellViewModel.content,
+                                                        likes: cellViewModel.likes,
+                                                        interactions: 0)),
+                           bottomSpacing: 16)
         
         return cell
     }
@@ -148,7 +153,6 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
     }
     
 }

@@ -18,7 +18,10 @@
 		0346E48026F3768400F43504 /* CardStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47F26F3768400F43504 /* CardStyle.swift */; };
 		0346E48226F3791500F43504 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48126F3791500F43504 /* UIImage.swift */; };
 		0346E48526F3903300F43504 /* SelectableCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E48426F3903300F43504 /* SelectableCard.swift */; };
-		696FB50F26FA0A3D00D9ED8B /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696FB50E26FA0A3D00D9ED8B /* CardTableViewCell.swift */; };
+		039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */; };
+		039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */; };
+		039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */; };
+		039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDDA26F8CEE200B46BC0 /* CardCell.swift */; };
 		696FB51126FA1BE100D9ED8B /* MuralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696FB51026FA1BE100D9ED8B /* MuralViewModel.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
@@ -39,6 +42,19 @@
 		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
 		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
+		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
+		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
+		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
+		DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2726F7C5C40002C064 /* MCTextField.swift */; };
+		DEA931F326F8C9000096CB4D /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA931F226F8C9000096CB4D /* UserDefaultHelper.swift */; };
+		DEA931F726F8CDB60096CB4D /* UserType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA931F626F8CDB60096CB4D /* UserType.swift */; };
+		DEA931FB26F8D14B0096CB4D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA931FA26F8D14B0096CB4D /* User.swift */; };
+		DEDBCC1B26FA010F00902B2D /* UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDBCC1A26FA010F00902B2D /* UIStackView.swift */; };
+		DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3726F8B33000A4A26E /* Coordinator.swift */; };
+		DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */; };
+		DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */; };
+		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
+		FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +85,10 @@
 		0346E47F26F3768400F43504 /* CardStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardStyle.swift; sourceTree = "<group>"; };
 		0346E48126F3791500F43504 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		0346E48426F3903300F43504 /* SelectableCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectableCard.swift; sourceTree = "<group>"; };
-		696FB50E26FA0A3D00D9ED8B /* CardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewController.swift; sourceTree = "<group>"; };
+		039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsView.swift; sourceTree = "<group>"; };
+		039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewModel.swift; sourceTree = "<group>"; };
+		039DCDDA26F8CEE200B46BC0 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		696FB51026FA1BE100D9ED8B /* MuralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuralViewModel.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +116,19 @@
 		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
+		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
+		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
+		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
+		DEA931F226F8C9000096CB4D /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		DEA931F626F8CDB60096CB4D /* UserType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserType.swift; sourceTree = "<group>"; };
+		DEA931FA26F8D14B0096CB4D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DEDBCC1A26FA010F00902B2D /* UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackView.swift; sourceTree = "<group>"; };
+		DEEF7E3726F8B33000A4A26E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewController.swift; sourceTree = "<group>"; };
+		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
+		FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +161,7 @@
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DEF95EFE26F2D4EA008ED808 /* Elements */,
 				0346E48326F3901D00F43504 /* SelectableCard */,
 				0346E45F26F0D21600F43504 /* Cards */,
 			);
@@ -140,6 +173,7 @@
 			children = (
 				0346E46026F0DCCC00F43504 /* Card.swift */,
 				0346E47F26F3768400F43504 /* CardStyle.swift */,
+				039DCDDA26F8CEE200B46BC0 /* CardCell.swift */,
 			);
 			path = Cards;
 			sourceTree = "<group>";
@@ -150,6 +184,8 @@
 				0346E46F26F2219C00F43504 /* UIColor.swift */,
 				0346E47026F2219C00F43504 /* UIFont.swift */,
 				0346E48126F3791500F43504 /* UIImage.swift */,
+				DE97BA2526F7C0CC0002C064 /* UITextField.swift */,
+				DEDBCC1A26FA010F00902B2D /* UIStackView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,11 +217,44 @@
 			path = SelectableCard;
 			sourceTree = "<group>";
 		};
+		039DCDCF26F8B26000B46BC0 /* Interactions */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD226F8B27D00B46BC0 /* ViewModel */,
+				039DCDD126F8B27900B46BC0 /* View */,
+				039DCDD026F8B27200B46BC0 /* ViewController */,
+			);
+			path = Interactions;
+			sourceTree = "<group>";
+		};
+		039DCDD026F8B27200B46BC0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD326F8B2A400B46BC0 /* InteractionsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		039DCDD126F8B27900B46BC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		039DCDD226F8B27D00B46BC0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		693EAF6E26F8B55500D948D3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				69A7F12B26EA4B8F00A25A69 /* MuralViewController.swift */,
-				696FB50E26FA0A3D00D9ED8B /* CardTableViewCell.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -285,7 +354,12 @@
 		69A7F12026EA4A8F00A25A69 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				DEA931F126F8C8EE0096CB4D /* Helpers */,
+				DEEF7E3626F8B2B100A4A26E /* Coordinator */,
+				DEEF7E3B26F8B4F300A4A26E /* PreSettings */,
+				039DCDCF26F8B26000B46BC0 /* Interactions */,
 				69A7F12726EA4B2700A25A69 /* Mural */,
+				FF3BB8EA26F8ACEA009763F1 /* Create */,
 				69A7F12626EA4B0B00A25A69 /* Explore */,
 				69A7F12526EA4AE100A25A69 /* Profile */,
 				69A7F12426EA4AD800A25A69 /* SignIn */,
@@ -360,6 +434,60 @@
 				69A7F19026F36FDC00A25A69 /* Comment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DEA931F126F8C8EE0096CB4D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DEA931F226F8C9000096CB4D /* UserDefaultHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DEA931F526F8CD9C0096CB4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DEA931F626F8CDB60096CB4D /* UserType.swift */,
+				DEA931FA26F8D14B0096CB4D /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DEEF7E3626F8B2B100A4A26E /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DEEF7E3726F8B33000A4A26E /* Coordinator.swift */,
+				DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DEEF7E3B26F8B4F300A4A26E /* PreSettings */ = {
+			isa = PBXGroup;
+			children = (
+				DEA931F526F8CD9C0096CB4D /* Model */,
+				DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */,
+			);
+			path = PreSettings;
+			sourceTree = "<group>";
+		};
+		DEF95EFE26F2D4EA008ED808 /* Elements */ = {
+			isa = PBXGroup;
+			children = (
+				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
+				DE2FB04426F4D8710006E8B6 /* MCButton.swift */,
+				DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */,
+				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
+			);
+			path = Elements;
+			sourceTree = "<group>";
+		};
+		FF3BB8EA26F8ACEA009763F1 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,26 +651,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */,
+				DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */,
 				69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */,
+				DEA931F326F8C9000096CB4D /* UserDefaultHelper.swift in Sources */,
+				039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */,
 				69A7F13426EA4BD500A25A69 /* LoginViewController.swift in Sources */,
+				DEA931FB26F8D14B0096CB4D /* User.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
 				696FB51126FA1BE100D9ED8B /* MuralViewModel.swift in Sources */,
+				039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */,
 				69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */,
 				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				69A7F12E26EA4B9F00A25A69 /* ExploreViewController.swift in Sources */,
+				DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */,
+				DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */,
 				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
+				DEA931F726F8CDB60096CB4D /* UserType.swift in Sources */,
 				69A7F13226EA4BC100A25A69 /* SignInViewController.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
+				039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
+				FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */,
+				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
 				69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */,
 				69A7F13026EA4BAD00A25A69 /* ProfileViewController.swift in Sources */,
 				69A7F18C26F2227A00A25A69 /* Post.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
-				696FB50F26FA0A3D00D9ED8B /* CardTableViewCell.swift in Sources */,
+				DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */,
 				0346E48226F3791500F43504 /* UIImage.swift in Sources */,
 				0346E48526F3903300F43504 /* SelectableCard.swift in Sources */,
 				69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */,
+				DEDBCC1B26FA010F00902B2D /* UIStackView.swift in Sources */,
+				DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */,
+				DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */,
+				DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */,
 				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -641,7 +785,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -696,7 +840,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -713,7 +857,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GHRBLV3RV2;
+				DEVELOPMENT_TEAM = 62NRBAKMQ3;
 				INFOPLIST_FILE = Musicall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -733,7 +877,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Musicall/Musicall.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = GHRBLV3RV2;
+				DEVELOPMENT_TEAM = 62NRBAKMQ3;
 				INFOPLIST_FILE = Musicall/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
