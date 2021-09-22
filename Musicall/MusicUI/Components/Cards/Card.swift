@@ -22,7 +22,7 @@ class Card: UIView {
     private var style: CardStyle
     private var headerInfos: HeaderInfos
     private var contentView: UIView
-
+    
     // MARK: UI Elements
 
     let photoImageView: UIImageView = {
@@ -50,12 +50,14 @@ class Card: UIView {
         return label
     }()
 
-    lazy var editableLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Escreva seu comentário..."
+    lazy var editableLabel: UITextField = {
+        let label = UITextField()
+        label.attributedPlaceholder = NSAttributedString(string: "Escreva seu comentário...",
+                                                         attributes: [.font: UIFont.MCDesignSystem(font: .body),
+                                                                      .foregroundColor: UIColor.lightGray])
         label.font = .MCDesignSystem(font: .body)
-        label.textColor = .lightGray
-        label.numberOfLines = 0
+        label.keyboardType = .default
+
         return label
     }()
 
