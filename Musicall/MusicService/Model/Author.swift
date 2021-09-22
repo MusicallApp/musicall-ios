@@ -11,7 +11,7 @@ import CloudKit
 class Author {
     
     static let recordType = "Author"
-    private var id = CKRecord.ID()
+    var id = CKRecord.ID()
     let createdAt: Date
     let nickname: String
     let number: String
