@@ -41,9 +41,8 @@
 		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
 		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
-		FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
-		DE97BA2426F7B89D0002C064 /* KeyboardTexField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */; };
+		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
 		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
 		DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2726F7C5C40002C064 /* MCTextField.swift */; };
 		DEA931F326F8C9000096CB4D /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA931F226F8C9000096CB4D /* UserDefaultHelper.swift */; };
@@ -53,10 +52,8 @@
 		DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3726F8B33000A4A26E /* Coordinator.swift */; };
 		DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */; };
 		DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */; };
-		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
-		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
-		DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2726F7C5C40002C064 /* MCTextField.swift */; };
 		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
+		FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,9 +114,8 @@
 		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
-		FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
-		DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTexField.swift; sourceTree = "<group>"; };
+		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 		DEA931F226F8C9000096CB4D /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
@@ -129,11 +125,8 @@
 		DEEF7E3726F8B33000A4A26E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewController.swift; sourceTree = "<group>"; };
-		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
-		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
-		DE97BA2726F7C5C40002C064 /* MCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCTextField.swift; sourceTree = "<group>"; };
 		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
-
+		FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,7 +449,7 @@
 			children = (
 				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
 				DE2FB04426F4D8710006E8B6 /* MCButton.swift */,
-				DE97BA2326F7B89D0002C064 /* KeyboardTexField.swift */,
+				DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */,
 				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
 			);
 			path = Elements;
@@ -468,17 +461,6 @@
 				FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */,
 			);
 			path = Create;
-			sourceTree = "<group>";
-		};
-		DEF95EFE26F2D4EA008ED808 /* Elements */ = {
-			isa = PBXGroup;
-			children = (
-				DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */,
-				DE2FB04426F4D8710006E8B6 /* MCButton.swift */,
-				DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */,
-				DE97BA2726F7C5C40002C064 /* MCTextField.swift */,
-			);
-			path = Elements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -853,7 +835,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Musicall.Musicall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.Musicall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -873,7 +855,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Musicall.Musicall;
+				PRODUCT_BUNDLE_IDENTIFIER = com.br.Musicall;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
