@@ -12,7 +12,7 @@ class InteractionsView: UIView {
 
     // MARK: PRIVATE PROPERTIES
     private var isKeyboardAppearing = false
-    private var keyboardHeight = 0.0
+    private var keyboardHeight: CGFloat = 0.0
     private var keyboardBottomConstraint: ConstraintMakerEditable?
 
     // MARK: UI ELEMENTS

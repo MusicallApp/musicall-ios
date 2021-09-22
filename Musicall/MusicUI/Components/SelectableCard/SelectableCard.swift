@@ -8,6 +8,10 @@
 import UIKit
 import SnapKit
 
+protocol SelectableCardDelegate: AnyObject {
+    func selectCard(of type: SelectableCardStyle)
+}
+
 enum SelectableCardStyle {
     case musician
     case company
@@ -39,6 +43,7 @@ class SelectableCard: UIView {
 
     // MARK: PRIVATE PROPERTIES
     private let style: SelectableCardStyle
+    weak var delegate: SelectableCardDelegate?
 
     // MARK: UI ELEMENTS
     private lazy var iconImage: UIImageView = {
@@ -86,10 +91,20 @@ class SelectableCard: UIView {
         layer.cornerRadius = 10
 
         configureUI()
+
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(selectCard))
+        addGestureRecognizer(gesture)
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: ACTIONS
+
+    @objc
+    func selectCard() {
+        delegate?.selectCard(of: style)
     }
 
     // MARK: PRIVATE FUNCS

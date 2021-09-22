@@ -16,7 +16,7 @@ class MCTextField: UIView {
         return label
     }()
 
-    private let textField: UITextField = {
+    let textField: UITextField = {
         let textField = UITextField()
         textField.backgroundColor = .darkestGray
         textField.textColor = .lightGray
@@ -39,6 +39,10 @@ class MCTextField: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         textField.layer.cornerRadius = 5.5
+    }
+
+    func getText() -> String? {
+        return textField.text
     }
 
     private func setupView() {
