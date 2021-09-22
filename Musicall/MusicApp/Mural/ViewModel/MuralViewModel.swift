@@ -9,8 +9,13 @@ import Foundation
 import CloudKit
 
 class MuralViewModel {
+   
     var posts: [Post] = [Post]()
     var reloadTableView: (() -> Void)?
+    var showLoading: (() -> Void)?
+    var hideLoading: (() -> Void)?
+    var showError: (() -> Void)?
+    
     let cloudKit = ModelCloudKit()
     
     private var cellViewModels: [PostListViewModel] = [PostListViewModel]() {

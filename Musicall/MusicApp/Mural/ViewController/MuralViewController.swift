@@ -46,22 +46,39 @@ class MuralViewController: UIViewController {
         
         setUpUI()
         setUpTableView()
-        
-        let cloudKit = ModelCloudKit()
-        cloudKit.fetchPost { result in
-            switch result {
-            case .success(let data):
-                print(data)
-            case .failure(let error):
-                print(error)
-            }
-        }
+        setUpViewModel()
     }
     
     // MARK: Methods
     
     @objc func addPost() {
         
+    }
+    
+    private func setUpViewModel() {
+        viewModel.reloadTableView = {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+        
+        viewModel.showError = {
+            DispatchQueue.main.async {
+                print("Error")
+            }
+        }
+        
+        viewModel.showLoading = {
+            DispatchQueue.main.async {
+            }
+        }
+        
+        viewModel.hideLoading = {
+            DispatchQueue.main.async {
+            }
+        }
+        
+        viewModel.getPosts()
     }
 }
 
@@ -113,17 +130,25 @@ extension MuralViewController {
 
 extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        2
+        return viewModel.numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier, for: indexPath)
-        guard cell is CardTableViewCell else { return cell }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardTableViewCell.identifier, for: indexPath) as? CardTableViewCell else {
+            fatalError("Cell not exists")
+        }
+        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        cell.
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UIScreen.main.bounds.height * 0.2
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
     }
     
 }
