@@ -84,8 +84,7 @@ class InteractionsView: UIView {
         }
 
         tableView.snp.makeConstraints { make in
-            make.topMargin.equalToSuperview()
-            make.left.right.equalToSuperview().inset(16)
+            make.topMargin.left.right.equalToSuperview().inset(16)
             make.bottom.equalTo(keyboardTextField.snp.top)
         }
 
