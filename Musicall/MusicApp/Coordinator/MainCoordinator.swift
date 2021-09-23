@@ -47,6 +47,6 @@ class MainCoordinator: Coordinator {
     private func goToCreatePost() {
         let viewController = CreatePostViewController()
         viewController.coordinator = self
-        navigationController?.present(viewController, animated: true)
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

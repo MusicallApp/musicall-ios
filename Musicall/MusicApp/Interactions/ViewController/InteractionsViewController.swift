@@ -22,6 +22,7 @@ class InteractionsViewController: UIViewController, Coordinating {
         super.viewDidLoad()
         
         title = "interações"
+        navigationItem.largeTitleDisplayMode = .never
     }
 
 }

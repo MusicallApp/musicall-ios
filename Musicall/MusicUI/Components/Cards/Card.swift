@@ -56,6 +56,7 @@ class Card: UIView {
                                                          attributes: [.font: UIFont.MCDesignSystem(font: .body),
                                                                       .foregroundColor: UIColor.lightGray])
         label.font = .MCDesignSystem(font: .body)
+        label.textColor = .lightGray
         label.keyboardType = .default
 
         return label
