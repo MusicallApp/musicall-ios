@@ -27,7 +27,7 @@ class CreatePostViewController: UIViewController, Coordinating {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done",
                                                                                   style: .done,
                                                                                   target: self,
-                                                                                  action: nil)
+                                                                                  action: #selector(createPost))
 //        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.Style.subtitle1]
         navigationController?.navigationBar.largeTitleTextAttributes = [
                     NSAttributedString.Key.font: UIFont.MCDesignSystem(font: .heading1),
@@ -52,5 +52,10 @@ class CreatePostViewController: UIViewController, Coordinating {
         editableCard.heightAnchor.constraint(equalToConstant: 99),
         editableCard.widthAnchor.constraint(equalToConstant: 343)
       ])
+    }
+
+    // MARK: Actions
+    @objc func createPost() {
+        ModelCloudKit().createPost(withAuthor: CloudKitHelper.authorId, content: editableCard.currentText ?? "", likes: 0)
     }
 }

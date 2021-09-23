@@ -17,6 +17,7 @@ class Card: UIView {
 
     // MARK: PUBLIC PROPERTIES
     var isHighlighted = false
+    lazy var currentText = editableLabel.text
 
     // MARK: PRIVATE PROPERTIES
     private var style: CardStyle
