@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
 
         let navigationController = UINavigationController()
+        navigationController.navigationBar.barStyle = .black
         let coordinator = MainCoordinator()
 
         coordinator.navigationController = navigationController
