@@ -65,6 +65,7 @@ class PreSettingsViewController: UIViewController, Coordinating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        phoneTextField.textField.keyboardType = .phonePad
         setupButton()
         setupCards()
         setupNavBar()
@@ -80,10 +81,8 @@ class PreSettingsViewController: UIViewController, Coordinating {
            let phoneNumber = phoneTextField.getText(),
            validadeField(nickname),
            validadeField(phoneNumber) {
-
-            // TODO: Salvar dados no userDefault.
-            
             user = User(nickName: nickname, phoneNumber: phoneNumber)
+            UserDefaultHelper.setUser(user)
             animatoToSelectType()
         }
     }
@@ -171,8 +170,10 @@ extension PreSettingsViewController: SelectableCardDelegate {
         switch type {
         case .musician:
             user?.type = .musician
+            UserDefaultHelper.set(UserType.musician.rawValue, for: .userType)
         case .company:
             user?.type = .company
+            UserDefaultHelper.set(UserType.company.rawValue, for: .userType)
         }
 
         coordinator?.navigate(.toMural, with: user)

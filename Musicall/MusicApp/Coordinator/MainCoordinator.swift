@@ -34,19 +34,19 @@ class MainCoordinator: Coordinator {
 
     private func goToMural(with data: User?) {
         let viewController = MuralViewController()
-        // viewController.coordinator = self
+        viewController.coordinator = self
         navigationController?.setViewControllers([viewController], animated: false)
     }
 
     private func goToInteractions() {
         let viewController = InteractionsViewController()
-        // viewController.coordinator = self
+        viewController.coordinator = self
         navigationController?.pushViewController(viewController, animated: true)
     }
 
     private func goToCreatePost() {
         let viewController = CreatePostViewController()
-        // viewController.coordinator = self
-        navigationController?.pushViewController(viewController, animated: true)
+        viewController.coordinator = self
+        navigationController?.present(viewController, animated: true)
     }
 }

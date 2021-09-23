@@ -7,7 +7,9 @@
 
 import UIKit
 
-class InteractionsViewController: UIViewController {
+class InteractionsViewController: UIViewController, Coordinating {
+
+    var coordinator: Coordinator?
 
     private let interactionsView = InteractionsView()
 

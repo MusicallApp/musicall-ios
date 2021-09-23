@@ -7,23 +7,23 @@
 
 import UIKit
 
-class MuralViewController: UIViewController {
-    
+class MuralViewController: UIViewController, Coordinating {
+
     // MARK: Setup
-    
+
     let viewModel = MuralViewModel()
-    
+
     // MARK: UI
-    
+
     private let tableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
         view.bounces = true
         view.separatorStyle = .none
-        
+
         return view
     }()
-    
+
     private let addButton: UIButton = {
         let button = UIButton(type: .system)
         button.layer.cornerRadius = 6
@@ -32,14 +32,16 @@ class MuralViewController: UIViewController {
         button.tintColor = .white
         button.backgroundColor = .blue
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        
+
         return button
     }()
-    
+
     private let topView = UIView()
-    
+
     // MARK: Variables and constants
-    
+
+    var coordinator: Coordinator?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,8 +53,7 @@ class MuralViewController: UIViewController {
     // MARK: Methods
     
     @objc func addPost() {
-        let nextVC = CreatePostViewController()
-        present(nextVC, animated: true, completion: nil)
+        coordinator?.navigate(.toCreatePost, with: nil)
     }
     
     private func setUpViewModel() {
@@ -155,6 +156,7 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator?.navigate(.toInteractions, with: viewModel.getCellViewModel(at: indexPath))
     }
     
 }

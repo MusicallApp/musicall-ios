@@ -7,7 +7,9 @@
 
 import UIKit
 
-class CreatePostViewController: UIViewController {
+class CreatePostViewController: UIViewController, Coordinating {
+
+    var coordinator: Coordinator?
 
     let editableCard = Card(headerInfos: .init(username: "John", date: "26 de Janeiro"), style: .editable)
 
