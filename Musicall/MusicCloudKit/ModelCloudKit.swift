@@ -23,6 +23,20 @@ class ModelCloudKit {
         publicDataBase = container.publicCloudDatabase
     }
     
+    // MARK: Utils
+    
+    func getDate() -> Date {
+        let formatter = DateFormatter()
+        let date = Date()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let dateString = formatter.string(from: date)
+        guard let createdAt = formatter.date(from: dateString) else {
+            return date
+        }
+        
+        return createdAt
+    }
+    
     // MARK: GET functions 
     
     func fetchPost(_ completion: @escaping (Result<[Post], Error>) -> Void) {
@@ -95,5 +109,92 @@ class ModelCloudKit {
                 completion(.success(data))
             }
         }
+    }
+    
+    // MARK: POST functions
+    
+    func createAuthor(withNickname nickname: String, number: String, type: Int) {
+        
+        let record = CKRecord(recordType: "Author")
+        
+        let date = getDate()
+        
+        record.setValue(nickname, forKey: "nickname")
+        record.setValue(number, forKey: "number")
+        record.setValue(type, forKey: "type")
+        record.setValue(date, forKey: "createdAt")
+        
+        publicDataBase.save(record) { record, errors in
+            
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            }
+            
+            guard record != nil else {
+                return
+            }
+            // Saved
+        }
+        
+    }
+    
+    func createPost(withAuthor authorId: CKRecord.ID, content: String, likes: Int) {
+       
+        let record = CKRecord(recordType: "Post")
+        
+        let date = getDate()
+        
+        let authorReference = CKRecord.Reference(recordID: authorId, action: .deleteSelf)
+        
+        record.setValue(authorReference, forKey: "author_id")
+        record.setValue(content, forKey: "content")
+        record.setValue(likes, forKey: "likes")
+        record.setValue(date, forKey: "createdAt")
+        
+        publicDataBase.save(record) { record, errors in
+            
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            }
+            
+            guard record != nil else {
+                return
+            }
+            // Saved
+        }
+    }
+    
+    func createComment(withPost postId: CKRecord.ID, content: String, authorId: CKRecord.ID) {
+        
+        let record = CKRecord(recordType: "Comment")
+        
+        let date = getDate()
+        
+        let authorReference = CKRecord.Reference(recordID: authorId, action: .deleteSelf)
+        let postReference = CKRecord.Reference(recordID: postId, action: .deleteSelf)
+        
+        record.setValue(authorReference, forKey: "author_id")
+        record.setValue(content, forKey: "content")
+        record.setValue(postReference, forKey: "post_id")
+        record.setValue(date, forKey: "createdAt")
+        
+        publicDataBase.save(record) { record, errors in
+            
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            }
+            
+            guard record != nil else {
+                return
+            }
+            // Saved
+        }
+        
     }
 }

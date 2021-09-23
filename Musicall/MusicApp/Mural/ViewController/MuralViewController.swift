@@ -32,7 +32,6 @@ class MuralViewController: UIViewController {
         button.tintColor = .white
         button.backgroundColor = .blue
         button.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-        button.addTarget(self, action: #selector(addPost), for: .touchUpInside)
         
         return button
     }()
@@ -52,7 +51,8 @@ class MuralViewController: UIViewController {
     // MARK: Methods
     
     @objc func addPost() {
-        
+        let nextVC = CreatePostViewController()
+        present(nextVC, animated: true, completion: nil)
     }
     
     private func setUpViewModel() {
@@ -94,6 +94,7 @@ extension MuralViewController {
                     NSAttributedString.Key.font: UIFont.MCDesignSystem(font: .heading1),
                     NSAttributedString.Key.foregroundColor: UIColor.white
                 ]
+        addButton.addTarget(self, action: #selector(addPost), for: .touchUpInside)
         let buttonItem = UIBarButtonItem(customView: addButton)
         navigationItem.rightBarButtonItem = buttonItem
         
@@ -134,7 +135,8 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardCell.reuseId, for: indexPath) as? CardCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CardCell.reuseId,
+                                                       for: indexPath) as? CardCell else {
             fatalError("Cell not exists")
         }
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
