@@ -175,6 +175,6 @@ extension PreSettingsViewController: SelectableCardDelegate {
             user?.type = .company
         }
 
-        coordinator?.eventOcurred(with: .goToMural, data: user)
+        coordinator?.navigate(.toMural, with: user)
     }
 }
