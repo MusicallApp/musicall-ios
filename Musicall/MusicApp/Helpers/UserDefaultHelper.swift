@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import CloudKit
 
 enum Field: String {
     case userNickName = "MC_USER_NICKNAME"
     case userCellphone = "MC_USER_CELLPHONE"
     case userType = "MC_USER_TYPE"
+    case userID = "MC_USER_ID"
 }
 
 class UserDefaultHelper {
@@ -22,6 +24,11 @@ class UserDefaultHelper {
         switch field {
         case .userType:
             return UserDefaults.standard.value(forKey: field.rawValue) as? Int
+        case .userID:
+            if let recordName = UserDefaults.standard.value(forKey: field.rawValue) as? String {
+                return CKRecord.ID(recordName: recordName)
+            }
+            return CKRecord.ID(recordName: "")
         default:
             return UserDefaults.standard.value(forKey: field.rawValue) as? String
         }

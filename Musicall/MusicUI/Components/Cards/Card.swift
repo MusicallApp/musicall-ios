@@ -17,6 +17,7 @@ class Card: UIView {
 
     // MARK: PUBLIC PROPERTIES
     var isHighlighted = false
+    lazy var currentText = editableLabel.text
 
     // MARK: PRIVATE PROPERTIES
     private var style: CardStyle
@@ -27,7 +28,8 @@ class Card: UIView {
 
     let photoImageView: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .red
+//        image.backgroundColor = .red
+        image.image = .icContact
         image.layer.cornerRadius = 10
         return image
     }()

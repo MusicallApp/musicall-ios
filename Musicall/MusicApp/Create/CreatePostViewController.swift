@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import CloudKit
 
 class CreatePostViewController: UIViewController, Coordinating {
 
     var coordinator: Coordinator?
 
-    let editableCard = Card(headerInfos: .init(username: "John", date: "26 de Janeiro"), style: .editable)
+    let editableCard = Card(headerInfos: .init(username: UserDefaultHelper.get(field: .userNickName) as? String ?? "",
+                                               date: "26 de Janeiro"),
+                            style: .editable)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +30,7 @@ class CreatePostViewController: UIViewController, Coordinating {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Done",
                                                                                   style: .done,
                                                                                   target: self,
-                                                                                  action: nil)
+                                                                                  action: #selector(createPost))
 //        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont.Style.subtitle1]
         navigationController?.navigationBar.largeTitleTextAttributes = [
                     NSAttributedString.Key.font: UIFont.MCDesignSystem(font: .heading1),
@@ -49,6 +52,17 @@ class CreatePostViewController: UIViewController, Coordinating {
         editableCard.snp.makeConstraints { make in
             make.topMargin.equalToSuperview().inset(24)
             make.left.right.equalToSuperview().inset(16)
+        }
+    }
+
+    // MARK: Actions
+    @objc func createPost() {
+        if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID {
+            ModelCloudKit().createPost(withAuthor: userID, content: editableCard.currentText ?? "", likes: 0) {
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
         }
     }
 }

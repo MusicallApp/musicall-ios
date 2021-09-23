@@ -54,6 +54,7 @@ class MuralViewController: UIViewController, Coordinating {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
+        viewModel.getPosts()
     }
     
     // MARK: Methods
@@ -84,8 +85,6 @@ class MuralViewController: UIViewController, Coordinating {
             DispatchQueue.main.async {
             }
         }
-        
-        viewModel.getPosts()
     }
 }
 
@@ -161,7 +160,7 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.navigate(.toInteractions, with: viewModel.getCellViewModel(at: indexPath))
+//        coordinator?.navigate(.toInteractions, with: viewModel.getCellViewModel(at: indexPath))
     }
     
 }
