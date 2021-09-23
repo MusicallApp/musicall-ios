@@ -59,7 +59,6 @@ class PreSettingsViewController: UIViewController, Coordinating {
     // MARK: Control Variables.
 
     var coordinator: Coordinator?
-    var user: User?
 
     // MARK: Life cycle.
 
@@ -81,8 +80,7 @@ class PreSettingsViewController: UIViewController, Coordinating {
            let phoneNumber = phoneTextField.getText(),
            validadeField(nickname),
            validadeField(phoneNumber) {
-            user = User(nickName: nickname, phoneNumber: phoneNumber)
-            UserDefaultHelper.setUser(user)
+            UserDefaultHelper.setUser(User(nickName: nickname, phoneNumber: phoneNumber))
             animatoToSelectType()
         }
     }
@@ -169,13 +167,11 @@ extension PreSettingsViewController: SelectableCardDelegate {
     func selectCard(of type: SelectableCardStyle) {
         switch type {
         case .musician:
-            user?.type = .musician
             UserDefaultHelper.set(UserType.musician.rawValue, for: .userType)
         case .company:
-            user?.type = .company
             UserDefaultHelper.set(UserType.company.rawValue, for: .userType)
         }
 
-        coordinator?.navigate(.toMural, with: user)
+        coordinator?.navigate(.toMural, with: nil)
     }
 }

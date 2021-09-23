@@ -147,7 +147,7 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
                                                         likes: cellViewModel.likes,
                                                         interactions: 0)),
                            bottomSpacing: 16)
-        
+
         return cell
     }
     
