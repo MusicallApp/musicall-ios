@@ -7,13 +7,15 @@
 
 import UIKit
 
-enum Event {
-    case goToMural
+enum Destination {
+    case toMural
+    case toInteractions
+    case toCreatePost
 }
 
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
-    func eventOcurred(with type: Event, data: Any?)
+    func navigate(_ type: Destination, with data: Any?)
     func start()
 }
 
