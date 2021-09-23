@@ -8,12 +8,17 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
+    
     var navigationController: UINavigationController?
 
-    func eventOcurred(with type: Event, data: Any?) {
-        switch type {
-        case .goToMural:
+    func navigate(_ destination: Destination, with data: Any?) {
+        switch destination {
+        case .toMural:
             goToMural(with: data as? User)
+        case .toInteractions:
+            goToInteractions()
+        case .toCreatePost:
+            goToCreatePost()
         }
     }
 
@@ -21,15 +26,27 @@ class MainCoordinator: Coordinator {
         if let user = UserDefaultHelper.getUser() {
             goToMural(with: user)
         } else {
-            var viewController: UIViewController & Coordinating = PreSettingsViewController()
+            let viewController = PreSettingsViewController()
             viewController.coordinator = self
             navigationController?.setViewControllers([viewController], animated: false)
         }
     }
 
     private func goToMural(with data: User?) {
-        let viewController: UIViewController = MuralViewController()
+        let viewController = MuralViewController()
         // viewController.coordinator = self
         navigationController?.setViewControllers([viewController], animated: false)
+    }
+
+    private func goToInteractions() {
+        let viewController = InteractionsViewController()
+        // viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func goToCreatePost() {
+        let viewController = CreatePostViewController()
+        // viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
