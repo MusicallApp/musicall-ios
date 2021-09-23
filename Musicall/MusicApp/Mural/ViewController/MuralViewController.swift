@@ -49,6 +49,12 @@ class MuralViewController: UIViewController, Coordinating {
         setUpTableView()
         setUpViewModel()
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+    }
     
     // MARK: Methods
     
@@ -90,7 +96,6 @@ extension MuralViewController {
     private func setUpUI() {
         // Navigation Controller
         title = "Mural"
-        navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationBar.largeTitleTextAttributes = [
                     NSAttributedString.Key.font: UIFont.MCDesignSystem(font: .heading1),
                     NSAttributedString.Key.foregroundColor: UIColor.white

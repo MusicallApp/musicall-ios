@@ -43,14 +43,12 @@ class CreatePostViewController: UIViewController, Coordinating {
     }
 
     func setupEditableCard() {
-      view.addSubview(editableCard)
-      editableCard.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(editableCard)
+        editableCard.translatesAutoresizingMaskIntoConstraints = false
 
-      NSLayoutConstraint.activate([
-        editableCard.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 24),
-        editableCard.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-        editableCard.heightAnchor.constraint(equalToConstant: 99),
-        editableCard.widthAnchor.constraint(equalToConstant: 343)
-      ])
+        editableCard.snp.makeConstraints { make in
+            make.topMargin.equalToSuperview().inset(24)
+            make.left.right.equalToSuperview().inset(16)
+        }
     }
 }
