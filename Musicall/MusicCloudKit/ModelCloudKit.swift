@@ -19,7 +19,7 @@ class ModelCloudKit {
     // MARK: Setup Container
     
     init() {
-        container = CKContainer(identifier: "iCloud.Musicall")
+        container = CKContainer(identifier: "iCloud.MusicallApp")
         publicDataBase = container.publicCloudDatabase
     }
     
@@ -56,7 +56,7 @@ class ModelCloudKit {
             let data = result.compactMap {
                 Post.init(record: $0)
             }
-            
+
             DispatchQueue.main.async {
                 completion(.success(data))
             }
@@ -116,7 +116,7 @@ class ModelCloudKit {
     func createAuthor(withNickname nickname: String, number: String, type: Int) {
         
         let record = CKRecord(recordType: "Author")
-        
+
         let date = getDate()
         
         record.setValue(nickname, forKey: "nickname")
@@ -135,12 +135,14 @@ class ModelCloudKit {
             guard record != nil else {
                 return
             }
+
+            UserDefaultHelper.set(record!.recordID.recordName, for: .userID)
             // Saved
         }
         
     }
     
-    func createPost(withAuthor authorId: CKRecord.ID, content: String, likes: Int) {
+    func createPost(withAuthor authorId: CKRecord.ID, content: String, likes: Int, completionHandler: (() -> Void)? = nil) {
        
         let record = CKRecord(recordType: "Post")
         
@@ -164,6 +166,8 @@ class ModelCloudKit {
             guard record != nil else {
                 return
             }
+            
+            completionHandler?()
             // Saved
         }
     }

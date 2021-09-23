@@ -8,5 +8,5 @@
 import CloudKit
 
 struct CloudKitHelper {
-    static let authorId: CKRecord.ID = .init(recordName: "StandardUser")
+    static var authorId: CKRecord.ID = .init(recordName: "StandardUser")
 }

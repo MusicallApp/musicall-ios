@@ -172,6 +172,9 @@ extension PreSettingsViewController: SelectableCardDelegate {
             UserDefaultHelper.set(UserType.company.rawValue, for: .userType)
         }
 
+        if let user = UserDefaultHelper.getUser() {
+            ModelCloudKit().createAuthor(withNickname: user.nickName, number: user.phoneNumber, type: user.type.rawValue)
+        }
         coordinator?.navigate(.toMural, with: nil)
     }
 }

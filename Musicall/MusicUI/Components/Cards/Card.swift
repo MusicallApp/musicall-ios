@@ -28,7 +28,8 @@ class Card: UIView {
 
     let photoImageView: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = .red
+//        image.backgroundColor = .red
+        image.image = .icContact
         image.layer.cornerRadius = 10
         return image
     }()

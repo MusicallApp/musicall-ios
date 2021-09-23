@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import CloudKit
 
 class CreatePostViewController: UIViewController, Coordinating {
 
     var coordinator: Coordinator?
 
-    let editableCard = Card(headerInfos: .init(username: "John", date: "26 de Janeiro"), style: .editable)
+    let editableCard = Card(headerInfos: .init(username: UserDefaultHelper.get(field: .userNickName) as? String ?? "",
+                                               date: "26 de Janeiro"),
+                            style: .editable)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +57,12 @@ class CreatePostViewController: UIViewController, Coordinating {
 
     // MARK: Actions
     @objc func createPost() {
-        ModelCloudKit().createPost(withAuthor: CloudKitHelper.authorId, content: editableCard.currentText ?? "", likes: 0)
+        if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID {
+            ModelCloudKit().createPost(withAuthor: userID, content: editableCard.currentText ?? "", likes: 0) {
+                DispatchQueue.main.async {
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
     }
 }
