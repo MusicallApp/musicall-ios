@@ -30,7 +30,7 @@ class UserDefaultHelper {
     static func setUser(_ user: User) {
         set(user.nickName, for: .userNickName)
         set(user.phoneNumber, for: .userCellphone)
-        set(user.type, for: .userType)
+        set(user.type.rawValue, for: .userType)
     }
 
     static func getUser() -> User? {
