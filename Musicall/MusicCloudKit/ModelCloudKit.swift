@@ -140,13 +140,15 @@ class ModelCloudKit {
         
     }
     
-    func createPost(withAuthor authorId: CKRecord.Reference, content: String, likes: Int) {
+    func createPost(withAuthor authorId: CKRecord.ID, content: String, likes: Int) {
        
         let record = CKRecord(recordType: "Post")
         
         let date = getDate()
         
-        record.setValue(authorId, forKey: "author_id")
+        let authorReference = CKRecord.Reference(recordID: authorId, action: .deleteSelf)
+        
+        record.setValue(authorReference, forKey: "author_id")
         record.setValue(content, forKey: "content")
         record.setValue(likes, forKey: "likes")
         record.setValue(date, forKey: "createdAt")
@@ -166,15 +168,18 @@ class ModelCloudKit {
         }
     }
     
-    func createComment(withPost postId: CKRecord.Reference, content: String, authorId: CKRecord.Reference) {
+    func createComment(withPost postId: CKRecord.ID, content: String, authorId: CKRecord.ID) {
         
         let record = CKRecord(recordType: "Comment")
         
         let date = getDate()
         
-        record.setValue(authorId, forKey: "author_id")
+        let authorReference = CKRecord.Reference(recordID: authorId, action: .deleteSelf)
+        let postReference = CKRecord.Reference(recordID: postId, action: .deleteSelf)
+        
+        record.setValue(authorReference, forKey: "author_id")
         record.setValue(content, forKey: "content")
-        record.setValue(postId, forKey: "post_id")
+        record.setValue(postReference, forKey: "post_id")
         record.setValue(date, forKey: "createdAt")
         
         publicDataBase.save(record) { record, errors in
