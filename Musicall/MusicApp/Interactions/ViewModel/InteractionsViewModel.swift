@@ -8,7 +8,11 @@
 import Foundation
 
 class InteractionsViewModel {
-    init() {
 
-    }
+    var showLoading: (() -> Void)?
+    var hideLoading: (() -> Void)?
+    var showError: (() -> Void)?
+
 }
+
+
