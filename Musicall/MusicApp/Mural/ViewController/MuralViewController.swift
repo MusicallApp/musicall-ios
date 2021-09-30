@@ -170,8 +170,11 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("Cell not exists")
         }
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        cell.configureView(card: .init(headerInfos: HeaderInfos(username: cellViewModel.authorName,
-                                                                date: cellViewModel.date.description),
+
+        let headerView = HeaderInfos(username: cellViewModel.authorName,
+                                     date: cellViewModel.date.getFormattedDate(format: .dayMonth))
+
+        cell.configureView(card: .init(headerInfos: headerView,
                                        style: .complete(content: cellViewModel.content,
                                                         likes: cellViewModel.likes,
                                                         interactions: 0)),
