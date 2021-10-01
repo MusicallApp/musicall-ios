@@ -19,7 +19,7 @@ class ModelCloudKit {
     // MARK: Setup Container
     
     init() {
-        container = CKContainer(identifier: "iCloud.MusicallApp")
+        container = CKContainer(identifier: "iCloud.Musicall")
         publicDataBase = container.publicCloudDatabase
     }
     
@@ -43,6 +43,7 @@ class ModelCloudKit {
         
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Post", predicate: predicate)
+        query.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
         
         publicDataBase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { results, errors in
             
@@ -142,7 +143,10 @@ class ModelCloudKit {
         
     }
     
-    func createPost(withAuthor authorId: CKRecord.ID, content: String, likes: Int, completionHandler: (() -> Void)? = nil) {
+    func createPost(withAuthor authorId: CKRecord.ID,
+                    content: String,
+                    likes: Int,
+                    completionHandler: (() -> Void)? = nil) {
        
         let record = CKRecord(recordType: "Post")
         

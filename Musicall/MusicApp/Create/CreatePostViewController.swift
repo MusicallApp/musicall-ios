@@ -59,8 +59,9 @@ class CreatePostViewController: UIViewController, Coordinating {
     @objc func createPost() {
         if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID {
             ModelCloudKit().createPost(withAuthor: userID, content: editableCard.currentText ?? "", likes: 0) {
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     self.navigationController?.popViewController(animated: true)
+
                 }
             }
         }
