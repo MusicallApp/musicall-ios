@@ -55,6 +55,12 @@ class MuralViewController: UIViewController, Coordinating {
 
         return view
     }()
+    
+    private let spinner: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
+        indicator.color = .white
+        return indicator
+    }()
 
     private let addButton: UIButton = {
         let button = UIButton(type: .system)
@@ -99,10 +105,17 @@ class MuralViewController: UIViewController, Coordinating {
         coordinator?.navigate(.toCreatePost, with: nil)
     }
     
+    @objc func reloadPost() {
+        viewModel.getPosts()
+        tableView.refreshControl?.endRefreshing()
+    }
+    
     private func setUpViewModel() {
+        spinner.startAnimating()
         viewModel.reloadTableView = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.spinner.stopAnimating()
             }
         }
         
@@ -134,7 +147,7 @@ extension MuralViewController {
         // Views
         view.addSubview(headerStackView)
         view.addSubview(tableView)
-        
+        view.addSubview(spinner)
         setUpConstraints()
     }
     
@@ -149,10 +162,17 @@ extension MuralViewController {
             make.bottomMargin.equalToSuperview()
             make.left.right.equalToSuperview().inset(16)
         }
+        
+        spinner.snp.makeConstraints { (make) in
+            make.centerX.equalToSuperview()
+            make.centerY.equalToSuperview()
+        }
     }
     
     public func setUpTableView() {
         tableView.register(CardCell.self, forCellReuseIdentifier: CardCell.reuseId)
+        tableView.refreshControl = UIRefreshControl()
+        tableView.refreshControl?.addTarget(self, action: #selector(reloadPost), for: .valueChanged)
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -177,8 +197,7 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureView(card: .init(headerInfos: headerView,
                                        style: .complete(content: cellViewModel.content,
                                                         likes: cellViewModel.likes,
-                                                        interactions: 0)),
-                           bottomSpacing: 16)
+                                                        interactions: 0)), bottomSpacing: 16)
 
         return cell
     }

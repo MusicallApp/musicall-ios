@@ -20,17 +20,21 @@ class MuralViewModel {
     
     private var cellViewModels: [PostListViewModel] = [PostListViewModel]() {
         didSet {
-            self.reloadTableView?()
+            if cellViewModels.count == posts.count {
+                self.reloadTableView?()
+            }
         }
     }
     
+    private var cellViewModelsAux: [PostListViewModel] = [PostListViewModel]()
+    
+    @objc
     func getPosts() {
         cloudKit.fetchPost { result in
             switch result {
             case .success(let data):
                 self.posts = data
                 self.createCell(posts: self.posts)
-                self.reloadTableView?()
             case .failure(let error):
                 print(error)
             }
@@ -42,13 +46,16 @@ class MuralViewModel {
     }
     
     func getCellViewModel( at indexPath: IndexPath ) -> PostListViewModel {
-        return cellViewModels[indexPath.row]
+        
+        return (cellViewModels.isEmpty ? cellViewModelsAux[indexPath.row] : cellViewModels[indexPath.row])
     }
     
     func createCell(posts: [Post]) {
         self.posts = posts
         var vms = [PostListViewModel]()
-        for data in posts {
+        for index in 0...posts.count - 1 {
+            
+            let data = posts[index]
             
             let authorRecordName = data.authorId.recordID
             
@@ -61,7 +68,14 @@ class MuralViewModel {
                                              content: data.content,
                                              likes: data.likes,
                                              date: data.createdAt))
-                self.cellViewModels = vms
+                
+                if vms.count == posts.count {
+                    self.cellViewModels = vms
+                    self.cellViewModelsAux = self.cellViewModels
+                } else {
+                    self.cellViewModels = []
+                }
+                
             })
         }
     }

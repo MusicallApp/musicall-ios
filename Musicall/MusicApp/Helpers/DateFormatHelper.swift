@@ -12,14 +12,14 @@ enum DateFormatHelper: String {
 }
 
 enum Locale: String {
-    case pt_br
+    case ptbr
 }
 
 extension Date {
     func getFormattedDate(format: DateFormatHelper) -> String {
         let dateformat = DateFormatter()
         dateformat.dateFormat = format.rawValue
-        dateformat.locale = .init(identifier: Locale.pt_br.rawValue)
+        dateformat.locale = .init(identifier: Locale.ptbr.rawValue)
         return dateformat.string(from: self)
     }
 }
