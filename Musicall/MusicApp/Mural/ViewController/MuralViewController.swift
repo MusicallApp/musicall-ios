@@ -15,6 +15,38 @@ class MuralViewController: UIViewController, Coordinating {
 
     // MARK: UI
 
+    private lazy var headerStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+
+        stackView.addArrangedSubview(largeTitleLabel)
+        stackView.addArrangedSubview(UIView())
+        stackView.addArrangedSubview(button)
+
+        return stackView
+    }()
+
+    private let largeTitleLabel: UILabel = {
+        let label = UILabel()
+        label.font = .MCDesignSystem(font: .heading1)
+        label.text = "Mural"
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        return label
+    }()
+
+    private let button: MCButton = {
+        let button = MCButton(style: .primary, size: .large)
+        button.setImage(.icPlus, for: .normal)
+        button.addTarget(self, action: #selector(addPost), for: .touchDown)
+        button.translatesAutoresizingMaskIntoConstraints = false
+
+        return button
+    }()
+
     private let tableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
@@ -42,8 +74,6 @@ class MuralViewController: UIViewController, Coordinating {
         return button
     }()
 
-    private let topView = UIView()
-
     // MARK: Variables and constants
 
     var coordinator: Coordinator?
@@ -61,6 +91,12 @@ class MuralViewController: UIViewController, Coordinating {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
         viewModel.getPosts()
+        navigationController?.isNavigationBarHidden = true
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: Methods
@@ -106,35 +142,23 @@ class MuralViewController: UIViewController, Coordinating {
 extension MuralViewController {
     
     private func setUpUI() {
-        // Navigation Controller
-        title = "Mural"
-        navigationController?.navigationBar.largeTitleTextAttributes = [
-                    NSAttributedString.Key.font: UIFont.MCDesignSystem(font: .heading1),
-                    NSAttributedString.Key.foregroundColor: UIColor.white
-                ]
-        addButton.addTarget(self, action: #selector(addPost), for: .touchUpInside)
-        let buttonItem = UIBarButtonItem(customView: addButton)
-        navigationItem.rightBarButtonItem = buttonItem
-        
         view.backgroundColor = .black
         
         // Views
+        view.addSubview(headerStackView)
         view.addSubview(tableView)
-        view.addSubview(topView)
         view.addSubview(spinner)
-        
         setUpConstraints()
     }
     
     private func setUpConstraints() {
-        topView.snp.makeConstraints { (make) in
-            make.topMargin.equalToSuperview()
-            make.left.right.equalToSuperview()
-            make.height.equalToSuperview().multipliedBy(0.20)
+        headerStackView.snp.makeConstraints { make in
+            make.topMargin.equalToSuperview().inset(24)
+            make.left.right.equalToSuperview().inset(16)
         }
-        
+
         tableView.snp.makeConstraints { (make) in
-            make.topMargin.equalTo(topView.snp.bottom)
+            make.top.equalTo(headerStackView.snp.bottom).inset(-12)
             make.bottomMargin.equalToSuperview()
             make.left.right.equalToSuperview().inset(16)
         }
@@ -166,8 +190,11 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
             fatalError("Cell not exists")
         }
         let cellViewModel = viewModel.getCellViewModel(at: indexPath)
-        cell.configureView(card: .init(headerInfos: HeaderInfos(username: cellViewModel.authorName,
-                                                                date: cellViewModel.date.description),
+
+        let headerView = HeaderInfos(username: cellViewModel.authorName,
+                                     date: cellViewModel.date.getFormattedDate(format: .dayMonth))
+
+        cell.configureView(card: .init(headerInfos: headerView,
                                        style: .complete(content: cellViewModel.content,
                                                         likes: cellViewModel.likes,
                                                         interactions: 0)), bottomSpacing: 16)
