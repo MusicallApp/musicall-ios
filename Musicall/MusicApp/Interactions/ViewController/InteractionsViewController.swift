@@ -10,8 +10,7 @@ import UIKit
 class InteractionsViewController: UIViewController, Coordinating {
 
     var coordinator: Coordinator?
-    let viewModel = InteractionsViewModel()
-
+    
     private let interactionsView = InteractionsView()
 
     override func loadView() {
@@ -24,27 +23,33 @@ class InteractionsViewController: UIViewController, Coordinating {
         
         title = "interações"
         navigationItem.largeTitleDisplayMode = .never
-
-        setUpViewModel()
     }
 
-    private func setUpViewModel() {
+    func setUpViewModel(post: Post) {
 
-        viewModel.showError = {
+        interactionsView.viewModel.reloadTableView = {
+            DispatchQueue.main.async {
+                self.interactionsView.tableView.reloadData()
+            }
+        }
+
+        interactionsView.viewModel.showError = {
             DispatchQueue.main.async {
                 print("Error")
             }
         }
 
-        viewModel.showLoading = {
+        interactionsView.viewModel.showLoading = {
             DispatchQueue.main.async {
             }
         }
 
-        viewModel.hideLoading = {
+        interactionsView.viewModel.hideLoading = {
             DispatchQueue.main.async {
             }
         }
+
+        interactionsView.viewModel.createCells(post: post)
     }
 
 }

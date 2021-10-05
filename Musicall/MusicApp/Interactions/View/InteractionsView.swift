@@ -14,6 +14,7 @@ class InteractionsView: UIView {
     private var isKeyboardAppearing = false
     private var keyboardHeight: CGFloat = 0.0
     private var keyboardBottomConstraint: ConstraintMakerEditable?
+    let viewModel = InteractionsViewModel()
 
     // MARK: UI ELEMENTS
     lazy var tableView: UITableView = {
@@ -132,36 +133,42 @@ class InteractionsView: UIView {
 // MARK: UITableView Delegate & DataSource
 extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.numberOfCells
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        guard let interactionCell = viewModel.getViewModel() else {
+            return UITableViewCell()
+        }
 
         switch indexPath.row {
         case 0:
             let cardCell = CardCell()
 
-            let content = "Gostaria de contratar dois musicos, um baterista e um guitarrista, ambos tem que ser sem braço"
-            let cardView = Card(headerInfos: .init(username: "Lucas Oliveira", date: "3 de Janeiro"),
+            let content = interactionCell.content
+            let cardView = Card(headerInfos: .init(username: interactionCell.authorName,
+                                                   date: interactionCell.date.description),
                                 style: .complete(content: content,
-                                                 likes: 3,
+                                                 likes: interactionCell.likes,
                                                  interactions: 1))
+
             cardCell.configureView(card: cardView, bottomSpacing: 16)
+
             return cardCell
 
-        case 1:
+        default:
             let cardCell = CardCell()
+            let comment = interactionCell.comments[indexPath.row]
 
-            let content = "Gostaria de contratar dois musicos, um baterista e um guitarrista, ambos tem que ser sem braço"
-            let cardView = Card(headerInfos: .init(username: "Lucas Oliveira", date: "3 de Janeiro"),
+            let content = comment.content
+            let cardView = Card(headerInfos: .init(username: comment.authorName, date: comment.date.description),
                                 style: .simple(content: content))
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 
             return cardCell
-
-        default: break
         }
-        return UITableViewCell()
+
     }
 
 }
