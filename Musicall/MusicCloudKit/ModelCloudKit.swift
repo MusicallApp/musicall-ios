@@ -88,9 +88,11 @@ class ModelCloudKit {
         }
     }
     
-    func fetchComment(_ completion: @escaping (Result<[Comment], Error>) -> Void) {
+    func fetchComment(_ post: CKRecord.ID, completion: @escaping (Result<[Comment], Error>) -> Void) {
         
-        let predicate = NSPredicate(value: true)
+        let postReference = CKRecord.Reference(recordID: post, action: .deleteSelf)
+        
+        let predicate = NSPredicate(format: "post_id == %@", postReference)
         let query = CKQuery(recordType: "Comment", predicate: predicate)
         
         publicDataBase.perform(query, inZoneWith: CKRecordZone.default().zoneID) { results, errors in

@@ -32,11 +32,12 @@ class KeyboardTextField: UIView {
         return button
     }()
 
-    private let commentTextField: UITextField = {
+    let commentTextField: UITextField = {
         let textField = UITextField()
 
         let imageView = UIImageView(image: UIImage(named: "Telegram_spaced"))
         imageView.addGestureRecognizer(.init(target: self, action: #selector(sendAction)))
+        imageView.isUserInteractionEnabled = true
 
         textField.backgroundColor = .black
         textField.textColor = .lightGray

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CloudKit
 
 class InteractionsView: UIView {
 
@@ -35,7 +36,7 @@ class InteractionsView: UIView {
     }()
 
     private let keyboardTextField = KeyboardTextField(placeholder: "Escreva um comentário...", size: .reduced)
-
+    
     private let floatActionSheet = FloatActionSheet(imageIcon: .icContact, title: "Compartilhar meu perfil")
 
     // MARK: LIFE CYCLE
@@ -56,6 +57,7 @@ class InteractionsView: UIView {
         keyboardTextField.addTargetAttachmentButton(target: self,
                                     action: #selector(switchHiddenStateFloatActionSheet))
         addActionDismissKeyboard()
+        keyboardTextField.delegate = self
 
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
@@ -130,6 +132,18 @@ class InteractionsView: UIView {
     }
 }
 
+extension InteractionsView: KeyboardTextFieldDelegate {
+    func sendAction() {
+        guard let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID,
+        let postID = viewModel.cellViewModels?.id,
+        let content = keyboardTextField.commentTextField.text else {
+            return
+        }
+        viewModel.createNewComment(postId: postID, authorId: userID, content: content)
+    }
+
+}
+
 // MARK: UITableView Delegate & DataSource
 extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -159,7 +173,7 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
 
         default:
             let cardCell = CardCell()
-            let comment = interactionCell.comments[indexPath.row]
+            let comment = interactionCell.comments[indexPath.row - 1]
 
             let content = comment.content
             let cardView = Card(headerInfos: .init(username: comment.authorName, date: comment.date.description),
