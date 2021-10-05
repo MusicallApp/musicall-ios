@@ -42,6 +42,7 @@
 		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
 		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
+		DE10900B270CC7C100E5C8F3 /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
 		DE9745B326FB661200EDEA84 /* PreSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */; };
 		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
@@ -117,6 +118,7 @@
 		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
+		DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
 		DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewModel.swift; sourceTree = "<group>"; };
 		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
@@ -416,6 +418,7 @@
 				DEA931F226F8C9000096CB4D /* UserDefaultHelper.swift */,
 				030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */,
 				03BA87EE2705E92800925F2D /* DateFormatHelper.swift */,
+				DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -639,6 +642,7 @@
 				039DCDD426F8B2A400B46BC0 /* InteractionsViewController.swift in Sources */,
 				DEA931FB26F8D14B0096CB4D /* User.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
+				DE10900B270CC7C100E5C8F3 /* PhoneFormatter.swift in Sources */,
 				696FB51126FA1BE100D9ED8B /* MuralViewModel.swift in Sources */,
 				039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */,
 				DE9745B326FB661200EDEA84 /* PreSettingsViewModel.swift in Sources */,
