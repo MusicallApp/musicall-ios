@@ -153,7 +153,10 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         guard let interactionCell = viewModel.getViewModel() else {
-            return UITableViewCell()
+            let cell = UITableViewCell()
+            cell.contentView.backgroundColor = .clear
+            cell.backgroundColor = .clear
+            return cell
         }
 
         switch indexPath.row {

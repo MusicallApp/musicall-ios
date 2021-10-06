@@ -73,7 +73,8 @@ class MuralViewModel {
                                                  authorName: authorName,
                                                  content: data.content,
                                                  likes: data.likes,
-                                                 date: data.createdAt))
+                                                 date: data.createdAt,
+                                                 comments: 0))
                     
                     if vms.count == posts.count {
                         self.cellViewModels = vms
@@ -95,4 +96,5 @@ struct PostListViewModel {
     let content: String
     let likes: Int
     let date: Date
+    let comments: Int
 }

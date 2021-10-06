@@ -61,7 +61,8 @@ enum CardStyle: Equatable {
         likeStack.addArrangedSubview(likeLabel)
 
         let interactionsStack = buildIconStack(icon: .icComment)
-
+        
+        interactionsStack.isHidden = true
         let interactionsLabel = UILabel()
         interactionsLabel.font = .MCDesignSystem(font: .caption1)
         interactionsLabel.textColor = .white

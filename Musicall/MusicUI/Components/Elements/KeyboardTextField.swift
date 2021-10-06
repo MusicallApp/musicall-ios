@@ -32,11 +32,13 @@ class KeyboardTextField: UIView {
         return button
     }()
 
-    let commentTextField: UITextField = {
+    lazy var commentTextField: UITextField = {
         let textField = UITextField()
-
-        let imageView = UIImageView(image: UIImage(named: "Telegram_spaced"))
-        imageView.addGestureRecognizer(.init(target: self, action: #selector(sendAction)))
+        
+        let image = UIImage(named: "Telegram_spaced")
+        let imageView = UIImageView(image: image )
+        let tap = UITapGestureRecognizer(target: self, action: #selector(sendAction))
+        imageView.addGestureRecognizer(tap)
         imageView.isUserInteractionEnabled = true
 
         textField.backgroundColor = .black
@@ -88,7 +90,8 @@ class KeyboardTextField: UIView {
     }
 
     // MARK: Action
-    @objc func sendAction() {
+    @objc func sendAction(tapGestureRecognizer: UITapGestureRecognizer) {
+        
         delegate?.sendAction()
     }
 
