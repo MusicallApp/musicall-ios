@@ -59,12 +59,14 @@ class PreSettingsViewController: UIViewController, Coordinating {
     // MARK: Control Variables.
 
     var coordinator: Coordinator?
+    private let phoneFormatter = PhoneFormatter()
 
     // MARK: Life cycle.
 
     override func viewDidLoad() {
         super.viewDidLoad()
         phoneTextField.textField.keyboardType = .phonePad
+        phoneTextField.textField.delegate = self
         setupButton()
         setupCards()
         setupNavBar()
@@ -173,8 +175,20 @@ extension PreSettingsViewController: SelectableCardDelegate {
         }
 
         if let user = UserDefaultHelper.getUser() {
-            ModelCloudKit().createAuthor(withNickname: user.nickName, number: user.phoneNumber, type: user.type.rawValue)
+            ModelCloudKit().createAuthor(withNickname: user.nickName,
+                                         number: user.phoneNumber,
+                                         type: user.type.rawValue)
         }
         coordinator?.navigate(.toMural, with: nil)
+    }
+}
+
+// MARK: - TextField Delegate.
+
+extension PreSettingsViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
+        return phoneFormatter.mask(textField, range: range, replacementString: string)
     }
 }
