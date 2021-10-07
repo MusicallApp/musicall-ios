@@ -19,7 +19,7 @@ class ModelCloudKit {
     // MARK: Setup Container
     
     init() {
-        container = CKContainer(identifier: "iCloud.Musicall")
+        container = CKContainer(identifier: "iCloud.MusicallApp")
         publicDataBase = container.publicCloudDatabase
     }
     
