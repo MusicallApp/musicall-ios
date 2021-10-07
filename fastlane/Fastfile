@@ -1,0 +1,52 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Upload to TestFlight"
+  lane :upload_to_test_flight do
+    increment_build
+    generate_ipa
+    pilot
+    # add actions here: https://docs.fastlane.tools/actions
+  end
+
+  desc "Get app's current version and update the build number"
+  lane :increment_build do
+    current_version = get_info_plist_value(path: "Musicall/Info.plist", key: "CFBundleShortVersionString")
+    current_build_number = latest_testflight_build_number(version: current_version)
+
+    increment_build_number({
+      build_number: current_build_number + 1
+    })
+
+  end
+
+  desc "Generate ipa"
+  lane :generate_ipa do
+    gym(
+      project: "Musicall.xcodeproj",
+      scheme: "Musicall",
+      output_directory: "Musicall/ipa",
+      output_name: "Musicall.ipa",
+      export_method: "app-store",
+      include_bitcode: false,
+      clean: true
+    )
+
+  end
+
+end

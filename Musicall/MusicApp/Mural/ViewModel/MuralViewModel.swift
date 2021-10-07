@@ -67,6 +67,7 @@ class MuralViewModel {
                 cloudKit.publicDataBase.fetch(withRecordID: authorRecordName, completionHandler: { record, _ in
                     
                     guard let authorName = record?.object(forKey: "nickname") as? String else {
+                        assertionFailure(ErrorHelper.howAreYou.rawValue)
                         return
                     }
                     vms.append(PostListViewModel(id: data.id,
