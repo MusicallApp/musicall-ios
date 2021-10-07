@@ -36,7 +36,7 @@ class MuralViewModel {
                 self.posts = data
                 self.createCell(posts: self.posts)
             case .failure(let error):
-                print(error)
+                fatalError("\(error)")
             }
         }
     }
@@ -53,38 +53,48 @@ class MuralViewModel {
     func createCell(posts: [Post]) {
         self.posts = posts
         var vms = [PostListViewModel]()
-        for index in 0...posts.count - 1 {
-            
-            let data = posts[index]
-            
-            let authorRecordName = data.authorId.recordID
-            
-            cloudKit.publicDataBase.fetch(withRecordID: authorRecordName, completionHandler: { record, _ in
+        
+        let postsIndex = posts.isEmpty ? posts.count : posts.count - 1
+        
+        if !posts.isEmpty {
+        
+            for index in 0...postsIndex {
                 
-                guard let authorName = record?.object(forKey: "nickname") as? String else {
-                    return
-                }
-                vms.append(PostListViewModel(authorName: authorName,
-                                             content: data.content,
-                                             likes: data.likes,
-                                             date: data.createdAt))
+                let data = posts[index]
                 
-                if vms.count == posts.count {
-                    self.cellViewModels = vms
-                    self.cellViewModelsAux = self.cellViewModels
-                } else {
-                    self.cellViewModels = []
-                }
+                let authorRecordName = data.authorId.recordID
                 
-            })
+                cloudKit.publicDataBase.fetch(withRecordID: authorRecordName, completionHandler: { record, _ in
+                    
+                    guard let authorName = record?.object(forKey: "nickname") as? String else {
+                        return
+                    }
+                    vms.append(PostListViewModel(id: data.id,
+                                                 authorName: authorName,
+                                                 content: data.content,
+                                                 likes: data.likes,
+                                                 date: data.createdAt,
+                                                 comments: 0))
+                    
+                    if vms.count == posts.count {
+                        self.cellViewModels = vms
+                        self.cellViewModelsAux = self.cellViewModels
+                    } else {
+                        self.cellViewModels = []
+                    }
+                    
+                })
+            }
         }
     }
     
 }
 
 struct PostListViewModel {
+    let id: CKRecord.ID
     let authorName: String
     let content: String
     let likes: Int
     let date: Date
+    let comments: Int
 }

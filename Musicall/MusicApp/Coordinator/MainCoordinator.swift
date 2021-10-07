@@ -45,6 +45,7 @@ class MainCoordinator: Coordinator {
         viewController.coordinator = self
         viewController.setUpViewModel(post: post)
         navigationController?.pushViewController(viewController, animated: true)
+        
     }
 
     private func goToCreatePost() {
