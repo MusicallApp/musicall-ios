@@ -10,16 +10,13 @@ jobs:
   build:
 
     runs-on: macOS-latest
-    strategy:
-        matrix:
-          destination: ['platform:iOS Simulator, id:C5EA8725-C88D-4174-87B5-C188705B9D5B, OS:14.4, name:iPhone 8']
 
     steps:
     - name: Checkout
       uses: actions/checkout@master
     - name: Build and Test
       run: |
-        xcodebuild clean test -project "Musicall.xcodeproj" -scheme "Musicall" -destination "${destination}" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
+        xcodebuild clean test -project "Musicall.xcodeproj" -scheme "Musicall" -destination "platform=iOS Simulator, OS=14.5, name=iPhone 11" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO ONLY_ACTIVE_ARCH=NO
         bash <(curl -s https://codecov.io/bash)
         
       env:
