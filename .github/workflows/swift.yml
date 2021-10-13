@@ -16,7 +16,10 @@ jobs:
       uses: actions/checkout@master
     - name: Build and Test
       run: |
-        xcodebuild -project Musicall.xcodeproj -scheme Musicall -destination platform=iOS Simulator,OS=15.0,name=iPhone 11 clean test | xcpretty
+        xcodebuild -project Musicall.xcodeproj \
+            -scheme Musicall\
+            -destination platform=iOS\ Simulator,OS=14.5,name=iPhone\ 11 \
+            clean test | xcpretty
         
       env:
         destination: ${{ matrix.destination }}
