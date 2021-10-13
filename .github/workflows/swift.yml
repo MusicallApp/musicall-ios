@@ -12,7 +12,7 @@ jobs:
     runs-on: macOS-latest
     strategy:
         matrix:
-          destination: ['platform:iOS Simulator, OS:14.4, name:iPhone 8']
+          destination: ['platform:iOS Simulator, id:C5EA8725-C88D-4174-87B5-C188705B9D5B, OS:14.4, name:iPhone 8']
 
     steps:
     - name: Checkout
