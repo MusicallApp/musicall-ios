@@ -18,8 +18,5 @@ jobs:
       run: |
         xcodebuild -project Musicall.xcodeproj \
             -scheme Musicall\
-            -destination platform=iOS\ Simulator, id=32B19E4B-196F-4B44-BC5D-58B82FAA9B61 \
+            -destination platform="iOS Simulator", id:6411260A-0960-47A1-9F3B-D03A0406D26F, OS:14.4, name:"iPhone 11" \
             clean test | xcpretty
-        
-      env:
-        destination: ${{ matrix.destination }}
