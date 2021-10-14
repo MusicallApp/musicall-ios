@@ -52,6 +52,13 @@ class Card: UIView {
         return label
     }()
 
+    lazy var dotsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "dots"), for: .normal)
+        button.tintColor = .white
+        return button
+    }()
+
     lazy var editableLabel: UITextField = {
         let label = UITextField()
         label.attributedPlaceholder = NSAttributedString(string: "Escreva seu comentário...",
@@ -75,6 +82,15 @@ class Card: UIView {
         return stackView
     }()
 
+    let rightVerticalStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        return stackView
+    }()
+
     let stackHorizontal: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .fill
@@ -87,7 +103,7 @@ class Card: UIView {
     }()
 
     // MARK: LIFE CYCLE
-    init(headerInfos: HeaderInfos, style: CardStyle) {
+    init(headerInfos: HeaderInfos, style: CardStyle, enableActions: Bool = false) {
         self.style = style
         self.headerInfos = headerInfos
         self.contentView = style.configureStyleView()
@@ -97,6 +113,7 @@ class Card: UIView {
         layer.cornerRadius = 10
 
         configureUI()
+        rightVerticalStack.isHidden = !enableActions
     }
 
     required init?(coder: NSCoder) {
@@ -116,8 +133,13 @@ class Card: UIView {
     private func configureUI() {
         addSubview(stackHorizontal)
 
+        rightVerticalStack.addArrangedSubview(dotsButton)
+        rightVerticalStack.addArrangedSubview(UIView())
+
         stackHorizontal.addArrangedSubview(photoImageView)
         stackHorizontal.addArrangedSubview(stackVertical)
+        stackHorizontal.addArrangedSubview(UIView())
+        stackHorizontal.addArrangedSubview(rightVerticalStack)
 
         stackVertical.addArrangedSubview(nameLabel)
         stackVertical.addArrangedSubview(dateLabel)

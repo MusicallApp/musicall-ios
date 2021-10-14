@@ -168,7 +168,8 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
                                                    date: interactionCell.date.description),
                                 style: .complete(content: content,
                                                  likes: interactionCell.likes,
-                                                 interactions: 1))
+                                                 interactions: 1),
+                                enableActions: true)
 
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 
@@ -179,8 +180,10 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
             let comment = interactionCell.comments[indexPath.row - 1]
 
             let content = comment.content
-            let cardView = Card(headerInfos: .init(username: comment.authorName, date: comment.date.description),
-                                style: .simple(content: content))
+            let cardView = Card(headerInfos: .init(username: comment.authorName,
+                                                   date: comment.date.description),
+                                style: .simple(content: content),
+                                enableActions: true)
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 
             return cardCell
