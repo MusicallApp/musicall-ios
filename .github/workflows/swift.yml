@@ -18,10 +18,7 @@ jobs:
       uses: actions/checkout@master
     - name: Build and Test
       run: |
-        xcodebuild -project Musicall.xcodeproj \
-              -scheme Musicall \
-              -destination "${destination}" \
-              clean test | xcpretty
+        fastlane run build_app
         
       env: 
         destination: ${{ matrix.destination }}
