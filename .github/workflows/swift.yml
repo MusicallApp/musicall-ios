@@ -12,7 +12,7 @@ jobs:
     runs-on: macos-latest
     strategy:
         matrix:
-          destination: ['platform=iOS Simulator, id=D24B8183-F18A-4A00-87FD-8B49D06619A6, OS=14.4, name=iPhone 8']
+          destination: ['platform=iOS Simulator,name=iPhone 11 Pro']
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -20,9 +20,8 @@ jobs:
       run: |
         xcodebuild -project Musicall.xcodeproj \
               -scheme Musicall \
-              -destination 'platform=iOS Simulator,name=iPhone 11 Pro' \
+              -destination "${destination}" \
               clean test | xcpretty
-        bash <(curl -s https://codecov.io/bash)
         
       env: 
         destination: ${{ matrix.destination }}
