@@ -18,7 +18,7 @@ jobs:
       uses: actions/checkout@master
     - name: Build and Test
       run: |
-        fastlane run build_app
+        fastlane run scan
         
       env: 
         destination: ${{ matrix.destination }}
