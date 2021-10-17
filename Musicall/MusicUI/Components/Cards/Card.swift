@@ -18,6 +18,7 @@ class Card: UIView {
     // MARK: PUBLIC PROPERTIES
     var isHighlighted = false
     lazy var currentText = editableLabel.text
+    weak var delegate: InteractionViewActionDelegate?
 
     // MARK: PRIVATE PROPERTIES
     private var style: CardStyle
@@ -56,6 +57,7 @@ class Card: UIView {
         let button = UIButton(type: .system)
         button.setImage(UIImage(named: "dots"), for: .normal)
         button.tintColor = .white
+        button.addTarget(self, action: #selector(dotsButtonAction), for: .touchUpInside)
         return button
     }()
 
@@ -103,10 +105,15 @@ class Card: UIView {
     }()
 
     // MARK: LIFE CYCLE
-    init(headerInfos: HeaderInfos, style: CardStyle, enableActions: Bool = false) {
+    init(headerInfos: HeaderInfos,
+         style: CardStyle,
+         with delegate: InteractionViewActionDelegate? = nil,
+         enableActions: Bool = false) {
+
         self.style = style
         self.headerInfos = headerInfos
         self.contentView = style.configureStyleView()
+        self.delegate = delegate
         super.init(frame: .zero)
         editableConfiguration()
         backgroundColor = .darkestGray
@@ -118,6 +125,13 @@ class Card: UIView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: ACTIONS
+
+    @objc
+    private func dotsButtonAction() {
+        delegate?.dotsAction()
     }
 
     // MARK: PRIVATE FUNCS
