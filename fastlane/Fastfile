@@ -49,4 +49,38 @@ platform :ios do
 
   end
 
+  desc "configure Cloudkit environment to receive bryan's container"
+  lane :configure_bryan_cloudkit_environment do
+
+    bundle_id = "com.Musicall.Musicall"
+    cloudkit_enviroment = "iCloud.Musicall"
+
+    set_info_plist_value(path: "Musicall/Musicall.entitlements", key: "com.apple.developer.icloud-container-identifiers", value: [cloudkit_enviroment])
+    set_info_plist_value(path: "Musicall/info.plist", key: "CLOUDKIT_ENVIRONMENT", value: cloudkit_enviroment)
+
+    update_app_identifier(
+      xcodeproj: "Musicall.xcodeproj", # Optional path to xcodeproj, will use the first .xcodeproj if not set
+      plist_path: "Musicall/Info.plist", # Path to info plist file, relative to xcodeproj
+      app_identifier: bundle_id # The App Identifier
+    )
+
+  end
+
+  desc "configure Cloudkit environment to receive lucas's container"
+  lane :configure_lucas_cloudkit_environment do
+
+    bundle_id = "com.br.Musicall"
+    cloudkit_enviroment = "iCloud.MusicallApp"
+
+    set_info_plist_value(path: "Musicall/Musicall.entitlements", key: "com.apple.developer.icloud-container-identifiers", value: [cloudkit_enviroment])
+    set_info_plist_value(path: "Musicall/info.plist", key: "CLOUDKIT_ENVIRONMENT", value: cloudkit_enviroment)
+
+    update_app_identifier(
+      xcodeproj: "Musicall.xcodeproj", # Optional path to xcodeproj, will use the first .xcodeproj if not set
+      plist_path: "Musicall/Info.plist", # Path to info plist file, relative to xcodeproj
+      app_identifier: bundle_id # The App Identifier
+    )
+
+  end
+
 end

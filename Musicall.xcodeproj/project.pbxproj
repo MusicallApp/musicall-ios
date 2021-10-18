@@ -10,7 +10,7 @@
 		030F99C626FCB0B200F12415 /* ClouldKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */; };
 		03242E8C270F3B4500A19984 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03242E8B270F3B4500A19984 /* ErrorHelper.swift */; };
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
-		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
+		0346E46726F0E97E00F43504 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
 		0346E47926F2219C00F43504 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */; };
@@ -24,6 +24,7 @@
 		039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */; };
 		039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */; };
 		039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039DCDDA26F8CEE200B46BC0 /* CardCell.swift */; };
+		039F47DB27187B4B00F0CD36 /* PlistHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 039F47DA27187B4B00F0CD36 /* PlistHelper.swift */; };
 		03BA87EF2705E92800925F2D /* DateFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA87EE2705E92800925F2D /* DateFormatHelper.swift */; };
 		03BA87F127074B0C00925F2D /* MCSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA87F027074B0C00925F2D /* MCSegmentedControl.swift */; };
 		03BA87F3270B48E800925F2D /* MCSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA87F2270B48E800925F2D /* MCSegmentedControlCell.swift */; };
@@ -94,6 +95,7 @@
 		039DCDD526F8BF6B00B46BC0 /* InteractionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsView.swift; sourceTree = "<group>"; };
 		039DCDD726F8BF7900B46BC0 /* InteractionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractionsViewModel.swift; sourceTree = "<group>"; };
 		039DCDDA26F8CEE200B46BC0 /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
+		039F47DA27187B4B00F0CD36 /* PlistHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlistHelper.swift; sourceTree = "<group>"; };
 		03BA87EE2705E92800925F2D /* DateFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatHelper.swift; sourceTree = "<group>"; };
 		03BA87F027074B0C00925F2D /* MCSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSegmentedControl.swift; sourceTree = "<group>"; };
 		03BA87F2270B48E800925F2D /* MCSegmentedControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSegmentedControlCell.swift; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */,
-				0346E46726F0E97E00F43504 /* SnapKit in Frameworks */,
+				0346E46726F0E97E00F43504 /* BuildFile in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,6 +424,7 @@
 				03BA87EE2705E92800925F2D /* DateFormatHelper.swift */,
 				DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */,
 				03242E8B270F3B4500A19984 /* ErrorHelper.swift */,
+				039F47DA27187B4B00F0CD36 /* PlistHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -493,7 +496,7 @@
 			);
 			name = Musicall;
 			packageProductDependencies = (
-				0346E46626F0E97E00F43504 /* SnapKit */,
+				0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */,
 			);
 			productName = Musicall;
 			productReference = 69A7F0EB26EA49C500A25A69 /* Musicall.app */;
@@ -567,7 +570,7 @@
 			);
 			mainGroup = 69A7F0E226EA49C500A25A69;
 			packageReferences = (
-				0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = 69A7F0EC26EA49C500A25A69 /* Products */;
 			projectDirPath = "";
@@ -646,6 +649,7 @@
 				DEA931FB26F8D14B0096CB4D /* User.swift in Sources */,
 				69A7F0F326EA49C500A25A69 /* ViewController.swift in Sources */,
 				DE10900B270CC7C100E5C8F3 /* PhoneFormatter.swift in Sources */,
+				039F47DB27187B4B00F0CD36 /* PlistHelper.swift in Sources */,
 				696FB51126FA1BE100D9ED8B /* MuralViewModel.swift in Sources */,
 				039DCDD626F8BF6B00B46BC0 /* InteractionsView.swift in Sources */,
 				DE9745B326FB661200EDEA84 /* PreSettingsViewModel.swift in Sources */,
@@ -1014,7 +1018,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1025,9 +1029,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0346E46626F0E97E00F43504 /* SnapKit */ = {
+		0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			package = 0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

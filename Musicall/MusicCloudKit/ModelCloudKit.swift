@@ -19,7 +19,10 @@ class ModelCloudKit {
     // MARK: Setup Container
     
     init() {
-        container = CKContainer(identifier: "iCloud.Musicall")
+        guard let envVariable = PlistHelper().read(key: "CLOUDKIT_ENVIRONMENT") as? String else {
+                  fatalError("CloudKit container doesn't find in plist")
+        }
+        container = CKContainer(identifier: envVariable)
         publicDataBase = container.publicCloudDatabase
     }
     
