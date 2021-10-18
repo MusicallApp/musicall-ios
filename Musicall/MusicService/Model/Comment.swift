@@ -11,7 +11,7 @@ import CloudKit
 class Comment {
     
     static let recordType = "Comment"
-    private var id = CKRecord.ID()
+    var id = CKRecord.ID()
     let createdAt: Date
     let authorId: CKRecord.Reference
     let content: String

@@ -43,6 +43,11 @@ class InteractionsViewModel {
         }
     }
     
+    @objc
+    func deleteComment(id: CKRecord.ID) {
+        cloudKit.deleteRecord(withRecord: id)
+    }
+    
     func createNewComment(postId: CKRecord.ID, authorId: CKRecord.ID, content: String) {
         
         cloudKit.createComment(withPost: postId, content: content, authorId: authorId)
@@ -95,7 +100,8 @@ class InteractionsViewModel {
                    guard let authorName = record?.object(forKey: "nickname") as? String else {
                        return
                    }
-                   vms.append(ComentListViewModel(authorName: authorName,
+                   vms.append(ComentListViewModel(id: data.id,
+                                                  authorName: authorName,
                                                   content: data.content,
                                                   date: data.createdAt))
 
@@ -108,6 +114,7 @@ class InteractionsViewModel {
 }
 
 struct ComentListViewModel {
+    let id: CKRecord.ID
     let authorName: String
     let content: String
     let date: Date
