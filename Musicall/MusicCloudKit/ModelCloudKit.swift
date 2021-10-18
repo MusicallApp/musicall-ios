@@ -8,7 +8,7 @@
 import Foundation
 import CloudKit
 
-class ModelCloudKit 
+class ModelCloudKit {
     
     // MARK: Control variables
     
