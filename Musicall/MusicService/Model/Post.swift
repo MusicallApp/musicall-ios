@@ -17,6 +17,7 @@ class Post {
     let content: String
     let comment: [CKRecord.Reference]?
     let likes: Int
+    let wasReported: Int?
     
     init?(record: CKRecord) {
         guard
@@ -24,7 +25,8 @@ class Post {
               let content = record["content"] as? String,
               let likes = record["likes"] as? Int,
               let authorId = record["author_id"] as? CKRecord.Reference,
-              let comment = record["comments"] as? [CKRecord.Reference]? else {
+              let comment = record["comments"] as? [CKRecord.Reference]?,
+              let wasReported = record["wasReported"] as? Int? else {
             return nil
         }
         
@@ -34,6 +36,7 @@ class Post {
         self.content = content
         self.comment = comment
         self.likes = likes
+        self.wasReported = wasReported
         
     }
 }
