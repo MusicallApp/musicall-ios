@@ -31,6 +31,16 @@ Get app's current version and update the build number
 fastlane ios generate_ipa
 ```
 Generate ipa
+### ios configure_bryan_cloudkit_environment
+```
+fastlane ios configure_bryan_cloudkit_environment
+```
+configure Cloudkit environment to receive bryan's container
+### ios configure_lucas_cloudkit_environment
+```
+fastlane ios configure_lucas_cloudkit_environment
+```
+configure Cloudkit environment to receive lucas's container
 
 ----
 
