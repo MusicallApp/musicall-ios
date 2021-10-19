@@ -19,7 +19,7 @@
 	<key>CFBundleVersion</key>
 	<string>3</string>
 	<key>CLOUDKIT_ENVIRONMENT</key>
-	<string>iCloud.Musicall</string>
+	<string>iCloud.MusicallApp</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIAppFonts</key>
