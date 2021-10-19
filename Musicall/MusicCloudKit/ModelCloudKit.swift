@@ -210,4 +210,20 @@ class ModelCloudKit {
         }
         
     }
+    
+    func deleteRecord(withRecord record: CKRecord.ID) {
+        
+        publicDataBase.delete(withRecordID: record) { record, errors in
+            if let error = errors {
+                DispatchQueue.main.async {
+                    fatalError("\(error)")
+                }
+            } else {
+                DispatchQueue.main.async {
+                    print("Deleted with success")
+                }
+            }
+            
+        }
+    }
 }

@@ -25,11 +25,9 @@ class InteractionsView: UIView {
     // MARK: UI ELEMENTS
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
+        
         return tableView
     }()
 
@@ -72,6 +70,9 @@ class InteractionsView: UIView {
                                                selector: #selector(keyboardWillHide),
                                                name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
 
     }
 
@@ -104,7 +105,7 @@ class InteractionsView: UIView {
 
     private func addActionDismissKeyboard() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        tableView.addGestureRecognizer(tapGesture)
+        self.addGestureRecognizer(tapGesture)
     }
 
     // MARK: Objc
