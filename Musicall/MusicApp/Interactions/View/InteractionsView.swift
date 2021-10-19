@@ -9,6 +9,10 @@ import UIKit
 import SnapKit
 import CloudKit
 
+protocol InteractionViewActionDelegate: AnyObject {
+    func dotsAction()
+}
+
 class InteractionsView: UIView {
 
     // MARK: PRIVATE PROPERTIES
@@ -16,6 +20,7 @@ class InteractionsView: UIView {
     private var keyboardHeight: CGFloat = 0.0
     private var keyboardBottomConstraint: ConstraintMakerEditable?
     let viewModel = InteractionsViewModel()
+    weak var delegate: InteractionViewActionDelegate?
 
     // MARK: UI ELEMENTS
     lazy var tableView: UITableView = {
@@ -168,7 +173,9 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
                                                    date: interactionCell.date.description),
                                 style: .complete(content: content,
                                                  likes: interactionCell.likes,
-                                                 interactions: 1))
+                                                 interactions: 1),
+                                with: delegate,
+                                enableActions: true)
 
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 
@@ -179,8 +186,12 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
             let comment = interactionCell.comments[indexPath.row - 1]
 
             let content = comment.content
-            let cardView = Card(headerInfos: .init(username: comment.authorName, date: comment.date.description),
-                                style: .simple(content: content))
+            let cardView = Card(headerInfos: .init(username: comment.authorName,
+                                                   date: comment.date.description),
+                                style: .simple(content: content),
+                                with: delegate,
+                                enableActions: true)
+            
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 
             return cardCell

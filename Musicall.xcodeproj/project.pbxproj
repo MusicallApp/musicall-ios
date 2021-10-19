@@ -57,6 +57,7 @@
 		DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3726F8B33000A4A26E /* Coordinator.swift */; };
 		DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */; };
 		DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */; };
+		DEF3EFFF271C6EE0001327D8 /* AlerHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF3EFFE271C6EE0001327D8 /* AlerHelper.swift */; };
 		DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */; };
 		FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */; };
 /* End PBXBuildFile section */
@@ -135,6 +136,7 @@
 		DEEF7E3726F8B33000A4A26E /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DEEF7E3926F8B4A900A4A26E /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		DEEF7E3C26F8B51D00A4A26E /* PreSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewController.swift; sourceTree = "<group>"; };
+		DEF3EFFE271C6EE0001327D8 /* AlerHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlerHelper.swift; sourceTree = "<group>"; };
 		DEF95EFF26F2D50A008ED808 /* FloatActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatActionSheet.swift; sourceTree = "<group>"; };
 		FF3BB8ED26F8AD62009763F1 /* CreatePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePostViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -424,6 +426,7 @@
 				03BA87EE2705E92800925F2D /* DateFormatHelper.swift */,
 				DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */,
 				03242E8B270F3B4500A19984 /* ErrorHelper.swift */,
+				DEF3EFFE271C6EE0001327D8 /* AlerHelper.swift */,
 				039F47DA27187B4B00F0CD36 /* PlistHelper.swift */,
 			);
 			path = Helpers;
@@ -657,6 +660,7 @@
 				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */,
 				DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */,
+				DEF3EFFF271C6EE0001327D8 /* AlerHelper.swift in Sources */,
 				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
 				DEA931F726F8CDB60096CB4D /* UserType.swift in Sources */,
 				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,

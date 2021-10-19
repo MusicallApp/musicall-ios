@@ -21,6 +21,7 @@ class InteractionsViewController: UIViewController, Coordinating {
 
     override func loadView() {
         super.loadView()
+        interactionsView.delegate = self
         self.view = interactionsView
     }
 
@@ -69,4 +70,20 @@ class InteractionsViewController: UIViewController, Coordinating {
         interactionsView.viewModel.createCells(post: post)
     }
 
+}
+
+extension InteractionsViewController: InteractionViewActionDelegate {
+    func dotsAction() {
+        AlertHelper.showDeleteActionSheet(on: self, with: self)
+    }
+}
+
+extension InteractionsViewController: AlertDeleteDelegate {
+    func actionSheetDeleteAction() {
+        AlertHelper.showConfimAlert(
+            on: self,
+            title: "Apagar mensagem?",
+            message: "Após deletar essa mensagem, não será possível desfazer a ação!"
+        )
+    }
 }

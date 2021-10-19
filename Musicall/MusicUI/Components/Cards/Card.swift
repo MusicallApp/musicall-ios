@@ -18,6 +18,7 @@ class Card: UIView {
     // MARK: PUBLIC PROPERTIES
     var isHighlighted = false
     lazy var currentText = editableLabel.text
+    weak var delegate: InteractionViewActionDelegate?
 
     // MARK: PRIVATE PROPERTIES
     private var style: CardStyle
@@ -52,6 +53,14 @@ class Card: UIView {
         return label
     }()
 
+    lazy var dotsButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "dots"), for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(dotsButtonAction), for: .touchUpInside)
+        return button
+    }()
+
     lazy var editableLabel: UITextField = {
         let label = UITextField()
         label.attributedPlaceholder = NSAttributedString(string: "Escreva seu comentário...",
@@ -75,6 +84,15 @@ class Card: UIView {
         return stackView
     }()
 
+    let rightVerticalStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.alignment = .fill
+        stackView.distribution = .fill
+        stackView.axis = .vertical
+        stackView.spacing = 0
+        return stackView
+    }()
+
     let stackHorizontal: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .fill
@@ -87,20 +105,33 @@ class Card: UIView {
     }()
 
     // MARK: LIFE CYCLE
-    init(headerInfos: HeaderInfos, style: CardStyle) {
+    init(headerInfos: HeaderInfos,
+         style: CardStyle,
+         with delegate: InteractionViewActionDelegate? = nil,
+         enableActions: Bool = false) {
+
         self.style = style
         self.headerInfos = headerInfos
         self.contentView = style.configureStyleView()
+        self.delegate = delegate
         super.init(frame: .zero)
         editableConfiguration()
         backgroundColor = .darkestGray
         layer.cornerRadius = 10
 
         configureUI()
+        rightVerticalStack.isHidden = !enableActions
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: ACTIONS
+
+    @objc
+    private func dotsButtonAction() {
+        delegate?.dotsAction()
     }
 
     // MARK: PRIVATE FUNCS
@@ -116,8 +147,13 @@ class Card: UIView {
     private func configureUI() {
         addSubview(stackHorizontal)
 
+        rightVerticalStack.addArrangedSubview(dotsButton)
+        rightVerticalStack.addArrangedSubview(UIView())
+
         stackHorizontal.addArrangedSubview(photoImageView)
         stackHorizontal.addArrangedSubview(stackVertical)
+        stackHorizontal.addArrangedSubview(UIView())
+        stackHorizontal.addArrangedSubview(rightVerticalStack)
 
         stackVertical.addArrangedSubview(nameLabel)
         stackVertical.addArrangedSubview(dateLabel)
