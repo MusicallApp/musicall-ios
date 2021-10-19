@@ -33,7 +33,7 @@ class CardCell: UITableViewCell {
         contentView.addSubview(card)
 
         card.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
+            make.top.left.right.equalToSuperview(
             make.bottom.equalToSuperview().inset(bottomSpacing)
         }
     }
