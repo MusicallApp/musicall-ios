@@ -21,6 +21,8 @@ class MainCoordinator: Coordinator {
             }
         case .toCreatePost:
             goToCreatePost()
+        case .toReport:
+            goToReport()
         }
     }
 
@@ -50,6 +52,12 @@ class MainCoordinator: Coordinator {
 
     private func goToCreatePost() {
         let viewController = CreatePostViewController()
+        viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+
+    private func goToReport() {
+        let viewController = ReportViewController()
         viewController.coordinator = self
         navigationController?.pushViewController(viewController, animated: true)
     }

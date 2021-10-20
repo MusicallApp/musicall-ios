@@ -29,7 +29,7 @@ class InteractionsViewController: UIViewController, Coordinating {
         super.viewDidLoad()
         view.addSubview(spinner)
         
-        title = "interações"
+        title = "Interações"
         navigationItem.largeTitleDisplayMode = .never
         
         setUpSpinner()

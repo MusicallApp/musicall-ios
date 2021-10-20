@@ -11,6 +11,7 @@ enum Destination {
     case toMural
     case toInteractions
     case toCreatePost
+    case toReport
 }
 
 protocol Coordinator {

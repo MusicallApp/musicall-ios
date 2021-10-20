@@ -23,6 +23,7 @@ extension UIFont {
     enum Style {
         case heading1
         case title1
+        case subtitle
         case subtitle1
         case subtitle2
         case body
@@ -37,6 +38,8 @@ extension UIFont {
             return UIFont(name: FontName.overLockBold.rawValue, size: 32)!
         case .title1:
             return UIFont(name: FontName.overLockBold.rawValue, size: 20)!
+        case .subtitle:
+            return UIFont(name: FontName.openSansRegular.rawValue, size: 18)!
         case .subtitle1:
             return UIFont(name: FontName.overLockBold.rawValue, size: 16)!
         case .subtitle2:

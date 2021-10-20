@@ -10,7 +10,7 @@
 		030F99C626FCB0B200F12415 /* ClouldKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */; };
 		03242E8C270F3B4500A19984 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03242E8B270F3B4500A19984 /* ErrorHelper.swift */; };
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
-		0346E46726F0E97E00F43504 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */; };
+		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
 		0346E47926F2219C00F43504 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */; };
@@ -46,6 +46,7 @@
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
 		DE10900B270CC7C100E5C8F3 /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
+		DE2FBE972720C0EC00D6AEE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */; };
 		DE9745B326FB661200EDEA84 /* PreSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */; };
 		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
 		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
@@ -125,6 +126,7 @@
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
 		DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
+		DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewModel.swift; sourceTree = "<group>"; };
 		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -147,7 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */,
-				0346E46726F0E97E00F43504 /* BuildFile in Frameworks */,
+				0346E46726F0E97E00F43504 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +359,7 @@
 		69A7F12026EA4A8F00A25A69 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				DE2FBE952720C0C300D6AEE4 /* Report */,
 				DEA931F126F8C8EE0096CB4D /* Helpers */,
 				DEEF7E3626F8B2B100A4A26E /* Coordinator */,
 				DEEF7E3B26F8B4F300A4A26E /* PreSettings */,
@@ -400,6 +403,22 @@
 				69A7F19026F36FDC00A25A69 /* Comment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DE2FBE952720C0C300D6AEE4 /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				DE2FBE982720C0F100D6AEE4 /* ViewController */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		DE2FBE982720C0F100D6AEE4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		DE9745B026FB65E400EDEA84 /* ViewModel */ = {
@@ -499,7 +518,7 @@
 			);
 			name = Musicall;
 			packageProductDependencies = (
-				0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */,
+				0346E46626F0E97E00F43504 /* SnapKit */,
 			);
 			productName = Musicall;
 			productReference = 69A7F0EB26EA49C500A25A69 /* Musicall.app */;
@@ -573,7 +592,7 @@
 			);
 			mainGroup = 69A7F0E226EA49C500A25A69;
 			packageReferences = (
-				0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */,
+				0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 69A7F0EC26EA49C500A25A69 /* Products */;
 			projectDirPath = "";
@@ -673,6 +692,7 @@
 				03BA87EF2705E92800925F2D /* DateFormatHelper.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
 				69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */,
+				DE2FBE972720C0EC00D6AEE4 /* ReportViewController.swift in Sources */,
 				69A7F18C26F2227A00A25A69 /* Post.swift in Sources */,
 				69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */,
 				DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */,
@@ -1022,7 +1042,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */ = {
+		0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1033,9 +1053,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */ = {
+		0346E46626F0E97E00F43504 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */;
+			package = 0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
