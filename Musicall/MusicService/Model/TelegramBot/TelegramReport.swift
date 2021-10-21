@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TelegramReport {
+public struct TelegramReport {
     let author: String
     let authorID: String
     let postID: String
