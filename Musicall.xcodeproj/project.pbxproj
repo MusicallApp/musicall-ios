@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03012222272056080029E5B6 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301221F272056080029E5B6 /* Networking.swift */; };
+		03012223272056080029E5B6 /* BotProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03012221272056080029E5B6 /* BotProvider.swift */; };
+		03012225272056870029E5B6 /* BotURLBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03012224272056870029E5B6 /* BotURLBuilder.swift */; };
+		0301222827205ADD0029E5B6 /* TelegramResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301222727205ADD0029E5B6 /* TelegramResponse.swift */; };
+		0301222A272085CF0029E5B6 /* TelegramReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03012229272085CF0029E5B6 /* TelegramReport.swift */; };
+		0301222C27218A130029E5B6 /* EnvironmentVariablesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301222B27218A130029E5B6 /* EnvironmentVariablesHelper.swift */; };
 		030F99C626FCB0B200F12415 /* ClouldKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */; };
 		03242E8C270F3B4500A19984 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03242E8B270F3B4500A19984 /* ErrorHelper.swift */; };
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
-		0346E46726F0E97E00F43504 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */; };
+		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
 		0346E47926F2219C00F43504 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */; };
@@ -37,7 +43,6 @@
 		69A7F10626EA49C800A25A69 /* MusicallTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F10526EA49C800A25A69 /* MusicallTests.swift */; };
 		69A7F11126EA49C800A25A69 /* MusicallUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F11026EA49C800A25A69 /* MusicallUITests.swift */; };
 		69A7F12C26EA4B8F00A25A69 /* MuralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F12B26EA4B8F00A25A69 /* MuralViewController.swift */; };
-		69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F13526EA4BFE00A25A69 /* Service.swift */; };
 		69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 69A7F18526F0E0F700A25A69 /* .swiftlint.yml */; };
 		69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69A7F18926F0E4B500A25A69 /* CloudKit.framework */; };
 		69A7F18C26F2227A00A25A69 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18B26F2227A00A25A69 /* Post.swift */; };
@@ -80,6 +85,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0301221F272056080029E5B6 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		03012221272056080029E5B6 /* BotProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BotProvider.swift; sourceTree = "<group>"; };
+		03012224272056870029E5B6 /* BotURLBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotURLBuilder.swift; sourceTree = "<group>"; };
+		0301222727205ADD0029E5B6 /* TelegramResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramResponse.swift; sourceTree = "<group>"; };
+		03012229272085CF0029E5B6 /* TelegramReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramReport.swift; sourceTree = "<group>"; };
+		0301222B27218A130029E5B6 /* EnvironmentVariablesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariablesHelper.swift; sourceTree = "<group>"; };
 		030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClouldKitHelper.swift; sourceTree = "<group>"; };
 		03242E8B270F3B4500A19984 /* ErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
 		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -115,7 +126,6 @@
 		69A7F11026EA49C800A25A69 /* MusicallUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicallUITests.swift; sourceTree = "<group>"; };
 		69A7F11226EA49C800A25A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69A7F12B26EA4B8F00A25A69 /* MuralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuralViewController.swift; sourceTree = "<group>"; };
-		69A7F13526EA4BFE00A25A69 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		69A7F18526F0E0F700A25A69 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		69A7F18726F0E2AE00A25A69 /* Musicall.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Musicall.entitlements; sourceTree = "<group>"; };
 		69A7F18926F0E4B500A25A69 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
@@ -147,7 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */,
-				0346E46726F0E97E00F43504 /* BuildFile in Frameworks */,
+				0346E46726F0E97E00F43504 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +178,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0301221E272056080029E5B6 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0301221F272056080029E5B6 /* Networking.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		03012220272056080029E5B6 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				0301222D27218ECF0029E5B6 /* Bot */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		0301222627205ACB0029E5B6 /* TelegramBot */ = {
+			isa = PBXGroup;
+			children = (
+				0301222727205ADD0029E5B6 /* TelegramResponse.swift */,
+				03012229272085CF0029E5B6 /* TelegramReport.swift */,
+			);
+			path = TelegramBot;
+			sourceTree = "<group>";
+		};
+		0301222D27218ECF0029E5B6 /* Bot */ = {
+			isa = PBXGroup;
+			children = (
+				03012221272056080029E5B6 /* BotProvider.swift */,
+				03012224272056870029E5B6 /* BotURLBuilder.swift */,
+			);
+			path = Bot;
+			sourceTree = "<group>";
+		};
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -348,7 +392,8 @@
 		69A7F11F26EA4A7900A25A69 /* MusicService */ = {
 			isa = PBXGroup;
 			children = (
-				69A7F13526EA4BFE00A25A69 /* Service.swift */,
+				0301221E272056080029E5B6 /* Networking */,
+				03012220272056080029E5B6 /* Providers */,
 				69A7F18D26F36CB100A25A69 /* Model */,
 			);
 			path = MusicService;
@@ -395,6 +440,7 @@
 		69A7F18D26F36CB100A25A69 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0301222627205ACB0029E5B6 /* TelegramBot */,
 				69A7F18B26F2227A00A25A69 /* Post.swift */,
 				69A7F18E26F36CD800A25A69 /* Author.swift */,
 				69A7F19026F36FDC00A25A69 /* Comment.swift */,
@@ -428,6 +474,7 @@
 				03242E8B270F3B4500A19984 /* ErrorHelper.swift */,
 				DEF3EFFE271C6EE0001327D8 /* AlerHelper.swift */,
 				039F47DA27187B4B00F0CD36 /* PlistHelper.swift */,
+				0301222B27218A130029E5B6 /* EnvironmentVariablesHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -499,7 +546,7 @@
 			);
 			name = Musicall;
 			packageProductDependencies = (
-				0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */,
+				0346E46626F0E97E00F43504 /* SnapKit */,
 			);
 			productName = Musicall;
 			productReference = 69A7F0EB26EA49C500A25A69 /* Musicall.app */;
@@ -573,7 +620,7 @@
 			);
 			mainGroup = 69A7F0E226EA49C500A25A69;
 			packageReferences = (
-				0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */,
+				0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 69A7F0EC26EA49C500A25A69 /* Products */;
 			projectDirPath = "";
@@ -644,6 +691,7 @@
 			files = (
 				03BA87F3270B48E800925F2D /* MCSegmentedControlCell.swift in Sources */,
 				03BA87F127074B0C00925F2D /* MCSegmentedControl.swift in Sources */,
+				0301222827205ADD0029E5B6 /* TelegramResponse.swift in Sources */,
 				039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */,
 				DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */,
 				69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */,
@@ -661,15 +709,18 @@
 				DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */,
 				DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */,
 				DEF3EFFF271C6EE0001327D8 /* AlerHelper.swift in Sources */,
+				03012222272056080029E5B6 /* Networking.swift in Sources */,
 				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
 				DEA931F726F8CDB60096CB4D /* UserType.swift in Sources */,
-				69A7F13626EA4BFE00A25A69 /* Service.swift in Sources */,
 				039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */,
 				0346E47726F2219C00F43504 /* UIColor.swift in Sources */,
 				03242E8C270F3B4500A19984 /* ErrorHelper.swift in Sources */,
+				03012225272056870029E5B6 /* BotURLBuilder.swift in Sources */,
 				FF3BB8EE26F8AD62009763F1 /* CreatePostViewController.swift in Sources */,
+				03012223272056080029E5B6 /* BotProvider.swift in Sources */,
 				030F99C626FCB0B200F12415 /* ClouldKitHelper.swift in Sources */,
 				DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */,
+				0301222C27218A130029E5B6 /* EnvironmentVariablesHelper.swift in Sources */,
 				03BA87EF2705E92800925F2D /* DateFormatHelper.swift in Sources */,
 				0346E47826F2219C00F43504 /* UIFont.swift in Sources */,
 				69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */,
@@ -683,6 +734,7 @@
 				DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */,
 				DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */,
 				DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */,
+				0301222A272085CF0029E5B6 /* TelegramReport.swift in Sources */,
 				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1022,7 +1074,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */ = {
+		0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1033,9 +1085,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */ = {
+		0346E46626F0E97E00F43504 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */;
+			package = 0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */

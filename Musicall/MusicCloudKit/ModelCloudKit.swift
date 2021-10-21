@@ -42,7 +42,7 @@ class ModelCloudKit {
     
     // MARK: GET functions 
     
-    func fetchPost(_ completion: @escaping (Result<[Post], Error>) -> Void) {
+    func fetchPost(_ completion: @escaping (Swift.Result<[Post], Error>) -> Void) {
         
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Post", predicate: predicate)
@@ -67,7 +67,7 @@ class ModelCloudKit {
         }
     }
     
-    func fetchAuthor(_ completion: @escaping (Result<[Author], Error>) -> Void) {
+    func fetchAuthor(_ completion: @escaping (Swift.Result<[Author], Error>) -> Void) {
         
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: "Author", predicate: predicate)
@@ -91,7 +91,7 @@ class ModelCloudKit {
         }
     }
     
-    func fetchComment(_ post: CKRecord.ID, completion: @escaping (Result<[Comment], Error>) -> Void) {
+    func fetchComment(_ post: CKRecord.ID, completion: @escaping (Swift.Result<[Comment], Error>) -> Void) {
         
         let postReference = CKRecord.Reference(recordID: post, action: .deleteSelf)
         
