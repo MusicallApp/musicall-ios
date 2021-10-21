@@ -10,7 +10,7 @@ import Foundation
 // MARK: Protocol
 public protocol BotProviderProtocol {
     var network: Networking { get }
-    func sendMessage(text: String)
+    func sendMessage(_ telegramReport: TelegramReport)
 
 }
 
@@ -30,7 +30,7 @@ public class BotProvider: BotProviderProtocol {
         self.network = network
     }
 
-    public func sendMessage(text: String) {
+    public func sendMessage(_ telegramReport: TelegramReport) {
         var rootURL = self.baseEndpoint
 
         rootURL.path = URLStructure.pathBot.rawValue + EnvironmentVariables.botToken.getVariable() + URLStructure.pathSendMessage.rawValue
@@ -39,7 +39,7 @@ public class BotProvider: BotProviderProtocol {
                                        value: EnvironmentVariables.chatId.getVariable())
 
         let queryText = URLQueryItem(name: URLStructure.text.rawValue,
-                                     value: text)
+                                     value: telegramReport.descriptionFormatted)
 
         let queryParseMode = URLQueryItem(name: URLStructure.parseMode.rawValue,
                                           value: ParseMode.markdown.rawValue)
