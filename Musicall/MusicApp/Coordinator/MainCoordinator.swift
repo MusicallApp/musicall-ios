@@ -37,6 +37,10 @@ class MainCoordinator: Coordinator {
             navigationController?.setViewControllers([viewController], animated: false)
         }
     }
+    
+    func pop(_ viewController: UIViewController) {
+        viewController.navigationController?.popViewController(animated: true)
+    }
 
     func dismiss(_ viewController: UIViewController, completion: (() -> Void)?) {
         viewController.dismiss(animated: true, completion: completion)

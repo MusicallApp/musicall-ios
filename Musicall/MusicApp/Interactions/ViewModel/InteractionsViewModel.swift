@@ -44,7 +44,7 @@ class InteractionsViewModel {
     }
     
     @objc
-    func deleteComment(id: CKRecord.ID) {
+    func deleteRecord(id: CKRecord.ID) {
         cloudKit.deleteRecord(withRecord: id)
     }
     

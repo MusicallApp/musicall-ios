@@ -9,6 +9,7 @@ import UIKit
 
 protocol AlertDeleteDelegate: AnyObject {
     func actionSheetDeleteAction()
+    func actionConfirmDelete()
 }
 
 class AlertHelper {
@@ -25,11 +26,12 @@ class AlertHelper {
         viewController?.present(actionSheet, animated: true, completion: nil)
     }
 
-    static func showConfimAlert(on viewController: UIViewController?, title: String, message: String) {
+    static func showConfimAlert(on viewController: UIViewController?, title: String, message: String, with delegate: AlertDeleteDelegate?) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Deletar", style: .destructive) { _ in
+            delegate?.actionConfirmDelete()
             print("Deletou...")
         })
 

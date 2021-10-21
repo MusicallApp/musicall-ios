@@ -18,7 +18,7 @@ class MuralViewModel {
     
     let cloudKit = ModelCloudKit()
     
-    private var cellViewModels: [PostListViewModel] = [PostListViewModel]() {
+    var cellViewModels: [PostListViewModel] = [PostListViewModel]() {
         didSet {
             if cellViewModels.count == posts.count {
                 self.reloadTableView?()
@@ -86,6 +86,13 @@ class MuralViewModel {
                     
                 })
             }
+        }
+    }
+    
+    func deleteCell(with recordID: CKRecord.ID) {
+        for index in 0...cellViewModels.count where cellViewModels[index].id == recordID {
+            cellViewModels.remove(at: index)
+            self.reloadTableView?()
         }
     }
     

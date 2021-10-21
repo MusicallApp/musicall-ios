@@ -20,6 +20,7 @@ protocol Coordinator {
     func navigate(_ type: Destination, with data: Any?)
     func dismiss(_ viewController: UIViewController, completion: (() -> Void)?)
     func start()
+    func pop(_ viewController: UIViewController)
 }
 
 protocol Coordinating {

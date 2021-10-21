@@ -47,7 +47,7 @@ class MuralViewController: UIViewController, Coordinating {
         return button
     }()
 
-    private let tableView: UITableView = {
+    let tableView: UITableView = {
         let view = UITableView()
         view.backgroundColor = .clear
         view.bounces = true
