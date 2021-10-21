@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CloudKit
 
 struct HeaderInfos {
     let username: String
@@ -24,6 +25,8 @@ class Card: UIView {
     private var style: CardStyle
     private var headerInfos: HeaderInfos
     private var contentView: UIView
+    private var recordID = CKRecord.ID()
+    private var indexPath = Int()
     
     // MARK: UI Elements
 
@@ -122,6 +125,28 @@ class Card: UIView {
         configureUI()
         rightVerticalStack.isHidden = !enableActions
     }
+    
+    init(headerInfos: HeaderInfos,
+         style: CardStyle,
+         with delegate: InteractionViewActionDelegate? = nil,
+         enableActions: Bool = false,
+         recordId: CKRecord.ID,
+         indexPath: Int) {
+
+        self.style = style
+        self.headerInfos = headerInfos
+        self.contentView = style.configureStyleView()
+        self.delegate = delegate
+        self.recordID = recordId
+        self.indexPath = indexPath
+        super.init(frame: .zero)
+        editableConfiguration()
+        backgroundColor = .darkestGray
+        layer.cornerRadius = 10
+
+        configureUI()
+        rightVerticalStack.isHidden = !enableActions
+    }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -131,7 +156,7 @@ class Card: UIView {
 
     @objc
     private func dotsButtonAction() {
-        delegate?.dotsAction()
+        delegate?.dotsAction(with: recordID, indexPath: indexPath)
     }
 
     // MARK: PRIVATE FUNCS

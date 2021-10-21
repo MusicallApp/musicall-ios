@@ -33,6 +33,10 @@ class MainCoordinator: Coordinator {
             navigationController?.setViewControllers([viewController], animated: false)
         }
     }
+    
+    func pop(_ viewController: UIViewController) {
+        viewController.navigationController?.popViewController(animated: true)
+    }
 
     private func goToMural() {
         let viewController = MuralViewController()

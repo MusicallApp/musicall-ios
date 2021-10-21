@@ -17,6 +17,7 @@ protocol Coordinator {
     var navigationController: UINavigationController? { get set }
     func navigate(_ type: Destination, with data: Any?)
     func start()
+    func pop(_ viewController: UIViewController)
 }
 
 protocol Coordinating {
