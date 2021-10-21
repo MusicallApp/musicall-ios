@@ -27,6 +27,8 @@ class CardCell: UITableViewCell {
 
     // MARK: Public APIs
     public func configureView(card: Card, bottomSpacing: Int) {
+        self.card?.removeFromSuperview()
+        
         self.card = card
         contentView.addSubview(card)
 
