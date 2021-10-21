@@ -10,4 +10,5 @@ import Foundation
 enum ErrorHelper: String {
     case howAreYou = "HOW ARE YOU?! Author name doesn't exist"
     case botInvalidCredentials = "Telegram Bot: Invalid token or chat ID"
+    case botSendError = "Telegram Bot: Invalid send a message"
 }
