@@ -80,7 +80,7 @@ class MuralViewController: UIViewController, Coordinating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setUpUI()
         setUpTableView()
         setUpViewModel()
