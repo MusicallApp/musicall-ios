@@ -80,12 +80,6 @@ class MuralViewController: UIViewController, Coordinating {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let message = TelegramReport(author: "Lucas",
-                                     authorID: "1234",
-                                     postID: "12345",
-                                     message: "Achei desrespeitoso").descriptionFormatted
-
-        BotProvider().sendMessage(text: message)
 
         setUpUI()
         setUpTableView()
