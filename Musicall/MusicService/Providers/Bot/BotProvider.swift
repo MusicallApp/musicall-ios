@@ -55,6 +55,7 @@ public class BotProvider: BotProviderProtocol {
         switch result {
         case .failure(let error):
             print(error)
+            assertionFailure(ErrorHelper.botInvalidCredentials.rawValue)
         default: break
         }
     }
