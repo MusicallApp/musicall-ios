@@ -11,11 +11,14 @@ enum Destination {
     case toMural
     case toInteractions
     case toCreatePost
+    case toReport
+    case toConfirmReport
 }
 
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
     func navigate(_ type: Destination, with data: Any?)
+    func dismiss(_ viewController: UIViewController, completion: (() -> Void)?)
     func start()
 }
 
