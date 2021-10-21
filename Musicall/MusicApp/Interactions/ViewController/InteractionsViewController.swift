@@ -88,7 +88,6 @@ extension InteractionsViewController: InteractionViewActionDelegate {
 extension InteractionsViewController: AlertDeleteDelegate {
     func actionConfirmDelete() {
         if cellIndex == 0 {
-//            muralView.viewModel.deleteCell(with: self.recordId)
             interactionsView.viewModel.deleteRecord(id: self.recordId)
             coordinator?.pop(self)
             muralView.viewModel.getPosts()
