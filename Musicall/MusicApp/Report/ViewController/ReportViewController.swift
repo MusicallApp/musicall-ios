@@ -65,7 +65,7 @@ class ReportViewController: UIViewController, Coordinating {
             let telegramReport = TelegramReport(author: rep.authorName,
                                                 authorID: rep.authorId.recordName, postID: rep.postId.recordName,
                                                 message: comment)
-            BotProvider().sendMessage(text: telegramReport.descriptionFormatted)
+            BotProvider().sendMessage(telegramReport)
             coordinator?.navigate(.toConfirmReport, with: self)
         }
     }
