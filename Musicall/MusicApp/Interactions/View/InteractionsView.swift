@@ -10,7 +10,7 @@ import SnapKit
 import CloudKit
 
 protocol InteractionViewActionDelegate: AnyObject {
-    func dotsAction(with recordID: CKRecord.ID, indexPath: Int)
+    func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID)
 }
 
 class InteractionsView: UIView {
@@ -176,7 +176,7 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
                                                  likes: interactionCell.likes,
                                                  interactions: 1),
                                 with: delegate,
-                                enableActions: true, recordId: interactionCell.id, indexPath: indexPath.row)
+                                enableActions: true, recordId: interactionCell.id, indexPath: indexPath.row, authorId: interactionCell.authorId.recordID)
 
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 
@@ -191,7 +191,7 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
                                                    date: comment.date.description),
                                 style: .simple(content: content),
                                 with: delegate,
-                                enableActions: true, recordId: comment.id, indexPath: indexPath.row)
+                                enableActions: true, recordId: comment.id, indexPath: indexPath.row, authorId: interactionCell.authorId.recordID)
             
             cardCell.configureView(card: cardView, bottomSpacing: 16)
 

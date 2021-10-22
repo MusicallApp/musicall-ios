@@ -23,6 +23,7 @@ class InteractionsViewController: UIViewController, Coordinating {
     
     private var recordId = CKRecord.ID()
     private var cellIndex = Int()
+    private var auhtorId = CKRecord.ID()
 
     override func loadView() {
         super.loadView()
@@ -78,14 +79,27 @@ class InteractionsViewController: UIViewController, Coordinating {
 }
 
 extension InteractionsViewController: InteractionViewActionDelegate {
-    func dotsAction(with recordID: CKRecord.ID, indexPath: Int) {
-        AlertHelper.showDeleteActionSheet(on: self, with: self)
+    func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID) {
+        if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID, userID == authorId {
+            AlertHelper.showDeleteActionSheet(on: self, with: self)
+        } else {
+            AlertHelper.showReportActionSheet(on: self, with: self)
+        }
+
         self.recordId = recordID
         self.cellIndex = indexPath
+        self.auhtorId = authorId
     }
 }
 
-extension InteractionsViewController: AlertDeleteDelegate {
+extension InteractionsViewController: AlertDelegate {
+    func actionSheetReportAction() {
+        if let user = UserDefaultHelper.getUser() {
+            let report = Report(authorName: user.nickName, authorId: auhtorId, postId: recordId)
+            coordinator?.navigate(.toReport, with: report)
+        }
+    }
+
     func actionConfirmDelete() {
         if cellIndex == 0 {
             interactionsView.viewModel.deleteRecord(id: self.recordId)
