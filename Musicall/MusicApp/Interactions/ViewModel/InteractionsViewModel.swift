@@ -67,6 +67,7 @@ class InteractionsViewModel {
 
             let vms = InteractionsListViewModel(id: post.id,
                                                 authorName: authorName,
+                                                authorId: post.authorId,
                                                 content: post.content,
                                                 likes: post.likes,
                                                 date: post.createdAt,
@@ -102,6 +103,7 @@ class InteractionsViewModel {
                    }
                    vms.append(ComentListViewModel(id: data.id,
                                                   authorName: authorName,
+                                                  authorId: data.authorId,
                                                   content: data.content,
                                                   date: data.createdAt))
 
@@ -116,6 +118,7 @@ class InteractionsViewModel {
 struct ComentListViewModel {
     let id: CKRecord.ID
     let authorName: String
+    let authorId: CKRecord.Reference
     let content: String
     let date: Date
 }
@@ -123,6 +126,7 @@ struct ComentListViewModel {
 struct InteractionsListViewModel {
     let id: CKRecord.ID
     let authorName: String
+    let authorId: CKRecord.Reference
     let content: String
     let likes: Int
     let date: Date

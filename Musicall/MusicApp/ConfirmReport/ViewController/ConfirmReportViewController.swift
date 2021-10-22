@@ -11,6 +11,7 @@ import SnapKit
 class ConfirmReportViewController: UIViewController, Coordinating {
 
     var coordinator: Coordinator?
+    var delegate: ReportDelegate?
 
     lazy var icon: UIImageView = {
         let imageView = UIImageView()
@@ -44,6 +45,7 @@ class ConfirmReportViewController: UIViewController, Coordinating {
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .MCDesignSystem(font: .subtitle1)
+        button.addTarget(self, action: #selector(closeAction), for: .touchUpInside)
         return button
     }()
 
@@ -72,6 +74,7 @@ class ConfirmReportViewController: UIViewController, Coordinating {
     @objc
     private func closeAction() {
         coordinator?.dismiss(self, completion: nil)
+        delegate?.dismissParent()
     }
 
     private func setupView() {

@@ -8,9 +8,11 @@
 import UIKit
 import SnapKit
 
-class ReportViewController: UIViewController, Coordinating {
+protocol ReportDelegate: AnyObject {
+    func dismissParent()
+}
 
-    var coordinator: Coordinator?
+class ReportViewController: UIViewController, Coordinating {
 
     lazy var subtitle: UILabel = {
         let label = UILabel()
@@ -36,8 +38,12 @@ class ReportViewController: UIViewController, Coordinating {
         button.backgroundColor = .blue
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .MCDesignSystem(font: .subtitle1)
+        button.addTarget(self, action: #selector(sendButtonAction), for: .touchUpInside)
         return button
     }()
+
+    var coordinator: Coordinator?
+    var report: Report?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,6 +57,17 @@ class ReportViewController: UIViewController, Coordinating {
     @objc
     private func dismissKeyboard() {
         commentTextView.endEditing(true)
+    }
+
+    @objc
+    private func sendButtonAction() {
+        if let comment = commentTextView.text, let rep = self.report {
+            let telegramReport = TelegramReport(author: rep.authorName,
+                                                authorID: rep.authorId.recordName, postID: rep.postId.recordName,
+                                                message: comment).descriptionFormatted
+            BotProvider().sendMessage(text: telegramReport)
+            coordinator?.navigate(.toConfirmReport, with: self)
+        }
     }
 
     private func setupNavBar() {
@@ -113,5 +130,11 @@ extension ReportViewController: UITextViewDelegate {
             textView.text = nil
             textView.textColor = .lightGray
         }
+    }
+}
+
+extension ReportViewController: ReportDelegate {
+    func dismissParent() {
+        coordinator?.pop(self)
     }
 }
