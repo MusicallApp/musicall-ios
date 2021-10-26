@@ -29,6 +29,7 @@ class KeyboardTextField: UIView {
     private let attachmentButton: MCButton = {
         let button = MCButton(style: .ghost, size: .medium)
         button.setImage(.icPaperclip, for: .normal)
+        button.isHidden = true
         return button
     }()
 
@@ -84,7 +85,8 @@ class KeyboardTextField: UIView {
         commentTextField.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
             make.height.equalTo(38)
-            make.leading.equalTo(attachmentButton.snp.trailing).offset(6)
+       //     make.leading.equalTo(attachmentButton.snp.trailing).offset(6)
+            make.leading.equalToSuperview().inset(16)
             make.trailing.equalToSuperview().inset(16)
         }
     }

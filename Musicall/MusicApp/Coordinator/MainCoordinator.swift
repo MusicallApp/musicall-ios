@@ -16,7 +16,7 @@ class MainCoordinator: Coordinator {
         case .toMural:
             goToMural()
         case .toInteractions:
-            if let post = data as? Post {
+            if let post = data as? PostListViewModel {
                 goToInteractions(with: post)
             }
         case .toCreatePost:
@@ -55,7 +55,7 @@ class MainCoordinator: Coordinator {
         navigationController?.setViewControllers([viewController], animated: false)
     }
 
-    private func goToInteractions(with post: Post) {
+    private func goToInteractions(with post: PostListViewModel) {
         let viewController = InteractionsViewController()
         viewController.coordinator = self
         viewController.setUpViewModel(post: post)

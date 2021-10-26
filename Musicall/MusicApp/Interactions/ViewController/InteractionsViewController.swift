@@ -48,7 +48,7 @@ class InteractionsViewController: UIViewController, Coordinating {
         }
     }
 
-    func setUpViewModel(post: Post) {
+    func setUpViewModel(post: PostListViewModel) {
         spinner.startAnimating()
         interactionsView.viewModel.reloadTableView = {
             DispatchQueue.main.async {
