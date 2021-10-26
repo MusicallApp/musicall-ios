@@ -72,6 +72,7 @@ class MuralViewModel {
                     }
                     vms.append(PostListViewModel(id: data.id,
                                                  authorName: authorName,
+                                                 authorId: data.authorId,
                                                  content: data.content,
                                                  likes: data.likes,
                                                  date: data.createdAt,
@@ -103,6 +104,7 @@ class MuralViewModel {
 struct PostListViewModel {
     let id: CKRecord.ID
     let authorName: String
+    let authorId: CKRecord.Reference
     let content: String
     let likes: Int
     let date: Date

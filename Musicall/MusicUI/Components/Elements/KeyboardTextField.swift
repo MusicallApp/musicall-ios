@@ -29,6 +29,7 @@ class KeyboardTextField: UIView {
     private let attachmentButton: MCButton = {
         let button = MCButton(style: .ghost, size: .medium)
         button.setImage(.icPaperclip, for: .normal)
+        button.isHidden = true
         return button
     }()
 

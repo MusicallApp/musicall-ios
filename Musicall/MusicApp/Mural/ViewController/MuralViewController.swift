@@ -203,7 +203,8 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        coordinator?.navigate(.toInteractions, with: viewModel.cellViewModels[indexPath.row])
+        let cellViewModel = viewModel.getCellViewModel(at: indexPath)
+        coordinator?.navigate(.toInteractions, with: cellViewModel)
     }
     
 }

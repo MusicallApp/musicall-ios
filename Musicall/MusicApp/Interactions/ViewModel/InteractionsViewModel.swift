@@ -62,6 +62,7 @@ class InteractionsViewModel {
 
         let vms = InteractionsListViewModel(id: post.id,
                                             authorName: post.authorName,
+                                            authorId: post.authorId,
                                             content: post.content,
                                             likes: post.likes,
                                             date: post.date,
