@@ -58,26 +58,20 @@ class InteractionsViewModel {
         return cellViewModels
     }
 
-    func createCells(post: Post) {
+    func createCells(post: PostListViewModel) {
 
-        cloudKit.publicDataBase.fetch(withRecordID: post.authorId.recordID, completionHandler: { record, _ in
-            guard let authorName = record?.object(forKey: "nickname") as? String else {
-                return
-            }
-
-            let vms = InteractionsListViewModel(id: post.id,
-                                                authorName: authorName,
-                                                content: post.content,
-                                                likes: post.likes,
-                                                date: post.createdAt,
-                                                comments: [])
-            self.cellViewModels = vms
-            
-            guard let id = self.cellViewModels?.id else {
-                return
-            }
-            self.getComments(id: id)
-        })
+        let vms = InteractionsListViewModel(id: post.id,
+                                            authorName: post.authorName,
+                                            content: post.content,
+                                            likes: post.likes,
+                                            date: post.date,
+                                            comments: [])
+        self.cellViewModels = vms
+        
+        guard let id = self.cellViewModels?.id else {
+            return
+        }
+        self.getComments(id: id)
 
     }
     
