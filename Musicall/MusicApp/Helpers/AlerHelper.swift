@@ -15,8 +15,13 @@ protocol AlertDelegate: AnyObject {
 
 class AlertHelper {
 
-    static func showDeleteActionSheet(on viewController: UIViewController?, with delegate: AlertDelegate?) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    static func showDeleteActionSheet(on viewController: UIViewController?,
+                                      with delegate: AlertDelegate?,
+                                      preferredStyle: UIAlertController.Style) {
+
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: preferredStyle)
+        actionSheet.title = "Deseja deletar?"
+        actionSheet.message = "Essa ação é irreversivel, tenha certeza ao tomar a decisão"
 
         actionSheet.addAction(UIAlertAction(title: "Deletar", style: .destructive) { _ in
             delegate?.actionSheetDeleteAction()
@@ -27,8 +32,13 @@ class AlertHelper {
         viewController?.present(actionSheet, animated: true, completion: nil)
     }
 
-    static func showReportActionSheet(on viewController: UIViewController?, with delegate: AlertDelegate?) {
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+    static func showReportActionSheet(on viewController: UIViewController?,
+                                      with delegate: AlertDelegate?,
+                                      preferredStyle: UIAlertController.Style) {
+
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: preferredStyle)
+        actionSheet.title = "Deseja deletar?"
+        actionSheet.message = "Essa ação é irreversivel, tenha certeza ao tomar a decisão"
 
         actionSheet.addAction(UIAlertAction(title: "Reportar", style: .destructive) { _ in
             delegate?.actionSheetReportAction()

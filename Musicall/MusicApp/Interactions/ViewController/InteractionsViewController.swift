@@ -80,10 +80,22 @@ class InteractionsViewController: UIViewController, Coordinating {
 
 extension InteractionsViewController: InteractionViewActionDelegate {
     func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID) {
+
+        var message: UIAlertController.Style
+
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
+            message = .actionSheet
+        case .pad:
+            message = .alert
+        @unknown default:
+            return
+        }
+
         if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID, userID == authorId {
-            AlertHelper.showDeleteActionSheet(on: self, with: self)
+            AlertHelper.showDeleteActionSheet(on: self, with: self, preferredStyle: message)
         } else {
-            AlertHelper.showReportActionSheet(on: self, with: self)
+            AlertHelper.showReportActionSheet(on: self, with: self, preferredStyle: message)
         }
 
         self.recordId = recordID
