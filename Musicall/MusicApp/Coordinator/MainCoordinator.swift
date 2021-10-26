@@ -22,9 +22,12 @@ class MainCoordinator: Coordinator {
         case .toCreatePost:
             goToCreatePost()
         case .toReport:
-            goToReport()
+            if let report = data as? Report {
+                goToReport(with: report)
+            }
         case .toConfirmReport:
-            goToConfirmReport()
+            let delegate = data as? ReportDelegate
+            goToConfirmReport(with: delegate)
         }
     }
 
@@ -66,16 +69,17 @@ class MainCoordinator: Coordinator {
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    private func goToReport() {
+    private func goToReport(with report: Report) {
         let viewController = ReportViewController()
+        viewController.report = report
         viewController.coordinator = self
         navigationController?.pushViewController(viewController, animated: true)
     }
 
-    private func goToConfirmReport() {
+    private func goToConfirmReport(with delegate: ReportDelegate?) {
         let viewController = ConfirmReportViewController()
         viewController.coordinator = self
-
+        viewController.delegate = delegate
         let nvc = UINavigationController()
         nvc.setViewControllers([viewController], animated: false)
         nvc.modalPresentationStyle = .fullScreen

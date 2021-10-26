@@ -27,6 +27,7 @@ class Card: UIView {
     private var contentView: UIView
     private var recordID = CKRecord.ID()
     private var indexPath = Int()
+    private var authorId = CKRecord.ID()
     
     // MARK: UI Elements
 
@@ -131,7 +132,8 @@ class Card: UIView {
          with delegate: InteractionViewActionDelegate? = nil,
          enableActions: Bool = false,
          recordId: CKRecord.ID,
-         indexPath: Int) {
+         indexPath: Int,
+         authorId: CKRecord.ID) {
 
         self.style = style
         self.headerInfos = headerInfos
@@ -139,6 +141,7 @@ class Card: UIView {
         self.delegate = delegate
         self.recordID = recordId
         self.indexPath = indexPath
+        self.authorId = authorId
         super.init(frame: .zero)
         editableConfiguration()
         backgroundColor = .darkestGray
@@ -156,7 +159,7 @@ class Card: UIView {
 
     @objc
     private func dotsButtonAction() {
-        delegate?.dotsAction(with: recordID, indexPath: indexPath)
+        delegate?.dotsAction(with: recordID, indexPath: indexPath, authorId: authorId)
     }
 
     // MARK: PRIVATE FUNCS

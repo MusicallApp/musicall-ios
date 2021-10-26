@@ -53,6 +53,7 @@
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
 		DE2FBE972720C0EC00D6AEE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */; };
 		DE2FBE9C2720D2A200D6AEE4 /* ConfirmReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FBE9B2720D2A200D6AEE4 /* ConfirmReportViewController.swift */; };
+		DE4856BB2722E14F003766F7 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4856BA2722E14F003766F7 /* Report.swift */; };
 		DE9745B326FB661200EDEA84 /* PreSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */; };
 		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
 		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
@@ -139,6 +140,7 @@
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
 		DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DE2FBE9B2720D2A200D6AEE4 /* ConfirmReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReportViewController.swift; sourceTree = "<group>"; };
+		DE4856BA2722E14F003766F7 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
 		DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewModel.swift; sourceTree = "<group>"; };
 		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -457,6 +459,7 @@
 		DE2FBE952720C0C300D6AEE4 /* Report */ = {
 			isa = PBXGroup;
 			children = (
+				DE4856B92722E134003766F7 /* Model */,
 				DE2FBE982720C0F100D6AEE4 /* ViewController */,
 			);
 			path = Report;
@@ -484,6 +487,14 @@
 				DE2FBE9B2720D2A200D6AEE4 /* ConfirmReportViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DE4856B92722E134003766F7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DE4856BA2722E14F003766F7 /* Report.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DE9745B026FB65E400EDEA84 /* ViewModel */ = {
@@ -748,6 +759,7 @@
 				DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */,
 				DEF3EFFF271C6EE0001327D8 /* AlerHelper.swift in Sources */,
 				03012222272056080029E5B6 /* Networking.swift in Sources */,
+				DE4856BB2722E14F003766F7 /* Report.swift in Sources */,
 				69A7F18F26F36CD800A25A69 /* Author.swift in Sources */,
 				DEA931F726F8CDB60096CB4D /* UserType.swift in Sources */,
 				039DCDD826F8BF7900B46BC0 /* InteractionsViewModel.swift in Sources */,

@@ -17,7 +17,7 @@ public struct TelegramReport {
         var message = "*Report Recebido ☹️* \n\n"
         message.append("*Author*: \(author) \n")
         message.append("*AuthorID*: \(authorID) \n")
-        message.append("*PostID*: \(postID) \n")
+        message.append("*RecordName*: \(postID) \n")
         message.append("*Message*: \(self.message) \n")
         return message
     }
