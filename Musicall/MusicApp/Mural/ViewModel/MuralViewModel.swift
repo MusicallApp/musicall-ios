@@ -34,7 +34,10 @@ class MuralViewModel {
             switch result {
             case .success(let data):
                 self.posts = data
-                self.createCell(posts: self.posts)
+
+                let postSorted = self.posts.sorted {$0.createdAt > $1.createdAt}
+
+                self.createCell(posts: postSorted)
             case .failure(let error):
                 fatalError("\(error)")
             }
