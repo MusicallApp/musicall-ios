@@ -88,7 +88,7 @@ extension InteractionsViewController: InteractionViewActionDelegate {
             message = .actionSheet
         case .pad:
             message = .alert
-        @unknown default:
+        default:
             return
         }
 

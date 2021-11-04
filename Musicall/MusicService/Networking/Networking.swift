@@ -28,7 +28,7 @@ public final class Networking: NetworkingProtocol {
                     completion(.failure(error))
                     return
                 }
-                print(data!)
+
                 guard let data = data else {
                     preconditionFailure("No error was received but we also don't have data...")
                 }
