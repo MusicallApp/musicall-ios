@@ -28,7 +28,7 @@ enum EnvironmentVariables: String {
     case chatId = "TELEGRAM_CHAT_ID"
 
     func getVariable() -> String {
-        guard let message = EnvironmentVariablesHelper.read(self.rawValue) else {
+        guard let message = Bundle.main.infoDictionary?[self.rawValue] as? String else {
             assertionFailure(ErrorHelper.botInvalidCredentials.rawValue)
             return ""
         }
