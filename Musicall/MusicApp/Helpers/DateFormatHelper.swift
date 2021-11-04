@@ -12,7 +12,7 @@ enum DateFormatHelper: String {
 }
 
 enum Locale: String {
-    case ptbr = "pt_BR"
+    case ptbr
 }
 
 extension Date {

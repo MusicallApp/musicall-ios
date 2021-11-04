@@ -65,16 +65,8 @@ class ReportViewController: UIViewController, Coordinating {
             let telegramReport = TelegramReport(author: rep.authorName,
                                                 authorID: rep.authorId.recordName, postID: rep.postId.recordName,
                                                 message: comment)
-            BotProvider().sendMessage(telegramReport) { result in
-                switch result {
-                case .success(_):
-                    DispatchQueue.main.async {
-                        self.coordinator?.navigate(.toConfirmReport, with: self)
-                    }
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                }
-            }
+            BotProvider().sendMessage(telegramReport)
+            coordinator?.navigate(.toConfirmReport, with: self)
         }
     }
 

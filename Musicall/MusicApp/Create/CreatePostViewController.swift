@@ -13,7 +13,7 @@ class CreatePostViewController: UIViewController, Coordinating {
     var coordinator: Coordinator?
 
     let editableCard = Card(headerInfos: .init(username: UserDefaultHelper.get(field: .userNickName) as? String ?? "",
-                                               date: Date().getFormattedDate(format: .dayMonth)),
+                                               date: "26 de Janeiro"),
                             style: .editable)
 
     override func viewDidLoad() {
@@ -71,10 +71,6 @@ class CreatePostViewController: UIViewController, Coordinating {
                     self.dismiss(animated: true)
                     self.navigationController?.popViewController(animated: true)
                 }
-            } else if text.isEmpty {
-                AlertHelper.showOnlyAlert(on: self, title: "Campo de texto vazio", message: "Escreva alguma mensagem em sua postagem", preferredStyle: .alert)
-            } else if userID.recordName.isEmpty {
-                AlertHelper.showOnlyAlert(on: self, title: "Usuário inválido", message: "Tente relogar novamente", preferredStyle: .alert)
             }
         }
     }
