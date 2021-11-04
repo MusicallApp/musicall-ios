@@ -57,25 +57,33 @@ class CreatePostViewController: UIViewController, Coordinating {
 
     // MARK: Actions
     @objc func createPost() {
-        if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID {
-            
-            let loadingVC = LoadingViewController()
-            loadingVC.modalPresentationStyle = .overFullScreen
-            loadingVC.loadingWithCompleteView.isHidden = true
-            loadingVC.loadingView.isHidden = false
-            self.present(loadingVC, animated: true, completion: nil)
-            
-            ModelCloudKit().createPost(withAuthor: userID, content: editableCard.currentText ?? "", likes: 0) {
+        if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID,
+           let text = editableCard.currentText {
+            if !text.isEmpty && !userID.recordName.isEmpty {
+                let loadingVC = LoadingViewController()
+                loadingVC.modalPresentationStyle = .overFullScreen
+                loadingVC.loadingWithCompleteView.isHidden = true
+                loadingVC.loadingView.isHidden = false
+                self.present(loadingVC, animated: true, completion: nil)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.dismiss(animated: true)
-                    self.navigationController?.popViewController(animated: true)
+                ModelCloudKit().createPost(withAuthor: userID, content: editableCard.currentText ?? "", likes: 0) {
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.dismiss(animated: true)
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
             } else if text.isEmpty {
-                AlertHelper.showOnlyAlert(on: self, title: "Campo de texto vazio", message: "Escreva alguma mensagem em sua postagem", preferredStyle: .alert)
+                AlertHelper.showOnlyAlert(on: self,
+                                          title: "Campo de texto vazio",
+                                          message: "Escreva alguma mensagem em sua postagem",
+                                          preferredStyle: .alert)
             } else if userID.recordName.isEmpty {
-                AlertHelper.showOnlyAlert(on: self, title: "Usuário inválido", message: "Tente relogar novamente", preferredStyle: .alert)
+                AlertHelper.showOnlyAlert(on: self,
+                                          title: "Usuário inválido",
+                                          message: "Tente relogar novamente",
+                                          preferredStyle: .alert)
             }
-        }
+         }
     }
 }
