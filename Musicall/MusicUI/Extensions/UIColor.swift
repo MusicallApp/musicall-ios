@@ -17,5 +17,4 @@ extension UIColor {
     static let white = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
     static let red = #colorLiteral(red: 1, green: 0.3411764706, blue: 0.3529411765, alpha: 1)
     static let cyan = #colorLiteral(red: 0.01568627451, green: 1, blue: 0.8941176471, alpha: 1)
-    static let systemBlack = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
 }
