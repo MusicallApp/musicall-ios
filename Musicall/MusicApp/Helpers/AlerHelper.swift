@@ -60,4 +60,11 @@ class AlertHelper {
 
         viewController?.present(alert, animated: true, completion: nil)
     }
+    
+    static func showOnlyAlert(on viewController: UIViewController?, title: String, message: String, preferredStyle: UIAlertController.Style) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        
+        alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
+        viewController?.present(alert, animated: true, completion: nil)
+    }
 }

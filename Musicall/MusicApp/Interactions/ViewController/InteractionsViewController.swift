@@ -121,7 +121,7 @@ extension InteractionsViewController: AlertDelegate {
         } else {
             interactionsView.viewModel.deleteRecord(id: self.recordId)
             interactionsView.viewModel.cellViewModels?.comments.remove(at: cellIndex - 1)
-            interactionsView.tableView.deleteRows(at: [IndexPath(row: self.cellIndex, section: 0)], with: .left)
+            interactionsView.tableView.deleteRows(at: [IndexPath(row: self.cellIndex, section: 0)], with: .middle)
         }
     }
     
