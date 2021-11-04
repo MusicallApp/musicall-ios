@@ -58,10 +58,18 @@ class CreatePostViewController: UIViewController, Coordinating {
     // MARK: Actions
     @objc func createPost() {
         if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID {
+            
+            let loadingVC = LoadingViewController()
+            loadingVC.modalPresentationStyle = .overFullScreen
+            loadingVC.loadingWithCompleteView.isHidden = true
+            loadingVC.loadingView.isHidden = false
+            self.present(loadingVC, animated: true, completion: nil)
+            
             ModelCloudKit().createPost(withAuthor: userID, content: editableCard.currentText ?? "", likes: 0) {
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.dismiss(animated: true)
                     self.navigationController?.popViewController(animated: true)
-
                 }
             }
         }

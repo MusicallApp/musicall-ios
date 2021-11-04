@@ -16,7 +16,7 @@
 		030F99C626FCB0B200F12415 /* ClouldKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */; };
 		03242E8C270F3B4500A19984 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03242E8B270F3B4500A19984 /* ErrorHelper.swift */; };
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
-		0346E46726F0E97E00F43504 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */; };
+		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
 		0346E47726F2219C00F43504 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46F26F2219C00F43504 /* UIColor.swift */; };
 		0346E47826F2219C00F43504 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E47026F2219C00F43504 /* UIFont.swift */; };
 		0346E47926F2219C00F43504 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0346E47326F2219C00F43504 /* OpenSans-SemiBold.ttf */; };
@@ -49,6 +49,10 @@
 		69A7F18F26F36CD800A25A69 /* Author.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F18E26F36CD800A25A69 /* Author.swift */; };
 		69A7F19126F36FDC00A25A69 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19026F36FDC00A25A69 /* Comment.swift */; };
 		69A7F19326F3711F00A25A69 /* ModelCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */; };
+		69AAD26B272C3E5500E78943 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 69AAD26A272C3E5500E78943 /* Lottie */; };
+		69AAD26D2732C85900E78943 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AAD26C2732C85800E78943 /* LoadingViewController.swift */; };
+		69AAD2732732CCF100E78943 /* LoadingWithComplete.json in Resources */ = {isa = PBXBuildFile; fileRef = 69AAD2712732CCF100E78943 /* LoadingWithComplete.json */; };
+		69AAD2742732CCF100E78943 /* LoadingAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = 69AAD2722732CCF100E78943 /* LoadingAnimation.json */; };
 		DE10900B270CC7C100E5C8F3 /* PhoneFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */; };
 		DE2FB04526F4D8710006E8B6 /* MCButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FB04426F4D8710006E8B6 /* MCButton.swift */; };
 		DE2FBE972720C0EC00D6AEE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */; };
@@ -136,6 +140,9 @@
 		69A7F18E26F36CD800A25A69 /* Author.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Author.swift; sourceTree = "<group>"; };
 		69A7F19026F36FDC00A25A69 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		69A7F19226F3711F00A25A69 /* ModelCloudKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCloudKit.swift; sourceTree = "<group>"; };
+		69AAD26C2732C85800E78943 /* LoadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		69AAD2712732CCF100E78943 /* LoadingWithComplete.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingWithComplete.json; sourceTree = "<group>"; };
+		69AAD2722732CCF100E78943 /* LoadingAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LoadingAnimation.json; sourceTree = "<group>"; };
 		DE10900A270CC7C100E5C8F3 /* PhoneFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneFormatter.swift; sourceTree = "<group>"; };
 		DE2FB04426F4D8710006E8B6 /* MCButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCButton.swift; sourceTree = "<group>"; };
 		DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
@@ -163,7 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				69A7F18A26F0E4B500A25A69 /* CloudKit.framework in Frameworks */,
-				0346E46726F0E97E00F43504 /* BuildFile in Frameworks */,
+				0346E46726F0E97E00F43504 /* SnapKit in Frameworks */,
+				69AAD26B272C3E5500E78943 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,6 +261,7 @@
 		0346E47126F2219C00F43504 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				69AAD2702732CB3D00E78943 /* Animation */,
 				0346E47226F2219C00F43504 /* Fonts */,
 			);
 			path = Assets;
@@ -408,6 +417,7 @@
 		69A7F12026EA4A8F00A25A69 /* MusicApp */ = {
 			isa = PBXGroup;
 			children = (
+				69AAD26E2732CAEE00E78943 /* Loading */,
 				DE2FBE992720D1C700D6AEE4 /* ConfirmReport */,
 				DE2FBE952720C0C300D6AEE4 /* Report */,
 				DEA931F126F8C8EE0096CB4D /* Helpers */,
@@ -454,6 +464,31 @@
 				69A7F19026F36FDC00A25A69 /* Comment.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		69AAD26E2732CAEE00E78943 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				69AAD26F2732CAFB00E78943 /* ViewController */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		69AAD26F2732CAFB00E78943 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				69AAD26C2732C85800E78943 /* LoadingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		69AAD2702732CB3D00E78943 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				69AAD2722732CCF100E78943 /* LoadingAnimation.json */,
+				69AAD2712732CCF100E78943 /* LoadingWithComplete.json */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 		DE2FBE952720C0C300D6AEE4 /* Report */ = {
@@ -595,7 +630,8 @@
 			);
 			name = Musicall;
 			packageProductDependencies = (
-				0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */,
+				0346E46626F0E97E00F43504 /* SnapKit */,
+				69AAD26A272C3E5500E78943 /* Lottie */,
 			);
 			productName = Musicall;
 			productReference = 69A7F0EB26EA49C500A25A69 /* Musicall.app */;
@@ -669,7 +705,8 @@
 			);
 			mainGroup = 69A7F0E226EA49C500A25A69;
 			packageReferences = (
-				0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */,
+				0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				69AAD269272C3E5500E78943 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 69A7F0EC26EA49C500A25A69 /* Products */;
 			projectDirPath = "";
@@ -690,6 +727,8 @@
 				0346E47926F2219C00F43504 /* OpenSans-SemiBold.ttf in Resources */,
 				69A7F18626F0E0F700A25A69 /* .swiftlint.yml in Resources */,
 				0346E47C26F2219C00F43504 /* Overlock-Bold.ttf in Resources */,
+				69AAD2732732CCF100E78943 /* LoadingWithComplete.json in Resources */,
+				69AAD2742732CCF100E78943 /* LoadingAnimation.json in Resources */,
 				69A7F0FB26EA49C800A25A69 /* LaunchScreen.storyboard in Resources */,
 				0346E47A26F2219C00F43504 /* OpenSans-Bold.ttf in Resources */,
 				0346E47B26F2219C00F43504 /* OpenSans-Regular.ttf in Resources */,
@@ -740,6 +779,7 @@
 			files = (
 				03BA87F3270B48E800925F2D /* MCSegmentedControlCell.swift in Sources */,
 				03BA87F127074B0C00925F2D /* MCSegmentedControl.swift in Sources */,
+				69AAD26D2732C85900E78943 /* LoadingViewController.swift in Sources */,
 				0301222827205ADD0029E5B6 /* TelegramResponse.swift in Sources */,
 				039DCDDB26F8CEE200B46BC0 /* CardCell.swift in Sources */,
 				DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */,
@@ -1126,7 +1166,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */ = {
+		0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit";
 			requirement = {
@@ -1134,13 +1174,26 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		69AAD269272C3E5500E78943 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		0346E46626F0E97E00F43504 /* SwiftPackageProductDependency */ = {
+		0346E46626F0E97E00F43504 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 0346E46526F0E97E00F43504 /* RemoteSwiftPackageReference */;
+			package = 0346E46526F0E97E00F43504 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		69AAD26A272C3E5500E78943 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 69AAD269272C3E5500E78943 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
