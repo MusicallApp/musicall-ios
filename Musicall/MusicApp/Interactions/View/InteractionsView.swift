@@ -171,7 +171,7 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
 
             let content = interactionCell.content
             let cardView = Card(headerInfos: .init(username: interactionCell.authorName,
-                                                   date: interactionCell.date.description),
+                                                   date: interactionCell.date.getFormattedDate(format: .dayMonth)),
                                 style: .complete(content: content,
                                                  likes: interactionCell.likes,
                                                  interactions: 1),
@@ -191,7 +191,7 @@ extension InteractionsView: UITableViewDelegate, UITableViewDataSource {
 
             let content = comment.content
             let cardView = Card(headerInfos: .init(username: comment.authorName,
-                                                   date: comment.date.description),
+                                                   date: comment.date.getFormattedDate(format: .dayMonth)),
                                 style: .simple(content: content),
                                 with: delegate,
                                 enableActions: true,

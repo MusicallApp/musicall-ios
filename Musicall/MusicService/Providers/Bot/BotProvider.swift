@@ -10,7 +10,7 @@ import Foundation
 // MARK: Protocol
 public protocol BotProviderProtocol {
     var network: Networking { get }
-    func sendMessage(_ telegramReport: TelegramReport)
+    func sendMessage(_ telegramReport: TelegramReport, completion: @escaping (Swift.Result<TelegramResponse, Error>) -> Void)
 
 }
 
@@ -30,7 +30,7 @@ public class BotProvider: BotProviderProtocol {
         self.network = network
     }
 
-    public func sendMessage(_ telegramReport: TelegramReport) {
+    public func sendMessage(_ telegramReport: TelegramReport, completion: @escaping (Swift.Result<TelegramResponse, Error>) -> Void) {
         var rootURL = self.baseEndpoint
 
         rootURL.path = URLStructure.pathBot.rawValue + EnvironmentVariables.botToken.getVariable() + URLStructure.pathSendMessage.rawValue
@@ -48,15 +48,6 @@ public class BotProvider: BotProviderProtocol {
 
         guard let url = rootURL.url else {return}
 
-        network.get(url, completion: sendMessageCompletion(result:))
-    }
-
-    private func sendMessageCompletion(result: Swift.Result<TelegramResponse, Error>) {
-        switch result {
-        case .failure(let error):
-            print(error)
-            assertionFailure(ErrorHelper.botSendError.rawValue)
-        default: break
-        }
+        network.get(url, completion: completion)
     }
 }
