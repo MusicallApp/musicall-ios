@@ -13,7 +13,7 @@ class CreatePostViewController: UIViewController, Coordinating {
     var coordinator: Coordinator?
 
     let editableCard = Card(headerInfos: .init(username: UserDefaultHelper.get(field: .userNickName) as? String ?? "",
-                                               date: "26 de Janeiro"),
+                                               date: Date().getFormattedDate(format: .dayMonth)),
                             style: .editable)
 
     override func viewDidLoad() {
