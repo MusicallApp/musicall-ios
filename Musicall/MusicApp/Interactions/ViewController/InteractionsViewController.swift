@@ -101,6 +101,14 @@ extension InteractionsViewController: InteractionViewActionDelegate {
         self.recordId = recordID
         self.cellIndex = indexPath
         self.auhtorId = authorId
+
+//        var users = UserDefaultHelper.get(field: .blockedUsers) as? [CKRecord.ID]
+
+//        users?.append(authorId)
+
+//        UserDefaultHelper.setBlockedUsers(users: users)
+
+//        print("Users: \(users!)")
     }
 }
 
