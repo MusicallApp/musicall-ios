@@ -145,7 +145,23 @@ extension InteractionsView: KeyboardTextFieldDelegate {
         let content = keyboardTextField.commentTextField.text else {
             return
         }
-        viewModel.createNewComment(postId: postID, authorId: userID, content: content)
+        
+        if !content.isEmpty && !userID.recordName.isEmpty {
+            
+            viewModel.showLoading?()
+            
+            viewModel.createNewComment(postId: postID, authorId: userID, content: content)
+            keyboardTextField.commentTextField.text = ""
+            
+            viewModel.getComments(id: postID)
+            
+        } else if content.isEmpty {
+            viewModel.setUpAlert(title: "Campo de texto vazio", message: "Escreva alguma mensagem em sua postagem")
+        
+        } else if userID.recordName.isEmpty {
+            viewModel.setUpAlert(title: "Usuário inválido", message: "Tente relogar novamente")
+            
+        }
     }
 
 }

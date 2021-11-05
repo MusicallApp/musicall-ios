@@ -24,6 +24,8 @@ class InteractionsViewModel {
     }
     
     private var comment: [Comment] = []
+    var alertTitle = String()
+    var alertMessage = String()
     
     var numberOfCells: Int {
         return (cellViewModels?.comments.count ?? 0) + 1
@@ -52,6 +54,12 @@ class InteractionsViewModel {
         
         cloudKit.createComment(withPost: postId, content: content, authorId: authorId)
         
+    }
+    
+    func setUpAlert(title: String, message: String) {
+        alertTitle = title
+        alertMessage = message
+        self.showError?()
     }
 
     func getViewModel() -> InteractionsListViewModel? {
