@@ -34,6 +34,7 @@
 		03BA87EF2705E92800925F2D /* DateFormatHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA87EE2705E92800925F2D /* DateFormatHelper.swift */; };
 		03BA87F127074B0C00925F2D /* MCSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA87F027074B0C00925F2D /* MCSegmentedControl.swift */; };
 		03BA87F3270B48E800925F2D /* MCSegmentedControlCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03BA87F2270B48E800925F2D /* MCSegmentedControlCell.swift */; };
+		03C303902735645F00D57984 /* MusicLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03C3038F2735645F00D57984 /* MusicLoading.swift */; };
 		696FB51126FA1BE100D9ED8B /* MuralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696FB51026FA1BE100D9ED8B /* MuralViewModel.swift */; };
 		69A7F0EF26EA49C500A25A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */; };
 		69A7F0F126EA49C500A25A69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A7F0F026EA49C500A25A69 /* SceneDelegate.swift */; };
@@ -100,7 +101,6 @@
 		0301222B27218A130029E5B6 /* EnvironmentVariablesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariablesHelper.swift; sourceTree = "<group>"; };
 		030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClouldKitHelper.swift; sourceTree = "<group>"; };
 		03242E8B270F3B4500A19984 /* ErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
-		0325D8212729D9E60052C56A /* EnvVariables.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = EnvVariables.xcconfig; sourceTree = "<group>"; };
 		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0346E46F26F2219C00F43504 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		0346E47026F2219C00F43504 /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -119,6 +119,7 @@
 		03BA87EE2705E92800925F2D /* DateFormatHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatHelper.swift; sourceTree = "<group>"; };
 		03BA87F027074B0C00925F2D /* MCSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSegmentedControl.swift; sourceTree = "<group>"; };
 		03BA87F2270B48E800925F2D /* MCSegmentedControlCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCSegmentedControlCell.swift; sourceTree = "<group>"; };
+		03C3038F2735645F00D57984 /* MusicLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicLoading.swift; sourceTree = "<group>"; };
 		696FB51026FA1BE100D9ED8B /* MuralViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuralViewModel.swift; sourceTree = "<group>"; };
 		69A7F0EB26EA49C500A25A69 /* Musicall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musicall.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		69A7F0EE26EA49C500A25A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -230,6 +231,7 @@
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				03C3038E273563DE00D57984 /* LoadingComponent */,
 				DEF95EFE26F2D4EA008ED808 /* Elements */,
 				0346E48326F3901D00F43504 /* SelectableCard */,
 				0346E45F26F0D21600F43504 /* Cards */,
@@ -321,6 +323,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		03C3038E273563DE00D57984 /* LoadingComponent */ = {
+			isa = PBXGroup;
+			children = (
+				03C3038F2735645F00D57984 /* MusicLoading.swift */,
+			);
+			path = LoadingComponent;
+			sourceTree = "<group>";
+		};
 		693EAF6E26F8B55500D948D3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -373,7 +383,6 @@
 				69A7F0F926EA49C800A25A69 /* LaunchScreen.storyboard */,
 				69A7F0FC26EA49C800A25A69 /* Info.plist */,
 				69A7F18526F0E0F700A25A69 /* .swiftlint.yml */,
-				0325D8212729D9E60052C56A /* EnvVariables.xcconfig */,
 			);
 			path = Musicall;
 			sourceTree = "<group>";
@@ -799,6 +808,7 @@
 				0346E48026F3768400F43504 /* CardStyle.swift in Sources */,
 				DE97BA2826F7C5C40002C064 /* MCTextField.swift in Sources */,
 				DEEF7E3D26F8B51D00A4A26E /* PreSettingsViewController.swift in Sources */,
+				03C303902735645F00D57984 /* MusicLoading.swift in Sources */,
 				DEF3EFFF271C6EE0001327D8 /* AlerHelper.swift in Sources */,
 				03012222272056080029E5B6 /* Networking.swift in Sources */,
 				DE4856BB2722E14F003766F7 /* Report.swift in Sources */,
@@ -1021,7 +1031,6 @@
 		};
 		69A7F11726EA49C800A25A69 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0325D8212729D9E60052C56A /* EnvVariables.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

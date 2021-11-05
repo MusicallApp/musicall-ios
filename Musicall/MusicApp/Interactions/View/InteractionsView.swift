@@ -38,6 +38,13 @@ class InteractionsView: UIView {
         return view
     }()
 
+    let loadingView: MusicLoading = {
+        let loading = MusicLoading()
+        loading.translatesAutoresizingMaskIntoConstraints = false
+        loading.loadingView.play()
+        return loading
+    }()
+
     private let keyboardTextField = KeyboardTextField(placeholder: "Escreva um comentário...", size: .reduced)
     
     private let floatActionSheet = FloatActionSheet(imageIcon: .icContact, title: "Compartilhar meu perfil")
@@ -48,10 +55,17 @@ class InteractionsView: UIView {
         self.backgroundColor = .black
         configureUI()
         configureView()
+        viewModel.stopMusicLoading = stopLoading
     }
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    // MARK: Public FUNCS
+    func stopLoading() {
+        loadingView.loadingView.stop()
+        loadingView.isHidden = true
     }
 
     // MARK: PRIVATE FUNCS
@@ -81,6 +95,7 @@ class InteractionsView: UIView {
         addSubview(keyboardTextField)
         addSubview(tableView)
         addSubview(floatActionSheet)
+        addSubview(loadingView)
 
         bottomView.snp.makeConstraints { make in
             make.bottom.left.right.equalToSuperview()
@@ -100,6 +115,10 @@ class InteractionsView: UIView {
         floatActionSheet.snp.makeConstraints { make in
             make.bottom.equalTo(keyboardTextField.snp.top).inset(-8)
             make.left.equalTo(keyboardTextField.snp.left).inset(8)
+        }
+
+        loadingView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
         }
     }
 
