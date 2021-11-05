@@ -59,13 +59,23 @@ class InteractionsViewController: UIViewController, Coordinating {
         }
 
         interactionsView.viewModel.showError = {
-            DispatchQueue.main.async {
-                print("Error")
-            }
+            AlertHelper.showOnlyAlert(on: self,
+                                      title: self.interactionsView.viewModel.alertTitle,
+                                      message: self.interactionsView.viewModel.alertMessage,
+                                      preferredStyle: .alert)
         }
 
         interactionsView.viewModel.showLoading = {
-            DispatchQueue.main.async {
+            
+            let loadingVC = LoadingViewController()
+            loadingVC.modalPresentationStyle = .overFullScreen
+            loadingVC.loadingWithCompleteView.isHidden = true
+            loadingVC.loadingView.isHidden = false
+            self.present(loadingVC, animated: true, completion: nil)
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                self.dismiss(animated: true, completion: nil)
+            
             }
         }
 
