@@ -33,7 +33,9 @@ class MuralViewModel {
         cloudKit.fetchPost { result in
             switch result {
             case .success(let data):
+                let blockedUsers = UserDefaultHelper.get(field: .blockedUsers) as? [CKRecord.ID]
                 self.posts = data
+                self.posts = self.posts.filter { !(blockedUsers?.contains($0.authorId.recordID) ?? false) }
                 self.createCell(posts: self.posts)
             case .failure(let error):
                 fatalError("\(error)")
@@ -70,6 +72,7 @@ class MuralViewModel {
                             assertionFailure(ErrorHelper.howAreYou.rawValue)
                         return
                     }
+
                     vms.append(PostListViewModel(id: data.id,
                                                  authorName: authorName,
                                                  authorId: data.authorId,

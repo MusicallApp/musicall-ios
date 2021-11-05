@@ -159,7 +159,7 @@ class Card: UIView {
 
     @objc
     private func dotsButtonAction() {
-        delegate?.dotsAction(with: recordID, indexPath: indexPath, authorId: authorId)
+        delegate?.dotsAction(with: recordID, indexPath: indexPath, authorId: authorId, authorName: headerInfos.username)
     }
 
     // MARK: PRIVATE FUNCS

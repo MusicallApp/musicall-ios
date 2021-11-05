@@ -54,6 +54,7 @@
 		DE2FBE972720C0EC00D6AEE4 /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */; };
 		DE2FBE9C2720D2A200D6AEE4 /* ConfirmReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2FBE9B2720D2A200D6AEE4 /* ConfirmReportViewController.swift */; };
 		DE4856BB2722E14F003766F7 /* Report.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4856BA2722E14F003766F7 /* Report.swift */; };
+		DE6E47BC2735661400F71A63 /* EnvVariables.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = DE6E47BB2735661400F71A63 /* EnvVariables.xcconfig */; };
 		DE9745B326FB661200EDEA84 /* PreSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */; };
 		DE97BA2426F7B89D0002C064 /* KeyboardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */; };
 		DE97BA2626F7C0CC0002C064 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE97BA2526F7C0CC0002C064 /* UITextField.swift */; };
@@ -142,6 +143,7 @@
 		DE2FBE962720C0EC00D6AEE4 /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
 		DE2FBE9B2720D2A200D6AEE4 /* ConfirmReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReportViewController.swift; sourceTree = "<group>"; };
 		DE4856BA2722E14F003766F7 /* Report.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Report.swift; sourceTree = "<group>"; };
+		DE6E47BB2735661400F71A63 /* EnvVariables.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = EnvVariables.xcconfig; path = ../../../../Downloads/EnvVariables.xcconfig; sourceTree = "<group>"; };
 		DE9745B226FB661200EDEA84 /* PreSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreSettingsViewModel.swift; sourceTree = "<group>"; };
 		DE97BA2326F7B89D0002C064 /* KeyboardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTextField.swift; sourceTree = "<group>"; };
 		DE97BA2526F7C0CC0002C064 /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
@@ -362,6 +364,7 @@
 				69A7F0F226EA49C500A25A69 /* ViewController.swift */,
 				69A7F0F726EA49C800A25A69 /* Assets.xcassets */,
 				69A7F0F926EA49C800A25A69 /* LaunchScreen.storyboard */,
+				DE6E47BB2735661400F71A63 /* EnvVariables.xcconfig */,
 				69A7F0FC26EA49C800A25A69 /* Info.plist */,
 				69A7F18526F0E0F700A25A69 /* .swiftlint.yml */,
 				0325D8212729D9E60052C56A /* EnvVariables.xcconfig */,
@@ -695,6 +698,7 @@
 				69A7F0FB26EA49C800A25A69 /* LaunchScreen.storyboard in Resources */,
 				0346E47A26F2219C00F43504 /* OpenSans-Bold.ttf in Resources */,
 				0346E47B26F2219C00F43504 /* OpenSans-Regular.ttf in Resources */,
+				DE6E47BC2735661400F71A63 /* EnvVariables.xcconfig in Resources */,
 				69A7F0F826EA49C800A25A69 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -958,6 +962,7 @@
 		};
 		69A7F11626EA49C800A25A69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE6E47BB2735661400F71A63 /* EnvVariables.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
