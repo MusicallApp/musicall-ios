@@ -61,15 +61,24 @@ class ReportViewController: UIViewController, Coordinating {
 
     @objc
     private func sendButtonAction() {
+        let loadingVC = LoadingViewController()
+        loadingVC.modalPresentationStyle = .overFullScreen
+        present(loadingVC, animated: false, completion: nil)
+
         if let comment = commentTextView.text, let rep = self.report {
             let telegramReport = TelegramReport(author: rep.authorName,
                                                 authorID: rep.authorId.recordName, postID: rep.postId.recordName,
                                                 message: comment)
-            BotProvider().sendMessage(telegramReport) { result in
+            BotProvider().sendMessage(telegramReport) { [weak self] result in
+
+                DispatchQueue.main.async {
+                    self?.dismiss(animated: false, completion: nil)
+                }
+
                 switch result {
                 case .success(_):
                     DispatchQueue.main.async {
-                        self.coordinator?.navigate(.toConfirmReport, with: self)
+                        self?.coordinator?.navigate(.toConfirmReport, with: self)
                     }
                 case .failure(let error):
                     fatalError(error.localizedDescription)

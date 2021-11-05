@@ -7,6 +7,7 @@
 
 import Foundation
 import CloudKit
+import UIKit
 
 class InteractionsViewModel {
 
@@ -14,6 +15,7 @@ class InteractionsViewModel {
     var showLoading: (() -> Void)?
     var hideLoading: (() -> Void)?
     var showError: (() -> Void)?
+    var stopMusicLoading: (() -> Void)?
 
     let cloudKit = ModelCloudKit()
 
@@ -30,9 +32,10 @@ class InteractionsViewModel {
     }
     
     @objc
-    func getComments(id: CKRecord.ID) {
+    func getComments(id: CKRecord.ID, completion: @escaping () -> Void) {
         
         cloudKit.fetchComment(id) { result in
+            completion()
             switch result {
             case .success(let data):
                 self.comment = data
@@ -72,7 +75,9 @@ class InteractionsViewModel {
         guard let id = self.cellViewModels?.id else {
             return
         }
-        self.getComments(id: id)
+        self.getComments(id: id) {
+            self.stopMusicLoading?()
+        }
 
     }
     
