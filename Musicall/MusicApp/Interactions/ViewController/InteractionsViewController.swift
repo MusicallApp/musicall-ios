@@ -96,7 +96,7 @@ extension InteractionsViewController: InteractionViewActionDelegate {
         if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID, userID == authorId {
             AlertHelper.showDeleteActionSheet(on: self, with: self, preferredStyle: message)
         } else {
-            AlertHelper.showReportActionSheet(on: self, with: self, preferredStyle: message)
+            AlertHelper.showOptionsActionSheet(on: self, with: self, preferredStyle: message)
         }
 
         self.recordId = recordID

@@ -26,9 +26,7 @@ class AlertHelper {
                                       with delegate: AlertDelegate?,
                                       preferredStyle: UIAlertController.Style) {
 
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: preferredStyle)
-        actionSheet.title = "Deseja deletar?"
-        actionSheet.message = "Essa ação é irreversivel, tenha certeza ao tomar a decisão"
+        let actionSheet = UIAlertController(title: "Ações", message: nil, preferredStyle: preferredStyle)
 
         actionSheet.addAction(UIAlertAction(title: "Deletar", style: .destructive) { _ in
             delegate?.actionSheetDeleteAction()
@@ -39,13 +37,11 @@ class AlertHelper {
         viewController?.present(actionSheet, animated: true, completion: nil)
     }
 
-    static func showReportActionSheet(on viewController: UIViewController?,
-                                      with delegate: AlertDelegate?,
-                                      preferredStyle: UIAlertController.Style) {
+    static func showOptionsActionSheet(on viewController: UIViewController?,
+                                       with delegate: AlertDelegate?,
+                                       preferredStyle: UIAlertController.Style) {
 
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: preferredStyle)
-        actionSheet.title = "Deseja deletar?"
-        actionSheet.message = "Essa ação é irreversivel, tenha certeza ao tomar a decisão"
+        let actionSheet = UIAlertController(title: "Ações", message: nil, preferredStyle: preferredStyle)
 
         actionSheet.addAction(UIAlertAction(title: "Reportar", style: .destructive) { _ in
             delegate?.actionSheetReportAction()
@@ -60,7 +56,11 @@ class AlertHelper {
         viewController?.present(actionSheet, animated: true, completion: nil)
     }
 
-    static func showConfimAlert(on viewController: UIViewController?, title: String, message: String, with delegate: AlertDelegate?, action: Action) {
+    static func showConfimAlert(on viewController: UIViewController?,
+                                title: String,
+                                message: String,
+                                with delegate: AlertDelegate?,
+                                action: Action) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
@@ -79,7 +79,10 @@ class AlertHelper {
         viewController?.present(alert, animated: true, completion: nil)
     }
     
-    static func showOnlyAlert(on viewController: UIViewController?, title: String, message: String, preferredStyle: UIAlertController.Style) {
+    static func showOnlyAlert(on viewController: UIViewController?,
+                              title: String,
+                              message: String,
+                              preferredStyle: UIAlertController.Style) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         
         alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))
