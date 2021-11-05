@@ -7,10 +7,17 @@
 
 import UIKit
 
+enum Action: String {
+    case delete
+    case ban
+}
+
 protocol AlertDelegate: AnyObject {
     func actionSheetDeleteAction()
     func actionSheetReportAction()
+    func actionSheetBanAction()
     func actionConfirmDelete()
+    func actionConfirmBan()
 }
 
 class AlertHelper {
@@ -19,9 +26,7 @@ class AlertHelper {
                                       with delegate: AlertDelegate?,
                                       preferredStyle: UIAlertController.Style) {
 
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: preferredStyle)
-        actionSheet.title = "Deseja deletar?"
-        actionSheet.message = "Essa ação é irreversivel, tenha certeza ao tomar a decisão"
+        let actionSheet = UIAlertController(title: "Ações", message: nil, preferredStyle: preferredStyle)
 
         actionSheet.addAction(UIAlertAction(title: "Deletar", style: .destructive) { _ in
             delegate?.actionSheetDeleteAction()
@@ -32,16 +37,18 @@ class AlertHelper {
         viewController?.present(actionSheet, animated: true, completion: nil)
     }
 
-    static func showReportActionSheet(on viewController: UIViewController?,
-                                      with delegate: AlertDelegate?,
-                                      preferredStyle: UIAlertController.Style) {
+    static func showOptionsActionSheet(on viewController: UIViewController?,
+                                       with delegate: AlertDelegate?,
+                                       preferredStyle: UIAlertController.Style) {
 
-        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: preferredStyle)
-        actionSheet.title = "Deseja deletar?"
-        actionSheet.message = "Essa ação é irreversivel, tenha certeza ao tomar a decisão"
+        let actionSheet = UIAlertController(title: "Ações", message: nil, preferredStyle: preferredStyle)
 
         actionSheet.addAction(UIAlertAction(title: "Reportar", style: .destructive) { _ in
             delegate?.actionSheetReportAction()
+        })
+
+        actionSheet.addAction(UIAlertAction(title: "Banir usuário", style: .destructive) { _ in
+            delegate?.actionSheetBanAction()
         })
 
         actionSheet.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
@@ -49,19 +56,33 @@ class AlertHelper {
         viewController?.present(actionSheet, animated: true, completion: nil)
     }
 
-    static func showConfimAlert(on viewController: UIViewController?, title: String, message: String, with delegate: AlertDelegate?) {
+    static func showConfimAlert(on viewController: UIViewController?,
+                                title: String,
+                                message: String,
+                                with delegate: AlertDelegate?,
+                                action: Action) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
 
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "Deletar", style: .destructive) { _ in
-            delegate?.actionConfirmDelete()
-            print("Deletou...")
-        })
+
+        switch action {
+        case .delete:
+            alert.addAction(UIAlertAction(title: "Deletar", style: .destructive) { _ in
+                delegate?.actionConfirmDelete()
+            })
+        case .ban:
+            alert.addAction(UIAlertAction(title: "Banir", style: .destructive) { _ in
+                delegate?.actionConfirmBan()
+            })
+        }
 
         viewController?.present(alert, animated: true, completion: nil)
     }
     
-    static func showOnlyAlert(on viewController: UIViewController?, title: String, message: String, preferredStyle: UIAlertController.Style) {
+    static func showOnlyAlert(on viewController: UIViewController?,
+                              title: String,
+                              message: String,
+                              preferredStyle: UIAlertController.Style) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
         
         alert.addAction(UIAlertAction(title: "Voltar", style: .cancel, handler: nil))

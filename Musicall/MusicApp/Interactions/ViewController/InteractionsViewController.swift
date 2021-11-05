@@ -24,6 +24,7 @@ class InteractionsViewController: UIViewController, Coordinating {
     private var recordId = CKRecord.ID()
     private var cellIndex = Int()
     private var auhtorId = CKRecord.ID()
+    private var authorName = ""
 
     override func loadView() {
         super.loadView()
@@ -79,7 +80,7 @@ class InteractionsViewController: UIViewController, Coordinating {
 }
 
 extension InteractionsViewController: InteractionViewActionDelegate {
-    func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID) {
+    func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID, authorName: String) {
 
         var message: UIAlertController.Style
 
@@ -95,21 +96,43 @@ extension InteractionsViewController: InteractionViewActionDelegate {
         if let userID = UserDefaultHelper.get(field: .userID) as? CKRecord.ID, userID == authorId {
             AlertHelper.showDeleteActionSheet(on: self, with: self, preferredStyle: message)
         } else {
-            AlertHelper.showReportActionSheet(on: self, with: self, preferredStyle: message)
+            AlertHelper.showOptionsActionSheet(on: self, with: self, preferredStyle: message)
         }
 
         self.recordId = recordID
         self.cellIndex = indexPath
         self.auhtorId = authorId
+        self.authorName = authorName
     }
 }
 
 extension InteractionsViewController: AlertDelegate {
+
+    func actionSheetBanAction() {
+        AlertHelper.showConfimAlert(
+            on: self,
+            title: "Banir \(authorName)?",
+            message: "Após banir esse usuário, não será possível desfazer a ação!",
+            with: self,
+            action: .ban
+        )
+    }
+
     func actionSheetReportAction() {
         if let user = UserDefaultHelper.getUser() {
             let report = Report(authorName: user.nickName, authorId: auhtorId, postId: recordId)
             coordinator?.navigate(.toReport, with: report)
         }
+    }
+
+    func actionSheetDeleteAction() {
+        AlertHelper.showConfimAlert(
+            on: self,
+            title: "Apagar mensagem?",
+            message: "Após deletar essa mensagem, não será possível desfazer a ação!",
+            with: self,
+            action: .delete
+        )
     }
 
     func actionConfirmDelete() {
@@ -124,13 +147,10 @@ extension InteractionsViewController: AlertDelegate {
             interactionsView.tableView.deleteRows(at: [IndexPath(row: self.cellIndex, section: 0)], with: .middle)
         }
     }
-    
-    func actionSheetDeleteAction() {
-        AlertHelper.showConfimAlert(
-            on: self,
-            title: "Apagar mensagem?",
-            message: "Após deletar essa mensagem, não será possível desfazer a ação!",
-            with: self
-        )
+
+    func actionConfirmBan() {
+        UserDefaultHelper.setBlockedUser(userId: auhtorId)
+        coordinator?.pop(self)
     }
+
 }

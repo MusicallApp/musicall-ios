@@ -10,7 +10,7 @@ import SnapKit
 import CloudKit
 
 protocol InteractionViewActionDelegate: AnyObject {
-    func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID)
+    func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID, authorName: String)
 }
 
 class InteractionsView: UIView {

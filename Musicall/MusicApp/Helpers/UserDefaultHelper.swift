@@ -13,6 +13,7 @@ enum Field: String {
     case userCellphone = "MC_USER_CELLPHONE"
     case userType = "MC_USER_TYPE"
     case userID = "MC_USER_ID"
+    case blockedUsers = "MC_BLOCKED_USERS"
 }
 
 class UserDefaultHelper {
@@ -29,9 +30,31 @@ class UserDefaultHelper {
                 return CKRecord.ID(recordName: recordName)
             }
             return CKRecord.ID(recordName: "")
+        case .blockedUsers:
+            var blockedUsers = [CKRecord.ID]()
+            if let recordName = UserDefaults.standard.value(forKey: field.rawValue) as? [String] {
+                recordName.forEach { name in
+                    blockedUsers.append(CKRecord.ID(recordName: name))
+                }
+            }
+            return blockedUsers
         default:
             return UserDefaults.standard.value(forKey: field.rawValue) as? String
         }
+    }
+
+    static func setBlockedUsers(users: [CKRecord.ID]?) {
+        var names = [String]()
+        users?.forEach { recordId in
+            names.append(recordId.recordName)
+        }
+        set(names, for: .blockedUsers)
+    }
+
+    static func setBlockedUser(userId: CKRecord.ID) {
+        var users = UserDefaultHelper.get(field: .blockedUsers) as? [CKRecord.ID]
+        users?.append(userId)
+        setBlockedUsers(users: users)
     }
 
     static func setUser(_ user: User) {
