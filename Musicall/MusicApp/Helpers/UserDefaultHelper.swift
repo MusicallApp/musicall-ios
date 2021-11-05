@@ -51,6 +51,12 @@ class UserDefaultHelper {
         set(names, for: .blockedUsers)
     }
 
+    static func setBlockedUser(userId: CKRecord.ID) {
+        var users = UserDefaultHelper.get(field: .blockedUsers) as? [CKRecord.ID]
+        users?.append(userId)
+        setBlockedUsers(users: users)
+    }
+
     static func setUser(_ user: User) {
         set(user.nickName, for: .userNickName)
         set(user.phoneNumber, for: .userCellphone)

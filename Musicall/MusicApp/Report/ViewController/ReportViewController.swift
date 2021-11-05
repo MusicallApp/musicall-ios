@@ -69,6 +69,7 @@ class ReportViewController: UIViewController, Coordinating {
                 switch result {
                 case .success(_):
                     DispatchQueue.main.async {
+                        UserDefaultHelper.setBlockedUser(userId: rep.authorId)
                         self.coordinator?.navigate(.toConfirmReport, with: self)
                     }
                 case .failure(let error):
