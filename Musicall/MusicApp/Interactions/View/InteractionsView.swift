@@ -172,7 +172,9 @@ extension InteractionsView: KeyboardTextFieldDelegate {
             viewModel.createNewComment(postId: postID, authorId: userID, content: content)
             keyboardTextField.commentTextField.text = ""
             
-            viewModel.getComments(id: postID)
+            viewModel.getComments(id: postID) {
+                self.stopLoading()
+            }
             
         } else if content.isEmpty {
             viewModel.setUpAlert(title: "Campo de texto vazio", message: "Escreva alguma mensagem em sua postagem")
