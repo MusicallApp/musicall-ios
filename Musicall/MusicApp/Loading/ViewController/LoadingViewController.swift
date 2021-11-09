@@ -44,7 +44,7 @@ public class LoadingViewController: UIViewController {
     public init() {
         super.init(nibName: nil, bundle: nil)
         configureLayout()
-        view.backgroundColor = UIColor.systemBlack.withAlphaComponent(0.4)
+        view.backgroundColor = UIColor.systemBlack.withAlphaComponent(0.25)
     }
 
     required init?(coder: NSCoder) {
