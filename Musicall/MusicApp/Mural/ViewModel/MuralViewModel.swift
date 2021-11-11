@@ -30,7 +30,9 @@ class MuralViewModel {
     
     @objc
     func getPosts() {
+        
         cloudKit.fetchPost { result in
+          
             switch result {
             case .success(let data):
                 let blockedUsers = UserDefaultHelper.get(field: .blockedUsers) as? [CKRecord.ID]
@@ -81,10 +83,12 @@ class MuralViewModel {
                                                  date: data.createdAt,
                                                  comments: 0))
                     
-                    self.cellViewModels = vms
-                    
                     if vms.count == posts.count {
-                        self.cellViewModels = vms
+                        let sortedArray = vms.sorted {
+                            $0.date > $1.date
+                        }
+                        
+                        self.cellViewModels = sortedArray
                         self.cellViewModelsAux = self.cellViewModels
                     } else {
                         self.cellViewModels = []

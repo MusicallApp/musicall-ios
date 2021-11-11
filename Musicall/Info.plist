@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>MUSICALLAPP_TELEGRAM_BOT_TOKEN</key>
-	<string>$(MUSICALLAPP_TELEGRAM_BOT_TOKEN)</string>
-	<key>TELEGRAM_CHAT_ID</key>
-	<string>$(TELEGRAM_CHAT_ID)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -23,9 +19,13 @@
 	<key>CFBundleVersion</key>
 	<string>13</string>
 	<key>CLOUDKIT_ENVIRONMENT</key>
-	<string>iCloud.MusicallApp</string>
+	<string>iCloud.Musicall</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MUSICALLAPP_TELEGRAM_BOT_TOKEN</key>
+	<string>$(MUSICALLAPP_TELEGRAM_BOT_TOKEN)</string>
+	<key>TELEGRAM_CHAT_ID</key>
+	<string>$(TELEGRAM_CHAT_ID)</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>OpenSans-Regular.ttf</string>
@@ -55,7 +55,7 @@
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
-	<string></string>
+	<string/>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

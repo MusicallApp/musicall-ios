@@ -73,6 +73,14 @@ class MuralViewController: UIViewController, Coordinating {
 
         return button
     }()
+    
+    private let loadingVC: LoadingViewController = {
+        let loadingVC = LoadingViewController()
+        loadingVC.modalPresentationStyle = .overFullScreen
+        loadingVC.loadingWithCompleteView.isHidden = true
+        loadingVC.loadingView.isHidden = false
+        return loadingVC
+    }()
 
     // MARK: Variables and constants
 
@@ -90,8 +98,8 @@ class MuralViewController: UIViewController, Coordinating {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationController?.navigationItem.largeTitleDisplayMode = .always
-        viewModel.getPosts()
         navigationController?.isNavigationBarHidden = true
+        viewModel.getPosts()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -106,16 +114,17 @@ class MuralViewController: UIViewController, Coordinating {
     }
     
     @objc func reloadPost() {
+        
         viewModel.getPosts()
         tableView.refreshControl?.endRefreshing()
     }
     
     private func setUpViewModel() {
-        spinner.startAnimating()
+        showLoading()
         viewModel.reloadTableView = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
-                self.spinner.stopAnimating()
+                self.hideLoading()
             }
         }
         
@@ -126,14 +135,20 @@ class MuralViewController: UIViewController, Coordinating {
         }
         
         viewModel.showLoading = {
-            DispatchQueue.main.async {
-            }
+            self.showLoading()
         }
         
         viewModel.hideLoading = {
-            DispatchQueue.main.async {
-            }
+            self.hideLoading()
         }
+    }
+    
+    private func showLoading() {
+        self.present(loadingVC, animated: true, completion: nil)
+    }
+    
+    private func hideLoading() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 
