@@ -63,7 +63,7 @@ class ToastView: UIView {
         mainStackView.addArrangedSubview(descriptionLabel)
     }
 
-    public func show(view: UIView, secondsToDisapear: CGFloat) {
+    public func show(view: UIView) {
         view.addSubview(self)
 
         self.snp.makeConstraints { make in
@@ -75,7 +75,7 @@ class ToastView: UIView {
             self?.center = .init(x: view.center.x, y: view.frame.maxY)
         }
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + secondsToDisapear) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             UIView.animate(withDuration: 0.5, animations: { [weak self] in
                 self?.center = .init(x: view.center.x, y: -view.frame.maxY)
             }, completion: { _ in
