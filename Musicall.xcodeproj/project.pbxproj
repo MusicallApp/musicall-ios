@@ -14,6 +14,7 @@
 		0301222A272085CF0029E5B6 /* TelegramReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03012229272085CF0029E5B6 /* TelegramReport.swift */; };
 		0301222C27218A130029E5B6 /* EnvironmentVariablesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0301222B27218A130029E5B6 /* EnvironmentVariablesHelper.swift */; };
 		030F99C626FCB0B200F12415 /* ClouldKitHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */; };
+		03112936273D4428002E3883 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03112935273D4428002E3883 /* ToastView.swift */; };
 		03242E8C270F3B4500A19984 /* ErrorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03242E8B270F3B4500A19984 /* ErrorHelper.swift */; };
 		0346E46126F0DCCC00F43504 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0346E46026F0DCCC00F43504 /* Card.swift */; };
 		0346E46726F0E97E00F43504 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0346E46626F0E97E00F43504 /* SnapKit */; };
@@ -100,6 +101,7 @@
 		03012229272085CF0029E5B6 /* TelegramReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelegramReport.swift; sourceTree = "<group>"; };
 		0301222B27218A130029E5B6 /* EnvironmentVariablesHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariablesHelper.swift; sourceTree = "<group>"; };
 		030F99C526FCB0B200F12415 /* ClouldKitHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClouldKitHelper.swift; sourceTree = "<group>"; };
+		03112935273D4428002E3883 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		03242E8B270F3B4500A19984 /* ErrorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHelper.swift; sourceTree = "<group>"; };
 		0346E46026F0DCCC00F43504 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		0346E46F26F2219C00F43504 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -228,9 +230,18 @@
 			path = Bot;
 			sourceTree = "<group>";
 		};
+		03112934273D440D002E3883 /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				03112935273D4428002E3883 /* ToastView.swift */,
+			);
+			path = ToastView;
+			sourceTree = "<group>";
+		};
 		0346E45E26F0D20E00F43504 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				03112934273D440D002E3883 /* ToastView */,
 				03C3038E273563DE00D57984 /* LoadingComponent */,
 				DEF95EFE26F2D4EA008ED808 /* Elements */,
 				0346E48326F3901D00F43504 /* SelectableCard */,
@@ -838,6 +849,7 @@
 				DEEF7E3826F8B33000A4A26E /* Coordinator.swift in Sources */,
 				DEEF7E3A26F8B4A900A4A26E /* MainCoordinator.swift in Sources */,
 				DEF95F0026F2D50A008ED808 /* FloatActionSheet.swift in Sources */,
+				03112936273D4428002E3883 /* ToastView.swift in Sources */,
 				0301222A272085CF0029E5B6 /* TelegramReport.swift in Sources */,
 				0346E46126F0DCCC00F43504 /* Card.swift in Sources */,
 			);
