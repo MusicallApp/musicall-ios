@@ -28,6 +28,10 @@ class MainCoordinator: Coordinator {
         case .toConfirmReport:
             let delegate = data as? ReportDelegate
             goToConfirmReport(with: delegate)
+        case .toSignIn:
+            goToSignIn()
+        case.toSignUp:
+            goToSignUp()
         }
     }
 
@@ -35,7 +39,7 @@ class MainCoordinator: Coordinator {
         if UserDefaultHelper.getUser() != nil {
             goToMural()
         } else {
-            let viewController = PreSettingsViewController()
+            let viewController = LoginViewController()
             viewController.coordinator = self
             navigationController?.setViewControllers([viewController], animated: false)
         }
@@ -85,5 +89,13 @@ class MainCoordinator: Coordinator {
         nvc.modalPresentationStyle = .fullScreen
 
         navigationController?.present(nvc, animated: true, completion: nil)
+    }
+    
+    private func goToSignIn() {
+        
+    }
+    
+    private func goToSignUp() {
+        
     }
 }

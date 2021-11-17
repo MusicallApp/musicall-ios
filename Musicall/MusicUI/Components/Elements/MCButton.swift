@@ -26,6 +26,7 @@ extension MCButton: Styleable {
         case medium
         case large
         case larger
+        case custom(width: CGFloat, height: CGFloat)
 
         func getSize() -> CGSize {
             switch self {
@@ -35,6 +36,8 @@ extension MCButton: Styleable {
                 return CGSize(width: 40, height: 40)
             case .larger:
                 return CGSize(width: 50, height: 50)
+            case .custom(let width, let height):
+                return CGSize(width: width, height: height)
             }
         }
     }
@@ -69,9 +72,19 @@ class MCButton: UIButton {
     }
 
     func configureSize(_ size: Size) {
-        snp.makeConstraints { make in
-            make.height.equalTo(size.getSize().height)
-            make.width.equalTo(size.getSize().width)
+        if size.getSize().height == 0 {
+            snp.makeConstraints { make in
+                make.width.equalTo(size.getSize().width)
+            }
+        } else if size.getSize().width == 0 {
+            snp.makeConstraints { make in
+                make.height.equalTo(size.getSize().height)
+            }
+        } else {
+            snp.makeConstraints { make in
+                make.height.equalTo(size.getSize().height)
+                make.width.equalTo(size.getSize().width)
+            }
         }
     }
 }
