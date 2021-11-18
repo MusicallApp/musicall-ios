@@ -96,6 +96,8 @@ class MainCoordinator: Coordinator {
     }
     
     private func goToSignUp() {
-        
+        let viewController = PreSettingsViewController()
+        viewController.coordinator = self
+        navigationController?.setViewControllers([viewController], animated: false)
     }
 }
