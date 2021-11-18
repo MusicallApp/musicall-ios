@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class MuralViewController: UIViewController, Coordinating {
 
@@ -212,7 +213,10 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
         cell.configureView(card: .init(headerInfos: headerView,
                                        style: .complete(content: cellViewModel.content,
                                                         likes: cellViewModel.likes,
-                                                        interactions: 0)), bottomSpacing: 16)
+                                                        interactions: 0),
+                                       authorId: cellViewModel.authorId.recordID),
+                           bottomSpacing: 16)
+        cell.card?.delegate = self
 
         return cell
     }
@@ -222,4 +226,11 @@ extension MuralViewController: UITableViewDelegate, UITableViewDataSource {
         coordinator?.navigate(.toInteractions, with: cellViewModel)
     }
     
+}
+
+extension MuralViewController: CardActionDelegate {
+    func profileAction(name: String, date: String, author: CKRecord.ID) {
+        let model = ProfileModel(name: name, date: date, authorId: author)
+        coordinator?.navigate(.toProfile, with: model)
+    }
 }

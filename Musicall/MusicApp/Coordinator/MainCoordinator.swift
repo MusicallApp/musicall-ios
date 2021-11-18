@@ -28,6 +28,10 @@ class MainCoordinator: Coordinator {
         case .toConfirmReport:
             let delegate = data as? ReportDelegate
             goToConfirmReport(with: delegate)
+        case .toProfile:
+            if let model = data as? ProfileModel {
+                goToProfile(with: model)
+            }
         }
     }
 
@@ -85,5 +89,11 @@ class MainCoordinator: Coordinator {
         nvc.modalPresentationStyle = .fullScreen
 
         navigationController?.present(nvc, animated: true, completion: nil)
+    }
+
+    private func goToProfile(with model: ProfileModel) {
+        let viewController = ProfileViewController(viewModel: .init(model: model))
+        viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

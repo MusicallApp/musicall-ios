@@ -9,8 +9,15 @@ import UIKit
 import SnapKit
 import CloudKit
 
-protocol InteractionViewActionDelegate: AnyObject {
+protocol CardActionDelegate: AnyObject {
     func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID, authorName: String)
+    func profileAction(name: String, date: String, author: CKRecord.ID)
+}
+
+extension CardActionDelegate {
+    func dotsAction(with recordID: CKRecord.ID, indexPath: Int,
+                    authorId: CKRecord.ID, authorName: String) {}
+    func profileAction(name: String, date: String, author: CKRecord.ID) {}
 }
 
 class InteractionsView: UIView {
@@ -20,7 +27,7 @@ class InteractionsView: UIView {
     private var keyboardHeight: CGFloat = 0.0
     private var keyboardBottomConstraint: ConstraintMakerEditable?
     let viewModel = InteractionsViewModel()
-    weak var delegate: InteractionViewActionDelegate?
+    weak var delegate: CardActionDelegate?
 
     // MARK: UI ELEMENTS
     lazy var tableView: UITableView = {

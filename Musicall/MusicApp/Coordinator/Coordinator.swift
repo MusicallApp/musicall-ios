@@ -13,6 +13,7 @@ enum Destination {
     case toCreatePost
     case toReport
     case toConfirmReport
+    case toProfile
 }
 
 protocol Coordinator {
