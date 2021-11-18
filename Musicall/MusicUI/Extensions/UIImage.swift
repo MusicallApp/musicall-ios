@@ -19,4 +19,5 @@ extension UIImage {
     static let icMic = UIImage(named: "mic")
     static let icArrowDown = UIImage(named: "arrowdown")
     static let icBan = UIImage(named: "ban")
+    static let icFace = UIImage(named: "Face")
 }
