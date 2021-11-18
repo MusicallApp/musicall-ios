@@ -18,4 +18,5 @@ extension UIImage {
     static let icTelegram = UIImage(named: "Telegram")
     static let icMic = UIImage(named: "mic")
     static let icArrowDown = UIImage(named: "arrowdown")
+    static let icBan = UIImage(named: "ban")
 }
