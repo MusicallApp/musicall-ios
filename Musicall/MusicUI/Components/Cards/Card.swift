@@ -19,7 +19,7 @@ class Card: UIView {
     // MARK: PUBLIC PROPERTIES
     var isHighlighted = false
     lazy var currentText = editableLabel.text
-    weak var delegate: InteractionViewActionDelegate?
+    weak var delegate: CardActionDelegate?
 
     // MARK: PRIVATE PROPERTIES
     private var style: CardStyle
@@ -33,7 +33,6 @@ class Card: UIView {
 
     let photoImageView: UIImageView = {
         let image = UIImageView()
-//        image.backgroundColor = .red
         image.image = .icContact
         image.layer.cornerRadius = 10
         return image
@@ -77,16 +76,25 @@ class Card: UIView {
         return label
     }()
 
-    let stackVertical: UIStackView = {
+    private lazy var stackVertical: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .fill
         stackView.distribution = .fill
         stackView.axis = .vertical
         stackView.spacing = 0
 
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(profileAction))
+        stackView.addGestureRecognizer(tapGesture)
+
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+
+    @objc func profileAction() {
+        let name = headerInfos.username
+        let date = headerInfos.date
+        delegate?.profileAction(name: name, date: date, author: authorId)
+    }
 
     let rightVerticalStack: UIStackView = {
         let stackView = UIStackView()
@@ -111,13 +119,20 @@ class Card: UIView {
     // MARK: LIFE CYCLE
     init(headerInfos: HeaderInfos,
          style: CardStyle,
-         with delegate: InteractionViewActionDelegate? = nil,
-         enableActions: Bool = false) {
+         with delegate: CardActionDelegate? = nil,
+         enableActions: Bool = false,
+         authorId: CKRecord.ID? = nil) {
 
         self.style = style
         self.headerInfos = headerInfos
         self.contentView = style.configureStyleView()
         self.delegate = delegate
+
+        if let author = authorId {
+            self.authorId = author
+
+        }
+        
         super.init(frame: .zero)
         editableConfiguration()
         backgroundColor = .darkestGray
@@ -129,7 +144,7 @@ class Card: UIView {
     
     init(headerInfos: HeaderInfos,
          style: CardStyle,
-         with delegate: InteractionViewActionDelegate? = nil,
+         with delegate: CardActionDelegate? = nil,
          enableActions: Bool = false,
          recordId: CKRecord.ID,
          indexPath: Int,

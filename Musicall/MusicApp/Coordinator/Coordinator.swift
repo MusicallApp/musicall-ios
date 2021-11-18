@@ -15,6 +15,7 @@ enum Destination {
     case toConfirmReport
     case toSignIn
     case toSignUp
+    case toProfile
 }
 
 protocol Coordinator {

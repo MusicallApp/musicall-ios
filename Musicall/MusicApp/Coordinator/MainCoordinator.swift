@@ -32,6 +32,10 @@ class MainCoordinator: Coordinator {
             goToSignIn()
         case.toSignUp:
             goToSignUp()
+        case .toProfile:
+            if let model = data as? ProfileModel {
+                goToProfile(with: model)
+            }
         }
     }
 
@@ -99,5 +103,11 @@ class MainCoordinator: Coordinator {
         let viewController = PreSettingsViewController()
         viewController.coordinator = self
         navigationController?.setViewControllers([viewController], animated: false)
+    }
+    
+    private func goToProfile(with model: ProfileModel) {
+        let viewController = ProfileViewController(viewModel: .init(model: model))
+        viewController.coordinator = self
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }

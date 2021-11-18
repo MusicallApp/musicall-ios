@@ -89,7 +89,7 @@ class InteractionsViewController: UIViewController, Coordinating {
 
 }
 
-extension InteractionsViewController: InteractionViewActionDelegate {
+extension InteractionsViewController: CardActionDelegate {
     func dotsAction(with recordID: CKRecord.ID, indexPath: Int, authorId: CKRecord.ID, authorName: String) {
 
         var message: UIAlertController.Style
