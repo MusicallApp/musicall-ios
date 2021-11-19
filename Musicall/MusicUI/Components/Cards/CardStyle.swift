@@ -51,6 +51,7 @@ enum CardStyle: Equatable {
         stackHorizontal.alignment = .fill
         stackHorizontal.distribution = .fill
         stackHorizontal.spacing = 0
+        stackHorizontal.isHidden = true
 
         let likeStack = buildIconStack(icon: .icHeartFill)
         let likeLabel = UILabel()

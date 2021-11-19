@@ -31,7 +31,7 @@ class LoginViewController: UIViewController {
     
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "I can chase you and I can catch you, but there is nothing I can do to mae you mine"
+        label.text = "Conecte-se para conhecer novas oportunidades e impulsionar sua carreira!"
         label.font = .MCDesignSystem(font: .subtitle1)
         label.textColor = .lightGray
         label.numberOfLines = 2
@@ -70,6 +70,8 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         setUpButtons()
         setUpUI()
+
+        signInButton.isHidden = true
         
     }
     
