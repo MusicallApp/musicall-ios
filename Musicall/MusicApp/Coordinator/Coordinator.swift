@@ -13,6 +13,8 @@ enum Destination {
     case toCreatePost
     case toReport
     case toConfirmReport
+    case toSignIn
+    case toSignUp
     case toProfile
 }
 

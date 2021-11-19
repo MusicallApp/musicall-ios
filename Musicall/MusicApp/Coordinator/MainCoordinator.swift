@@ -28,6 +28,10 @@ class MainCoordinator: Coordinator {
         case .toConfirmReport:
             let delegate = data as? ReportDelegate
             goToConfirmReport(with: delegate)
+        case .toSignIn:
+            goToSignIn()
+        case.toSignUp:
+            goToSignUp()
         case .toProfile:
             if let model = data as? ProfileModel {
                 goToProfile(with: model)
@@ -39,7 +43,7 @@ class MainCoordinator: Coordinator {
         if UserDefaultHelper.getUser() != nil {
             goToMural()
         } else {
-            let viewController = PreSettingsViewController()
+            let viewController = LoginViewController()
             viewController.coordinator = self
             navigationController?.setViewControllers([viewController], animated: false)
         }
@@ -90,7 +94,17 @@ class MainCoordinator: Coordinator {
 
         navigationController?.present(nvc, animated: true, completion: nil)
     }
-
+    
+    private func goToSignIn() {
+        
+    }
+    
+    private func goToSignUp() {
+        let viewController = PreSettingsViewController()
+        viewController.coordinator = self
+        navigationController?.setViewControllers([viewController], animated: false)
+    }
+    
     private func goToProfile(with model: ProfileModel) {
         let viewController = ProfileViewController(viewModel: .init(model: model))
         viewController.coordinator = self
